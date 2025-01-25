@@ -1,0 +1,259 @@
+[2025-01-24T19:40:30.313+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2025-01-24T19:40:30.326+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: coleta_dados_abertos_cnpj.extract manual__2025-01-24T19:04:37.945220+00:00 [queued]>
+[2025-01-24T19:40:30.331+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: coleta_dados_abertos_cnpj.extract manual__2025-01-24T19:04:37.945220+00:00 [queued]>
+[2025-01-24T19:40:30.332+0000] {taskinstance.py:2866} INFO - Starting attempt 5 of 5
+[2025-01-24T19:40:30.363+0000] {taskinstance.py:2889} INFO - Executing <Task(PythonOperator): extract> on 2025-01-24 19:04:37.945220+00:00
+[2025-01-24T19:40:30.367+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70: DeprecationWarning: This process (pid=104) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2025-01-24T19:40:30.368+0000] {standard_task_runner.py:72} INFO - Started process 105 to run task
+[2025-01-24T19:40:30.367+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'coleta_dados_abertos_cnpj', 'extract', 'manual__2025-01-24T19:04:37.945220+00:00', '--job-id', '733', '--raw', '--subdir', 'DAGS_FOLDER/coleta_dados_abertos_cnpj/dag.py', '--cfg-path', '/tmp/tmpys8wx68n']
+[2025-01-24T19:40:30.369+0000] {standard_task_runner.py:105} INFO - Job 733: Subtask extract
+[2025-01-24T19:40:30.398+0000] {task_command.py:467} INFO - Running <TaskInstance: coleta_dados_abertos_cnpj.extract manual__2025-01-24T19:04:37.945220+00:00 [running]> on host ee70781c29c7
+[2025-01-24T19:40:30.450+0000] {taskinstance.py:3132} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='Corvaum' AIRFLOW_CTX_DAG_ID='coleta_dados_abertos_cnpj' AIRFLOW_CTX_TASK_ID='extract' AIRFLOW_CTX_EXECUTION_DATE='2025-01-24T19:04:37.945220+00:00' AIRFLOW_CTX_TRY_NUMBER='5' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-01-24T19:04:37.945220+00:00'
+[2025-01-24T19:40:30.451+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2025-01-24T19:40:30.470+0000] {logging_mixin.py:190} INFO - Data formatada: 2025-01
+[2025-01-24T19:40:30.643+0000] {logging_mixin.py:190} INFO - Arquivos encontrados: ['Cnaes.zip', 'Empresas0.zip', 'Empresas1.zip', 'Empresas2.zip', 'Empresas3.zip', 'Empresas4.zip', 'Empresas5.zip', 'Empresas6.zip', 'Empresas7.zip', 'Empresas8.zip', 'Empresas9.zip', 'Estabelecimentos0.zip', 'Estabelecimentos1.zip', 'Estabelecimentos2.zip', 'Estabelecimentos3.zip', 'Estabelecimentos4.zip', 'Estabelecimentos5.zip', 'Estabelecimentos6.zip', 'Estabelecimentos7.zip', 'Estabelecimentos8.zip', 'Estabelecimentos9.zip', 'Motivos.zip', 'Municipios.zip', 'Naturezas.zip', 'Paises.zip', 'Qualificacoes.zip', 'Simples.zip', 'Socios0.zip', 'Socios1.zip', 'Socios2.zip', 'Socios3.zip', 'Socios4.zip', 'Socios5.zip', 'Socios6.zip', 'Socios7.zip', 'Socios8.zip', 'Socios9.zip']
+[2025-01-24T19:40:30.643+0000] {logging_mixin.py:190} INFO - Baixando o arquivo: https://arquivos.receitafederal.gov.br/dados/cnpj/dados_abertos_cnpj/2025-01/Cnaes.zip
+[2025-01-24T19:40:30.792+0000] {logging_mixin.py:190} INFO - Download concluído: https://arquivos.receitafederal.gov.br/dados/cnpj/dados_abertos_cnpj/2025-01/Cnaes.zip
+[2025-01-24T19:40:30.795+0000] {logging_mixin.py:190} INFO - Arquivos descompactados: ['/tmp/f9f5ed86e303410c9ae405c6b185ca44_extracted/F.K03200$Z.D50111.CNAECSV']
+[2025-01-24T19:40:30.799+0000] {connectionpool.py:870} WARNING - Retrying (Retry(total=4, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f825af97620>: Failed to establish a new connection: [Errno 101] Network is unreachable')': /raw?location=
+[2025-01-24T19:40:31.201+0000] {connectionpool.py:870} WARNING - Retrying (Retry(total=3, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f825af97800>: Failed to establish a new connection: [Errno 101] Network is unreachable')': /raw?location=
+[2025-01-24T19:40:32.005+0000] {connectionpool.py:870} WARNING - Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f825af97c50>: Failed to establish a new connection: [Errno 101] Network is unreachable')': /raw?location=
+[2025-01-24T19:40:33.608+0000] {connectionpool.py:870} WARNING - Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f825af98080>: Failed to establish a new connection: [Errno 101] Network is unreachable')': /raw?location=
+[2025-01-24T19:40:36.811+0000] {connectionpool.py:870} WARNING - Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f825af98410>: Failed to establish a new connection: [Errno 101] Network is unreachable')': /raw?location=
+[2025-01-24T19:40:36.814+0000] {taskinstance.py:3311} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/urllib3/connection.py", line 199, in _new_conn
+    sock = connection.create_connection(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/urllib3/util/connection.py", line 85, in create_connection
+    raise err
+  File "/home/airflow/.local/lib/python3.12/site-packages/urllib3/util/connection.py", line 73, in create_connection
+    sock.connect(sa)
+OSError: [Errno 101] Network is unreachable
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/urllib3/connectionpool.py", line 789, in urlopen
+    response = self._make_request(
+               ^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/urllib3/connectionpool.py", line 495, in _make_request
+    conn.request(
+  File "/home/airflow/.local/lib/python3.12/site-packages/urllib3/connection.py", line 441, in request
+    self.endheaders()
+  File "/usr/local/lib/python3.12/http/client.py", line 1331, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "/usr/local/lib/python3.12/http/client.py", line 1091, in _send_output
+    self.send(msg)
+  File "/usr/local/lib/python3.12/http/client.py", line 1035, in send
+    self.connect()
+  File "/home/airflow/.local/lib/python3.12/site-packages/urllib3/connection.py", line 279, in connect
+    self.sock = self._new_conn()
+                ^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/urllib3/connection.py", line 214, in _new_conn
+    raise NewConnectionError(
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPConnection object at 0x7f825af987d0>: Failed to establish a new connection: [Errno 101] Network is unreachable
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 767, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 733, in _execute_callable
+    return ExecutionCallableRunner(
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/operator_helpers.py", line 252, in run
+    return self.func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 422, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/python.py", line 238, in execute
+    return_value = self.execute_callable()
+                   ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/python.py", line 256, in execute_callable
+    return runner.run(*self.op_args, **self.op_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/operator_helpers.py", line 252, in run
+    return self.func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/airflow/dags/coleta_dados_abertos_cnpj/jobs/extract.py", line 134, in extract
+    upload_to_bucket(
+  File "/opt/airflow/dags/coleta_dados_abertos_cnpj/jobs/extract.py", line 100, in upload_to_bucket
+    client.put_object(
+  File "/home/airflow/.local/lib/python3.12/site-packages/minio/api.py", line 1996, in put_object
+    raise exc
+  File "/home/airflow/.local/lib/python3.12/site-packages/minio/api.py", line 1942, in put_object
+    return self._put_object(
+           ^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/minio/api.py", line 1781, in _put_object
+    response = self._execute(
+               ^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/minio/api.py", line 438, in _execute
+    region = self._get_region(bucket_name)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/minio/api.py", line 495, in _get_region
+    response = self._url_open(
+               ^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/minio/api.py", line 303, in _url_open
+    response = self._http.urlopen(
+               ^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/urllib3/poolmanager.py", line 443, in urlopen
+    response = conn.urlopen(method, u.request_uri, **kw)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/urllib3/connectionpool.py", line 873, in urlopen
+    return self.urlopen(
+           ^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/urllib3/connectionpool.py", line 873, in urlopen
+    return self.urlopen(
+           ^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/urllib3/connectionpool.py", line 873, in urlopen
+    return self.urlopen(
+           ^^^^^^^^^^^^^
+  [Previous line repeated 2 more times]
+  File "/home/airflow/.local/lib/python3.12/site-packages/urllib3/connectionpool.py", line 843, in urlopen
+    retries = retries.increment(
+              ^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/urllib3/util/retry.py", line 519, in increment
+    raise MaxRetryError(_pool, url, reason) from reason  # type: ignore[arg-type]
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+urllib3.exceptions.MaxRetryError: HTTPConnectionPool(host='host.docker.internal', port=9000): Max retries exceeded with url: /raw?location= (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f825af987d0>: Failed to establish a new connection: [Errno 101] Network is unreachable'))
+[2025-01-24T19:40:36.828+0000] {taskinstance.py:1225} INFO - Marking task as FAILED. dag_id=coleta_dados_abertos_cnpj, task_id=extract, run_id=manual__2025-01-24T19:04:37.945220+00:00, execution_date=20250124T190437, start_date=20250124T194030, end_date=20250124T194036
+[2025-01-24T19:40:36.834+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2025-01-24T19:40:36.835+0000] {standard_task_runner.py:124} ERROR - Failed to execute job 733 for task extract (HTTPConnectionPool(host='host.docker.internal', port=9000): Max retries exceeded with url: /raw?location= (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f825af987d0>: Failed to establish a new connection: [Errno 101] Network is unreachable')); 105)
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/urllib3/connection.py", line 199, in _new_conn
+    sock = connection.create_connection(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/urllib3/util/connection.py", line 85, in create_connection
+    raise err
+  File "/home/airflow/.local/lib/python3.12/site-packages/urllib3/util/connection.py", line 73, in create_connection
+    sock.connect(sa)
+OSError: [Errno 101] Network is unreachable
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/urllib3/connectionpool.py", line 789, in urlopen
+    response = self._make_request(
+               ^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/urllib3/connectionpool.py", line 495, in _make_request
+    conn.request(
+  File "/home/airflow/.local/lib/python3.12/site-packages/urllib3/connection.py", line 441, in request
+    self.endheaders()
+  File "/usr/local/lib/python3.12/http/client.py", line 1331, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "/usr/local/lib/python3.12/http/client.py", line 1091, in _send_output
+    self.send(msg)
+  File "/usr/local/lib/python3.12/http/client.py", line 1035, in send
+    self.connect()
+  File "/home/airflow/.local/lib/python3.12/site-packages/urllib3/connection.py", line 279, in connect
+    self.sock = self._new_conn()
+                ^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/urllib3/connection.py", line 214, in _new_conn
+    raise NewConnectionError(
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPConnection object at 0x7f825af987d0>: Failed to establish a new connection: [Errno 101] Network is unreachable
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/task/task_runner/standard_task_runner.py", line 117, in _start_by_fork
+    ret = args.func(args, dag=self.dag)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/cli/cli_config.py", line 49, in command
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/cli.py", line 116, in wrapper
+    return f(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/cli/commands/task_command.py", line 483, in task_run
+    task_return_code = _run_task_by_selected_method(args, _dag, ti)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/cli/commands/task_command.py", line 256, in _run_task_by_selected_method
+    return _run_raw_task(args, ti)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/cli/commands/task_command.py", line 341, in _run_raw_task
+    return ti._run_raw_task(
+           ^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/session.py", line 97, in wrapper
+    return func(*args, session=session, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 3005, in _run_raw_task
+    return _run_raw_task(
+           ^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 273, in _run_raw_task
+    TaskInstance._execute_task_with_callbacks(
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 3159, in _execute_task_with_callbacks
+    result = self._execute_task(context, task_orig)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 3183, in _execute_task
+    return _execute_task(self, context, task_orig)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 767, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 733, in _execute_callable
+    return ExecutionCallableRunner(
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/operator_helpers.py", line 252, in run
+    return self.func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 422, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/python.py", line 238, in execute
+    return_value = self.execute_callable()
+                   ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/python.py", line 256, in execute_callable
+    return runner.run(*self.op_args, **self.op_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/operator_helpers.py", line 252, in run
+    return self.func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/airflow/dags/coleta_dados_abertos_cnpj/jobs/extract.py", line 134, in extract
+    upload_to_bucket(
+  File "/opt/airflow/dags/coleta_dados_abertos_cnpj/jobs/extract.py", line 100, in upload_to_bucket
+    client.put_object(
+  File "/home/airflow/.local/lib/python3.12/site-packages/minio/api.py", line 1996, in put_object
+    raise exc
+  File "/home/airflow/.local/lib/python3.12/site-packages/minio/api.py", line 1942, in put_object
+    return self._put_object(
+           ^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/minio/api.py", line 1781, in _put_object
+    response = self._execute(
+               ^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/minio/api.py", line 438, in _execute
+    region = self._get_region(bucket_name)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/minio/api.py", line 495, in _get_region
+    response = self._url_open(
+               ^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/minio/api.py", line 303, in _url_open
+    response = self._http.urlopen(
+               ^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/urllib3/poolmanager.py", line 443, in urlopen
+    response = conn.urlopen(method, u.request_uri, **kw)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/urllib3/connectionpool.py", line 873, in urlopen
+    return self.urlopen(
+           ^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/urllib3/connectionpool.py", line 873, in urlopen
+    return self.urlopen(
+           ^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/urllib3/connectionpool.py", line 873, in urlopen
+    return self.urlopen(
+           ^^^^^^^^^^^^^
+  [Previous line repeated 2 more times]
+  File "/home/airflow/.local/lib/python3.12/site-packages/urllib3/connectionpool.py", line 843, in urlopen
+    retries = retries.increment(
+              ^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/urllib3/util/retry.py", line 519, in increment
+    raise MaxRetryError(_pool, url, reason) from reason  # type: ignore[arg-type]
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+urllib3.exceptions.MaxRetryError: HTTPConnectionPool(host='host.docker.internal', port=9000): Max retries exceeded with url: /raw?location= (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f825af987d0>: Failed to establish a new connection: [Errno 101] Network is unreachable'))
+[2025-01-24T19:40:36.862+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 1
+[2025-01-24T19:40:36.873+0000] {taskinstance.py:3895} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-01-24T19:40:36.881+0000] {local_task_job_runner.py:245} INFO - ::endgroup::

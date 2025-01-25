@@ -1,0 +1,40 @@
+[2025-01-24T19:42:12.475+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2025-01-24T19:42:12.482+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: coleta_dados_abertos_cnpj.extract manual__2025-01-24T19:42:11.617297+00:00 [queued]>
+[2025-01-24T19:42:12.486+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: coleta_dados_abertos_cnpj.extract manual__2025-01-24T19:42:11.617297+00:00 [queued]>
+[2025-01-24T19:42:12.487+0000] {taskinstance.py:2866} INFO - Starting attempt 1 of 2
+[2025-01-24T19:42:12.528+0000] {taskinstance.py:2889} INFO - Executing <Task(PythonOperator): extract> on 2025-01-24 19:42:11.617297+00:00
+[2025-01-24T19:42:12.532+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70: DeprecationWarning: This process (pid=128) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2025-01-24T19:42:12.533+0000] {standard_task_runner.py:72} INFO - Started process 129 to run task
+[2025-01-24T19:42:12.532+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'coleta_dados_abertos_cnpj', 'extract', 'manual__2025-01-24T19:42:11.617297+00:00', '--job-id', '734', '--raw', '--subdir', 'DAGS_FOLDER/coleta_dados_abertos_cnpj/dag.py', '--cfg-path', '/tmp/tmpoci3k65d']
+[2025-01-24T19:42:12.534+0000] {standard_task_runner.py:105} INFO - Job 734: Subtask extract
+[2025-01-24T19:42:12.557+0000] {task_command.py:467} INFO - Running <TaskInstance: coleta_dados_abertos_cnpj.extract manual__2025-01-24T19:42:11.617297+00:00 [running]> on host ee70781c29c7
+[2025-01-24T19:42:12.601+0000] {taskinstance.py:3132} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='Corvaum' AIRFLOW_CTX_DAG_ID='coleta_dados_abertos_cnpj' AIRFLOW_CTX_TASK_ID='extract' AIRFLOW_CTX_EXECUTION_DATE='2025-01-24T19:42:11.617297+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-01-24T19:42:11.617297+00:00'
+[2025-01-24T19:42:12.602+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2025-01-24T19:42:12.613+0000] {logging_mixin.py:190} INFO - Data formatada: 2025-01
+[2025-01-24T19:42:12.783+0000] {logging_mixin.py:190} INFO - Arquivos encontrados: ['Cnaes.zip', 'Empresas0.zip', 'Empresas1.zip', 'Empresas2.zip', 'Empresas3.zip', 'Empresas4.zip', 'Empresas5.zip', 'Empresas6.zip', 'Empresas7.zip', 'Empresas8.zip', 'Empresas9.zip', 'Estabelecimentos0.zip', 'Estabelecimentos1.zip', 'Estabelecimentos2.zip', 'Estabelecimentos3.zip', 'Estabelecimentos4.zip', 'Estabelecimentos5.zip', 'Estabelecimentos6.zip', 'Estabelecimentos7.zip', 'Estabelecimentos8.zip', 'Estabelecimentos9.zip', 'Motivos.zip', 'Municipios.zip', 'Naturezas.zip', 'Paises.zip', 'Qualificacoes.zip', 'Simples.zip', 'Socios0.zip', 'Socios1.zip', 'Socios2.zip', 'Socios3.zip', 'Socios4.zip', 'Socios5.zip', 'Socios6.zip', 'Socios7.zip', 'Socios8.zip', 'Socios9.zip']
+[2025-01-24T19:42:12.783+0000] {logging_mixin.py:190} INFO - Baixando o arquivo: https://arquivos.receitafederal.gov.br/dados/cnpj/dados_abertos_cnpj/2025-01/Cnaes.zip
+[2025-01-24T19:42:12.947+0000] {logging_mixin.py:190} INFO - Download concluído: https://arquivos.receitafederal.gov.br/dados/cnpj/dados_abertos_cnpj/2025-01/Cnaes.zip
+[2025-01-24T19:42:12.951+0000] {logging_mixin.py:190} INFO - Arquivos descompactados: ['/tmp/851e5a39b1a74aa9a08bb3257b7c66ca_extracted/F.K03200$Z.D50111.CNAECSV']
+[2025-01-24T19:42:12.978+0000] {logging_mixin.py:190} INFO - Arquivo full_cpf/Cnaes/2025-01/Cnaes_224a72a2200345e4a818aa648fa79a6d.csv carregado com sucesso no MinIO!
+[2025-01-24T19:42:12.978+0000] {logging_mixin.py:190} INFO - Baixando o arquivo: https://arquivos.receitafederal.gov.br/dados/cnpj/dados_abertos_cnpj/2025-01/Empresas0.zip
+[2025-01-24T19:43:59.572+0000] {logging_mixin.py:190} INFO - Download concluído: https://arquivos.receitafederal.gov.br/dados/cnpj/dados_abertos_cnpj/2025-01/Empresas0.zip
+[2025-01-24T19:44:03.285+0000] {logging_mixin.py:190} INFO - Arquivos descompactados: ['/tmp/d3c3db5512ed4a128dc5150c460564e4_extracted/K3241.K03200Y0.D50111.EMPRECSV']
+[2025-01-24T19:44:11.449+0000] {logging_mixin.py:190} INFO - Arquivo full_cpf/Cnaes/2025-01/Cnaes_e0e48ebe1a9140738335a8ff01f8cd5e.csv carregado com sucesso no MinIO!
+[2025-01-24T19:44:11.539+0000] {logging_mixin.py:190} INFO - Baixando o arquivo: https://arquivos.receitafederal.gov.br/dados/cnpj/dados_abertos_cnpj/2025-01/Empresas1.zip
+[2025-01-24T19:44:32.228+0000] {logging_mixin.py:190} INFO - Download concluído: https://arquivos.receitafederal.gov.br/dados/cnpj/dados_abertos_cnpj/2025-01/Empresas1.zip
+[2025-01-24T19:44:32.992+0000] {logging_mixin.py:190} INFO - Arquivos descompactados: ['/tmp/b5d58ef691434cdd997d05b5221d4872_extracted/K3241.K03200Y1.D50111.EMPRECSV']
+[2025-01-24T19:44:34.794+0000] {logging_mixin.py:190} INFO - Arquivo full_cpf/Cnaes/2025-01/Cnaes_de6ac2522505466c88145f211162a9ee.csv carregado com sucesso no MinIO!
+[2025-01-24T19:44:34.816+0000] {logging_mixin.py:190} INFO - Baixando o arquivo: https://arquivos.receitafederal.gov.br/dados/cnpj/dados_abertos_cnpj/2025-01/Empresas2.zip
+[2025-01-24T19:44:56.519+0000] {logging_mixin.py:190} INFO - Download concluído: https://arquivos.receitafederal.gov.br/dados/cnpj/dados_abertos_cnpj/2025-01/Empresas2.zip
+[2025-01-24T19:44:57.313+0000] {logging_mixin.py:190} INFO - Arquivos descompactados: ['/tmp/fb20ae1cbdca46aeb9ab75a463d089be_extracted/K3241.K03200Y2.D50111.EMPRECSV']
+[2025-01-24T19:44:59.101+0000] {logging_mixin.py:190} INFO - Arquivo full_cpf/Cnaes/2025-01/Cnaes_d2c2da3e3e454a5baeffc98df4d9b193.csv carregado com sucesso no MinIO!
+[2025-01-24T19:44:59.123+0000] {logging_mixin.py:190} INFO - Baixando o arquivo: https://arquivos.receitafederal.gov.br/dados/cnpj/dados_abertos_cnpj/2025-01/Empresas3.zip
+[2025-01-24T19:45:13.741+0000] {local_task_job_runner.py:346} WARNING - State of this instance has been externally set to success. Terminating instance.
+[2025-01-24T19:45:13.742+0000] {local_task_job_runner.py:245} INFO - ::endgroup::
+[2025-01-24T19:45:13.743+0000] {process_utils.py:132} INFO - Sending 15 to group 129. PIDs of all processes in the group: [129]
+[2025-01-24T19:45:13.743+0000] {process_utils.py:87} INFO - Sending the signal 15 to group 129
+[2025-01-24T19:45:13.743+0000] {taskinstance.py:3093} ERROR - Received SIGTERM. Terminating subprocesses.
+[2025-01-24T19:45:13.756+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2025-01-24T19:45:13.770+0000] {process_utils.py:80} INFO - Process psutil.Process(pid=129, status='terminated', exitcode=0, started='19:42:11') (129) terminated with exit code 0

@@ -1,0 +1,28 @@
+[2025-01-25T13:47:21.064+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2025-01-25T13:47:21.073+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: coleta_dados_abertos_cnpj.extract_estabelecimentos manual__2025-01-24T21:15:51.387766+00:00 [queued]>
+[2025-01-25T13:47:21.078+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: coleta_dados_abertos_cnpj.extract_estabelecimentos manual__2025-01-24T21:15:51.387766+00:00 [queued]>
+[2025-01-25T13:47:21.079+0000] {taskinstance.py:2866} INFO - Starting attempt 11 of 12
+[2025-01-25T13:47:21.107+0000] {taskinstance.py:2889} INFO - Executing <Task(PythonOperator): extract_estabelecimentos> on 2025-01-24 21:15:51.387766+00:00
+[2025-01-25T13:47:21.114+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70: DeprecationWarning: This process (pid=191) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2025-01-25T13:47:21.115+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'coleta_dados_abertos_cnpj', 'extract_estabelecimentos', 'manual__2025-01-24T21:15:51.387766+00:00', '--job-id', '869', '--raw', '--subdir', 'DAGS_FOLDER/coleta_dados_abertos_cnpj/dag.py', '--cfg-path', '/tmp/tmpj8dg9jne']
+[2025-01-25T13:47:21.118+0000] {standard_task_runner.py:72} INFO - Started process 192 to run task
+[2025-01-25T13:47:21.118+0000] {standard_task_runner.py:105} INFO - Job 869: Subtask extract_estabelecimentos
+[2025-01-25T13:47:21.141+0000] {task_command.py:467} INFO - Running <TaskInstance: coleta_dados_abertos_cnpj.extract_estabelecimentos manual__2025-01-24T21:15:51.387766+00:00 [running]> on host ee70781c29c7
+[2025-01-25T13:47:21.188+0000] {taskinstance.py:3132} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='Corvaum' AIRFLOW_CTX_DAG_ID='coleta_dados_abertos_cnpj' AIRFLOW_CTX_TASK_ID='extract_estabelecimentos' AIRFLOW_CTX_EXECUTION_DATE='2025-01-24T21:15:51.387766+00:00' AIRFLOW_CTX_TRY_NUMBER='11' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-01-24T21:15:51.387766+00:00'
+[2025-01-25T13:47:21.207+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2025-01-25T13:47:21.221+0000] {logging_mixin.py:190} INFO - Data formatada: 2025-01
+[2025-01-25T13:47:21.515+0000] {logging_mixin.py:190} INFO - Arquivos encontrados: ['Estabelecimentos0.zip', 'Estabelecimentos1.zip', 'Estabelecimentos2.zip', 'Estabelecimentos3.zip', 'Estabelecimentos4.zip', 'Estabelecimentos5.zip', 'Estabelecimentos6.zip', 'Estabelecimentos7.zip', 'Estabelecimentos8.zip', 'Estabelecimentos9.zip']
+[2025-01-25T13:47:21.516+0000] {logging_mixin.py:190} INFO - Baixando o arquivo: https://arquivos.receitafederal.gov.br/dados/cnpj/dados_abertos_cnpj/2025-01/Estabelecimentos0.zip
+[2025-01-25T13:54:24.302+0000] {logging_mixin.py:190} INFO - Download concluído: https://arquivos.receitafederal.gov.br/dados/cnpj/dados_abertos_cnpj/2025-01/Estabelecimentos0.zip
+[2025-01-25T13:54:38.251+0000] {logging_mixin.py:190} INFO - Arquivos descompactados: ['/tmp/4c0563554a4d4a4385307062487933e6_extracted/K3241.K03200Y0.D50111.ESTABELE']
+[2025-01-25T13:56:57.923+0000] {logging_mixin.py:190} INFO - Arquivo full_cpf/Estabelecimentos/2025-01/Estabelecimentos_5d6312ff4b5241e49ff1722412f0f642.csv carregado com sucesso no MinIO!
+[2025-01-25T13:56:58.162+0000] {logging_mixin.py:190} INFO - Baixando o arquivo: https://arquivos.receitafederal.gov.br/dados/cnpj/dados_abertos_cnpj/2025-01/Estabelecimentos1.zip
+[2025-01-25T13:58:35.260+0000] {logging_mixin.py:190} INFO - Download concluído: https://arquivos.receitafederal.gov.br/dados/cnpj/dados_abertos_cnpj/2025-01/Estabelecimentos1.zip
+[2025-01-25T13:58:38.442+0000] {logging_mixin.py:190} INFO - Arquivos descompactados: ['/tmp/4c091c27e97f43cc919c680983d307ce_extracted/K3241.K03200Y1.D50111.ESTABELE']
+[2025-01-25T13:59:18.668+0000] {logging_mixin.py:190} INFO - Arquivo full_cpf/Estabelecimentos/2025-01/Estabelecimentos_29b20ac1973f44e789b15e075c2d3024.csv carregado com sucesso no MinIO!
+[2025-01-25T13:59:19.595+0000] {logging_mixin.py:190} INFO - Baixando o arquivo: https://arquivos.receitafederal.gov.br/dados/cnpj/dados_abertos_cnpj/2025-01/Estabelecimentos2.zip
+[2025-01-25T14:01:11.172+0000] {logging_mixin.py:190} INFO - Download concluído: https://arquivos.receitafederal.gov.br/dados/cnpj/dados_abertos_cnpj/2025-01/Estabelecimentos2.zip
+[2025-01-25T14:01:14.292+0000] {logging_mixin.py:190} INFO - Arquivos descompactados: ['/tmp/77ff7f4ddc6f45839d7a41997a822b84_extracted/K3241.K03200Y2.D50111.ESTABELE']
+[2025-01-25T14:01:55.311+0000] {logging_mixin.py:190} INFO - Arquivo full_cpf/Estabelecimentos/2025-01/Estabelecimentos_09a1e6b0e4c9416ca0d5589584f60540.csv carregado com sucesso no MinIO!

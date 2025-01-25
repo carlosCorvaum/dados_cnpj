@@ -1,0 +1,65 @@
+[2025-01-24T19:11:20.591+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2025-01-24T19:11:20.599+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: coleta_dados_abertos_cnpj.extract manual__2025-01-24T19:04:37.945220+00:00 [queued]>
+[2025-01-24T19:11:20.603+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: coleta_dados_abertos_cnpj.extract manual__2025-01-24T19:04:37.945220+00:00 [queued]>
+[2025-01-24T19:11:20.603+0000] {taskinstance.py:2866} INFO - Starting attempt 4 of 5
+[2025-01-24T19:11:20.652+0000] {taskinstance.py:2889} INFO - Executing <Task(PythonOperator): extract> on 2025-01-24 19:04:37.945220+00:00
+[2025-01-24T19:11:20.656+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70: DeprecationWarning: This process (pid=1896) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2025-01-24T19:11:20.658+0000] {standard_task_runner.py:72} INFO - Started process 1897 to run task
+[2025-01-24T19:11:20.657+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'coleta_dados_abertos_cnpj', 'extract', 'manual__2025-01-24T19:04:37.945220+00:00', '--job-id', '730', '--raw', '--subdir', 'DAGS_FOLDER/coleta_dados_abertos_cnpj/dag.py', '--cfg-path', '/tmp/tmpckdntm1k']
+[2025-01-24T19:11:20.659+0000] {standard_task_runner.py:105} INFO - Job 730: Subtask extract
+[2025-01-24T19:11:20.683+0000] {task_command.py:467} INFO - Running <TaskInstance: coleta_dados_abertos_cnpj.extract manual__2025-01-24T19:04:37.945220+00:00 [running]> on host ee70781c29c7
+[2025-01-24T19:11:20.729+0000] {taskinstance.py:3132} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='Corvaum' AIRFLOW_CTX_DAG_ID='coleta_dados_abertos_cnpj' AIRFLOW_CTX_TASK_ID='extract' AIRFLOW_CTX_EXECUTION_DATE='2025-01-24T19:04:37.945220+00:00' AIRFLOW_CTX_TRY_NUMBER='4' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-01-24T19:04:37.945220+00:00'
+[2025-01-24T19:11:20.730+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2025-01-24T19:11:20.741+0000] {logging_mixin.py:190} INFO - Data formatada: 2025-01
+[2025-01-24T19:11:20.929+0000] {logging_mixin.py:190} INFO - Arquivos encontrados: ['Cnaes.zip', 'Empresas0.zip', 'Empresas1.zip', 'Empresas2.zip', 'Empresas3.zip', 'Empresas4.zip', 'Empresas5.zip', 'Empresas6.zip', 'Empresas7.zip', 'Empresas8.zip', 'Empresas9.zip', 'Estabelecimentos0.zip', 'Estabelecimentos1.zip', 'Estabelecimentos2.zip', 'Estabelecimentos3.zip', 'Estabelecimentos4.zip', 'Estabelecimentos5.zip', 'Estabelecimentos6.zip', 'Estabelecimentos7.zip', 'Estabelecimentos8.zip', 'Estabelecimentos9.zip', 'Motivos.zip', 'Municipios.zip', 'Naturezas.zip', 'Paises.zip', 'Qualificacoes.zip', 'Simples.zip', 'Socios0.zip', 'Socios1.zip', 'Socios2.zip', 'Socios3.zip', 'Socios4.zip', 'Socios5.zip', 'Socios6.zip', 'Socios7.zip', 'Socios8.zip', 'Socios9.zip']
+[2025-01-24T19:11:20.929+0000] {logging_mixin.py:190} INFO - Baixando o arquivo: https://arquivos.receitafederal.gov.br/dados/cnpj/dados_abertos_cnpj/2025-01/Cnaes.zip
+[2025-01-24T19:11:21.053+0000] {logging_mixin.py:190} INFO - Download concluído: https://arquivos.receitafederal.gov.br/dados/cnpj/dados_abertos_cnpj/2025-01/Cnaes.zip
+[2025-01-24T19:11:21.056+0000] {logging_mixin.py:190} INFO - Arquivos descompactados: ['/tmp/7bdb6117bcb544b9b35b5dba22f047cc_extracted/F.K03200$Z.D50111.CNAECSV']
+[2025-01-24T19:11:21.067+0000] {logging_mixin.py:190} INFO - Arquivo full_cpf/Cnaes/2025-01/Cnaes_a003b483bfa646918cd9e9217603c267.csv carregado com sucesso no MinIO!
+[2025-01-24T19:11:21.067+0000] {logging_mixin.py:190} INFO - Baixando o arquivo: https://arquivos.receitafederal.gov.br/dados/cnpj/dados_abertos_cnpj/2025-01/Empresas0.zip
+[2025-01-24T19:13:06.245+0000] {logging_mixin.py:190} INFO - Download concluído: https://arquivos.receitafederal.gov.br/dados/cnpj/dados_abertos_cnpj/2025-01/Empresas0.zip
+[2025-01-24T19:13:09.976+0000] {logging_mixin.py:190} INFO - Arquivos descompactados: ['/tmp/03322931ddbc47f5bdcafb1eb7bd3abd_extracted/K3241.K03200Y0.D50111.EMPRECSV']
+[2025-01-24T19:13:18.037+0000] {logging_mixin.py:190} INFO - Arquivo full_cpf/Cnaes/2025-01/Cnaes_50942111410b4c779fcb25886d8b4bc0.csv carregado com sucesso no MinIO!
+[2025-01-24T19:13:18.125+0000] {logging_mixin.py:190} INFO - Baixando o arquivo: https://arquivos.receitafederal.gov.br/dados/cnpj/dados_abertos_cnpj/2025-01/Empresas1.zip
+[2025-01-24T19:13:38.855+0000] {logging_mixin.py:190} INFO - Download concluído: https://arquivos.receitafederal.gov.br/dados/cnpj/dados_abertos_cnpj/2025-01/Empresas1.zip
+[2025-01-24T19:13:39.584+0000] {logging_mixin.py:190} INFO - Arquivos descompactados: ['/tmp/b37c2e44aa13426daa727c85dfcf10fe_extracted/K3241.K03200Y1.D50111.EMPRECSV']
+[2025-01-24T19:13:41.524+0000] {logging_mixin.py:190} INFO - Arquivo full_cpf/Cnaes/2025-01/Cnaes_3f72cfed977a4e158cb99cf7009376f5.csv carregado com sucesso no MinIO!
+[2025-01-24T19:13:41.544+0000] {logging_mixin.py:190} INFO - Baixando o arquivo: https://arquivos.receitafederal.gov.br/dados/cnpj/dados_abertos_cnpj/2025-01/Empresas2.zip
+[2025-01-24T19:14:02.830+0000] {logging_mixin.py:190} INFO - Download concluído: https://arquivos.receitafederal.gov.br/dados/cnpj/dados_abertos_cnpj/2025-01/Empresas2.zip
+[2025-01-24T19:14:03.594+0000] {logging_mixin.py:190} INFO - Arquivos descompactados: ['/tmp/a7c88ccd611f4262ba89f527e843c588_extracted/K3241.K03200Y2.D50111.EMPRECSV']
+[2025-01-24T19:14:05.531+0000] {logging_mixin.py:190} INFO - Arquivo full_cpf/Cnaes/2025-01/Cnaes_46f1e6747d7a4f368de19e24836f5f5a.csv carregado com sucesso no MinIO!
+[2025-01-24T19:14:05.552+0000] {logging_mixin.py:190} INFO - Baixando o arquivo: https://arquivos.receitafederal.gov.br/dados/cnpj/dados_abertos_cnpj/2025-01/Empresas3.zip
+[2025-01-24T19:14:27.891+0000] {logging_mixin.py:190} INFO - Download concluído: https://arquivos.receitafederal.gov.br/dados/cnpj/dados_abertos_cnpj/2025-01/Empresas3.zip
+[2025-01-24T19:14:28.679+0000] {logging_mixin.py:190} INFO - Arquivos descompactados: ['/tmp/119807421bd9454db76f36414263f078_extracted/K3241.K03200Y3.D50111.EMPRECSV']
+[2025-01-24T19:14:30.550+0000] {logging_mixin.py:190} INFO - Arquivo full_cpf/Cnaes/2025-01/Cnaes_f5c443cff9f64068b8e08a7aba8ad726.csv carregado com sucesso no MinIO!
+[2025-01-24T19:14:30.572+0000] {logging_mixin.py:190} INFO - Baixando o arquivo: https://arquivos.receitafederal.gov.br/dados/cnpj/dados_abertos_cnpj/2025-01/Empresas4.zip
+[2025-01-24T19:14:54.675+0000] {logging_mixin.py:190} INFO - Download concluído: https://arquivos.receitafederal.gov.br/dados/cnpj/dados_abertos_cnpj/2025-01/Empresas4.zip
+[2025-01-24T19:14:55.494+0000] {logging_mixin.py:190} INFO - Arquivos descompactados: ['/tmp/f48333a1917f4e168c0395322c3e9727_extracted/K3241.K03200Y4.D50111.EMPRECSV']
+[2025-01-24T19:14:57.476+0000] {logging_mixin.py:190} INFO - Arquivo full_cpf/Cnaes/2025-01/Cnaes_57967cf1c5794aeead38aa6551ac3bb1.csv carregado com sucesso no MinIO!
+[2025-01-24T19:14:57.497+0000] {logging_mixin.py:190} INFO - Baixando o arquivo: https://arquivos.receitafederal.gov.br/dados/cnpj/dados_abertos_cnpj/2025-01/Empresas5.zip
+[2025-01-24T19:15:24.510+0000] {logging_mixin.py:190} INFO - Download concluído: https://arquivos.receitafederal.gov.br/dados/cnpj/dados_abertos_cnpj/2025-01/Empresas5.zip
+[2025-01-24T19:15:25.374+0000] {logging_mixin.py:190} INFO - Arquivos descompactados: ['/tmp/619190a151444f5d8cf987b7ca636678_extracted/K3241.K03200Y5.D50111.EMPRECSV']
+[2025-01-24T19:15:27.186+0000] {logging_mixin.py:190} INFO - Arquivo full_cpf/Cnaes/2025-01/Cnaes_c4c092a421034f4cbf996460b631cfb9.csv carregado com sucesso no MinIO!
+[2025-01-24T19:15:27.208+0000] {logging_mixin.py:190} INFO - Baixando o arquivo: https://arquivos.receitafederal.gov.br/dados/cnpj/dados_abertos_cnpj/2025-01/Empresas6.zip
+[2025-01-24T19:15:52.558+0000] {logging_mixin.py:190} INFO - Download concluído: https://arquivos.receitafederal.gov.br/dados/cnpj/dados_abertos_cnpj/2025-01/Empresas6.zip
+[2025-01-24T19:15:53.406+0000] {logging_mixin.py:190} INFO - Arquivos descompactados: ['/tmp/e422e828cf7b4988af461147b674a58c_extracted/K3241.K03200Y6.D50111.EMPRECSV']
+[2025-01-24T19:15:55.443+0000] {logging_mixin.py:190} INFO - Arquivo full_cpf/Cnaes/2025-01/Cnaes_e689aa3239f6455ab070b263459522f3.csv carregado com sucesso no MinIO!
+[2025-01-24T19:15:55.465+0000] {logging_mixin.py:190} INFO - Baixando o arquivo: https://arquivos.receitafederal.gov.br/dados/cnpj/dados_abertos_cnpj/2025-01/Empresas7.zip
+[2025-01-24T19:16:21.503+0000] {logging_mixin.py:190} INFO - Download concluído: https://arquivos.receitafederal.gov.br/dados/cnpj/dados_abertos_cnpj/2025-01/Empresas7.zip
+[2025-01-24T19:16:22.375+0000] {logging_mixin.py:190} INFO - Arquivos descompactados: ['/tmp/9db3c494129d4f89b88d1e918cec8bb6_extracted/K3241.K03200Y7.D50111.EMPRECSV']
+[2025-01-24T19:16:24.308+0000] {logging_mixin.py:190} INFO - Arquivo full_cpf/Cnaes/2025-01/Cnaes_c081bfedf1c243c5ae54848d7c35c10a.csv carregado com sucesso no MinIO!
+[2025-01-24T19:16:24.330+0000] {logging_mixin.py:190} INFO - Baixando o arquivo: https://arquivos.receitafederal.gov.br/dados/cnpj/dados_abertos_cnpj/2025-01/Empresas8.zip
+[2025-01-24T19:16:50.774+0000] {logging_mixin.py:190} INFO - Download concluído: https://arquivos.receitafederal.gov.br/dados/cnpj/dados_abertos_cnpj/2025-01/Empresas8.zip
+[2025-01-24T19:16:51.648+0000] {logging_mixin.py:190} INFO - Arquivos descompactados: ['/tmp/6b5698ac54304e9599147a0198d933d2_extracted/K3241.K03200Y8.D50111.EMPRECSV']
+[2025-01-24T19:16:53.621+0000] {logging_mixin.py:190} INFO - Arquivo full_cpf/Cnaes/2025-01/Cnaes_2e033cdb9bb9435c9ea6a76d3ff47d0a.csv carregado com sucesso no MinIO!
+[2025-01-24T19:16:53.643+0000] {logging_mixin.py:190} INFO - Baixando o arquivo: https://arquivos.receitafederal.gov.br/dados/cnpj/dados_abertos_cnpj/2025-01/Empresas9.zip
+[2025-01-24T19:17:19.488+0000] {logging_mixin.py:190} INFO - Download concluído: https://arquivos.receitafederal.gov.br/dados/cnpj/dados_abertos_cnpj/2025-01/Empresas9.zip
+[2025-01-24T19:17:20.338+0000] {logging_mixin.py:190} INFO - Arquivos descompactados: ['/tmp/424fd4137924487888592370a4a09aeb_extracted/K3241.K03200Y9.D50111.EMPRECSV']
+[2025-01-24T19:17:22.331+0000] {logging_mixin.py:190} INFO - Arquivo full_cpf/Cnaes/2025-01/Cnaes_394abee9eaae404e887b57dade977ec5.csv carregado com sucesso no MinIO!
+[2025-01-24T19:17:22.353+0000] {logging_mixin.py:190} INFO - Baixando o arquivo: https://arquivos.receitafederal.gov.br/dados/cnpj/dados_abertos_cnpj/2025-01/Estabelecimentos0.zip
+[2025-01-24T19:26:06.209+0000] {logging_mixin.py:190} INFO - Download concluído: https://arquivos.receitafederal.gov.br/dados/cnpj/dados_abertos_cnpj/2025-01/Estabelecimentos0.zip
+[2025-01-24T19:26:20.198+0000] {logging_mixin.py:190} INFO - Arquivos descompactados: ['/tmp/7ec96264cc4b473c9e58d0c96f278685_extracted/K3241.K03200Y0.D50111.ESTABELE']
+[2025-01-24T19:31:42.434+0000] {connectionpool.py:870} WARNING - Retrying (Retry(total=4, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ReadTimeoutError("HTTPConnectionPool(host='host.docker.internal', port=9000): Read timed out. (read timeout=300)")': /raw/full_cpf/Cnaes/2025-01/Cnaes_0a47b06e472a408d9e81ee6f98ac4361.csv?partNumber=538&uploadId=NTAxMjI5OGItZTgyNS00MmRlLWIyYTctNjk0ZmY5NTgzMzQ2Ljk5MTdhMTFlLTUzMTQtNDM1My05MGFiLTY4YjNiOTNkNjQxZngxNzM3NzQ2NzgxMTQyNzMwOTM4
+[2025-01-24T19:31:42.524+0000] {connectionpool.py:870} WARNING - Retrying (Retry(total=4, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ReadTimeoutError("HTTPConnectionPool(host='host.docker.internal', port=9000): Read timed out. (read timeout=300)")': /raw/full_cpf/Cnaes/2025-01/Cnaes_0a47b06e472a408d9e81ee6f98ac4361.csv?partNumber=539&uploadId=NTAxMjI5OGItZTgyNS00MmRlLWIyYTctNjk0ZmY5NTgzMzQ2Ljk5MTdhMTFlLTUzMTQtNDM1My05MGFiLTY4YjNiOTNkNjQxZngxNzM3NzQ2NzgxMTQyNzMwOTM4

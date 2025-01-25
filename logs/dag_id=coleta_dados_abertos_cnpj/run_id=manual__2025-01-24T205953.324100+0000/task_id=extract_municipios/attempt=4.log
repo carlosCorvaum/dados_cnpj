@@ -1,0 +1,23 @@
+[2025-01-24T21:07:40.202+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2025-01-24T21:07:40.211+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: coleta_dados_abertos_cnpj.extract_municipios manual__2025-01-24T20:59:53.324100+00:00 [queued]>
+[2025-01-24T21:07:40.215+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: coleta_dados_abertos_cnpj.extract_municipios manual__2025-01-24T20:59:53.324100+00:00 [queued]>
+[2025-01-24T21:07:40.215+0000] {taskinstance.py:2866} INFO - Starting attempt 4 of 5
+[2025-01-24T21:07:40.242+0000] {taskinstance.py:2889} INFO - Executing <Task(PythonOperator): extract_municipios> on 2025-01-24 20:59:53.324100+00:00
+[2025-01-24T21:07:40.246+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70: DeprecationWarning: This process (pid=879) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2025-01-24T21:07:40.247+0000] {standard_task_runner.py:72} INFO - Started process 880 to run task
+[2025-01-24T21:07:40.247+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'coleta_dados_abertos_cnpj', 'extract_municipios', 'manual__2025-01-24T20:59:53.324100+00:00', '--job-id', '804', '--raw', '--subdir', 'DAGS_FOLDER/coleta_dados_abertos_cnpj/dag.py', '--cfg-path', '/tmp/tmp4lvuc8rz']
+[2025-01-24T21:07:40.248+0000] {standard_task_runner.py:105} INFO - Job 804: Subtask extract_municipios
+[2025-01-24T21:07:40.272+0000] {task_command.py:467} INFO - Running <TaskInstance: coleta_dados_abertos_cnpj.extract_municipios manual__2025-01-24T20:59:53.324100+00:00 [running]> on host ee70781c29c7
+[2025-01-24T21:07:40.314+0000] {taskinstance.py:3132} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='Corvaum' AIRFLOW_CTX_DAG_ID='coleta_dados_abertos_cnpj' AIRFLOW_CTX_TASK_ID='extract_municipios' AIRFLOW_CTX_EXECUTION_DATE='2025-01-24T20:59:53.324100+00:00' AIRFLOW_CTX_TRY_NUMBER='4' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-01-24T20:59:53.324100+00:00'
+[2025-01-24T21:07:40.314+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2025-01-24T21:07:40.325+0000] {logging_mixin.py:190} INFO - Data formatada: 2025-01
+[2025-01-24T21:07:50.511+0000] {logging_mixin.py:190} INFO - Erro ao listar os arquivos: HTTPSConnectionPool(host='arquivos.receitafederal.gov.br', port=443): Max retries exceeded with url: /dados/cnpj/dados_abertos_cnpj/2025-01 (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x7fe21cf3e660>, 'Connection to arquivos.receitafederal.gov.br timed out. (connect timeout=10)'))
+[2025-01-24T21:07:50.512+0000] {logging_mixin.py:190} INFO - Arquivos encontrados: []
+[2025-01-24T21:07:50.513+0000] {python.py:240} INFO - Done. Returned value was: None
+[2025-01-24T21:07:50.518+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2025-01-24T21:07:50.518+0000] {taskinstance.py:352} INFO - Marking task as SUCCESS. dag_id=coleta_dados_abertos_cnpj, task_id=extract_municipios, run_id=manual__2025-01-24T20:59:53.324100+00:00, execution_date=20250124T205953, start_date=20250124T210740, end_date=20250124T210750
+[2025-01-24T21:07:50.530+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2025-01-24T21:07:50.543+0000] {taskinstance.py:3895} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-01-24T21:07:50.545+0000] {local_task_job_runner.py:245} INFO - ::endgroup::

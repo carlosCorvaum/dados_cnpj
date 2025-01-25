@@ -1,0 +1,25 @@
+[2025-01-24T21:14:20.342+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2025-01-24T21:14:20.350+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: coleta_dados_abertos_cnpj.extract_paises manual__2025-01-24T20:59:53.324100+00:00 [queued]>
+[2025-01-24T21:14:20.356+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: coleta_dados_abertos_cnpj.extract_paises manual__2025-01-24T20:59:53.324100+00:00 [queued]>
+[2025-01-24T21:14:20.356+0000] {taskinstance.py:2866} INFO - Starting attempt 4 of 5
+[2025-01-24T21:14:20.403+0000] {taskinstance.py:2889} INFO - Executing <Task(PythonOperator): extract_paises> on 2025-01-24 20:59:53.324100+00:00
+[2025-01-24T21:14:20.407+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70: DeprecationWarning: This process (pid=991) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2025-01-24T21:14:20.408+0000] {standard_task_runner.py:72} INFO - Started process 1006 to run task
+[2025-01-24T21:14:20.409+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'coleta_dados_abertos_cnpj', 'extract_paises', 'manual__2025-01-24T20:59:53.324100+00:00', '--job-id', '809', '--raw', '--subdir', 'DAGS_FOLDER/coleta_dados_abertos_cnpj/dag.py', '--cfg-path', '/tmp/tmpsu8xgrik']
+[2025-01-24T21:14:20.410+0000] {standard_task_runner.py:105} INFO - Job 809: Subtask extract_paises
+[2025-01-24T21:14:20.436+0000] {task_command.py:467} INFO - Running <TaskInstance: coleta_dados_abertos_cnpj.extract_paises manual__2025-01-24T20:59:53.324100+00:00 [running]> on host ee70781c29c7
+[2025-01-24T21:14:20.487+0000] {taskinstance.py:3132} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='Corvaum' AIRFLOW_CTX_DAG_ID='coleta_dados_abertos_cnpj' AIRFLOW_CTX_TASK_ID='extract_paises' AIRFLOW_CTX_EXECUTION_DATE='2025-01-24T20:59:53.324100+00:00' AIRFLOW_CTX_TRY_NUMBER='4' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-01-24T20:59:53.324100+00:00'
+[2025-01-24T21:14:20.488+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2025-01-24T21:14:20.498+0000] {logging_mixin.py:190} INFO - Data formatada: 2025-01
+[2025-01-24T21:14:20.726+0000] {logging_mixin.py:190} INFO - Arquivos encontrados: ['Paises.zip']
+[2025-01-24T21:14:20.726+0000] {logging_mixin.py:190} INFO - Baixando o arquivo: https://arquivos.receitafederal.gov.br/dados/cnpj/dados_abertos_cnpj/2025-01/Paises.zip
+[2025-01-24T21:14:20.852+0000] {logging_mixin.py:190} INFO - Download concluído: https://arquivos.receitafederal.gov.br/dados/cnpj/dados_abertos_cnpj/2025-01/Paises.zip
+[2025-01-24T21:14:20.856+0000] {logging_mixin.py:190} INFO - Arquivos descompactados: ['/tmp/f776f2257e4a4863b2c48b6640dbfc60_extracted/F.K03200$Z.D50111.PAISCSV']
+[2025-01-24T21:14:21.094+0000] {logging_mixin.py:190} INFO - Arquivo full_cpf/Paises/2025-01/Paises_9d45006c3d594ea097606b8e01e4a22b.csv carregado com sucesso no MinIO!
+[2025-01-24T21:14:21.105+0000] {python.py:240} INFO - Done. Returned value was: None
+[2025-01-24T21:14:21.114+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2025-01-24T21:14:21.115+0000] {taskinstance.py:352} INFO - Marking task as SUCCESS. dag_id=coleta_dados_abertos_cnpj, task_id=extract_paises, run_id=manual__2025-01-24T20:59:53.324100+00:00, execution_date=20250124T205953, start_date=20250124T211420, end_date=20250124T211421
+[2025-01-24T21:14:21.143+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2025-01-24T21:14:21.148+0000] {local_task_job_runner.py:245} INFO - ::endgroup::

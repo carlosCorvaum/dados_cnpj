@@ -1,0 +1,2 @@
+def natureza():
+    print("natureza")

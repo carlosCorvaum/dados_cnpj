@@ -1,0 +1,2 @@
+def estabelecimentos():
+    print("estabelecimentos")

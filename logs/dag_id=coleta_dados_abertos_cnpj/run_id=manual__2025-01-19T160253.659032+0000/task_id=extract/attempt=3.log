@@ -1,0 +1,22 @@
+[2025-01-19T16:05:36.047+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2025-01-19T16:05:36.056+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: coleta_dados_abertos_cnpj.extract manual__2025-01-19T16:02:53.659032+00:00 [queued]>
+[2025-01-19T16:05:36.060+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: coleta_dados_abertos_cnpj.extract manual__2025-01-19T16:02:53.659032+00:00 [queued]>
+[2025-01-19T16:05:36.061+0000] {taskinstance.py:2866} INFO - Starting attempt 3 of 4
+[2025-01-19T16:05:36.089+0000] {taskinstance.py:2889} INFO - Executing <Task(PythonOperator): extract> on 2025-01-19 16:02:53.659032+00:00
+[2025-01-19T16:05:36.093+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70: DeprecationWarning: This process (pid=955) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2025-01-19T16:05:36.094+0000] {standard_task_runner.py:72} INFO - Started process 956 to run task
+[2025-01-19T16:05:36.094+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'coleta_dados_abertos_cnpj', 'extract', 'manual__2025-01-19T16:02:53.659032+00:00', '--job-id', '152', '--raw', '--subdir', 'DAGS_FOLDER/coleta_dados_abertos_cnpj/dag.py', '--cfg-path', '/tmp/tmpn2v2rpq_']
+[2025-01-19T16:05:36.096+0000] {standard_task_runner.py:105} INFO - Job 152: Subtask extract
+[2025-01-19T16:05:36.120+0000] {task_command.py:467} INFO - Running <TaskInstance: coleta_dados_abertos_cnpj.extract manual__2025-01-19T16:02:53.659032+00:00 [running]> on host e9a1739d3128
+[2025-01-19T16:05:36.171+0000] {taskinstance.py:3132} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='Corvaum' AIRFLOW_CTX_DAG_ID='coleta_dados_abertos_cnpj' AIRFLOW_CTX_TASK_ID='extract' AIRFLOW_CTX_EXECUTION_DATE='2025-01-19T16:02:53.659032+00:00' AIRFLOW_CTX_TRY_NUMBER='3' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-01-19T16:02:53.659032+00:00'
+[2025-01-19T16:05:36.172+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2025-01-19T16:05:36.184+0000] {logging_mixin.py:190} INFO - 2025-01
+[2025-01-19T16:05:36.451+0000] {logging_mixin.py:190} INFO - ['Cnaes.zip', 'Empresas0.zip', 'Empresas1.zip', 'Empresas2.zip', 'Empresas3.zip', 'Empresas4.zip', 'Empresas5.zip', 'Empresas6.zip', 'Empresas7.zip', 'Empresas8.zip', 'Empresas9.zip', 'Estabelecimentos0.zip', 'Estabelecimentos1.zip', 'Estabelecimentos2.zip', 'Estabelecimentos3.zip', 'Estabelecimentos4.zip', 'Estabelecimentos5.zip', 'Estabelecimentos6.zip', 'Estabelecimentos7.zip', 'Estabelecimentos8.zip', 'Estabelecimentos9.zip', 'Motivos.zip', 'Municipios.zip', 'Naturezas.zip', 'Paises.zip', 'Qualificacoes.zip', 'Simples.zip', 'Socios0.zip', 'Socios1.zip', 'Socios2.zip', 'Socios3.zip', 'Socios4.zip', 'Socios5.zip', 'Socios6.zip', 'Socios7.zip', 'Socios8.zip', 'Socios9.zip']
+[2025-01-19T16:05:36.452+0000] {python.py:240} INFO - Done. Returned value was: None
+[2025-01-19T16:05:36.459+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2025-01-19T16:05:36.460+0000] {taskinstance.py:352} INFO - Marking task as SUCCESS. dag_id=coleta_dados_abertos_cnpj, task_id=extract, run_id=manual__2025-01-19T16:02:53.659032+00:00, execution_date=20250119T160253, start_date=20250119T160536, end_date=20250119T160536
+[2025-01-19T16:05:36.508+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2025-01-19T16:05:36.521+0000] {taskinstance.py:3895} INFO - 10 downstream tasks scheduled from follow-on schedule check
+[2025-01-19T16:05:36.523+0000] {local_task_job_runner.py:245} INFO - ::endgroup::

@@ -1,0 +1,26 @@
+[2025-01-24T21:04:49.800+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2025-01-24T21:04:49.809+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: coleta_dados_abertos_cnpj.extract_cnaes manual__2025-01-24T20:59:53.324100+00:00 [queued]>
+[2025-01-24T21:04:49.815+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: coleta_dados_abertos_cnpj.extract_cnaes manual__2025-01-24T20:59:53.324100+00:00 [queued]>
+[2025-01-24T21:04:49.815+0000] {taskinstance.py:2866} INFO - Starting attempt 3 of 4
+[2025-01-24T21:04:49.846+0000] {taskinstance.py:2889} INFO - Executing <Task(PythonOperator): extract_cnaes> on 2025-01-24 20:59:53.324100+00:00
+[2025-01-24T21:04:49.850+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70: DeprecationWarning: This process (pid=807) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2025-01-24T21:04:49.851+0000] {standard_task_runner.py:72} INFO - Started process 817 to run task
+[2025-01-24T21:04:49.851+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'coleta_dados_abertos_cnpj', 'extract_cnaes', 'manual__2025-01-24T20:59:53.324100+00:00', '--job-id', '794', '--raw', '--subdir', 'DAGS_FOLDER/coleta_dados_abertos_cnpj/dag.py', '--cfg-path', '/tmp/tmpb20ylpoz']
+[2025-01-24T21:04:49.852+0000] {standard_task_runner.py:105} INFO - Job 794: Subtask extract_cnaes
+[2025-01-24T21:04:49.879+0000] {task_command.py:467} INFO - Running <TaskInstance: coleta_dados_abertos_cnpj.extract_cnaes manual__2025-01-24T20:59:53.324100+00:00 [running]> on host ee70781c29c7
+[2025-01-24T21:04:49.932+0000] {taskinstance.py:3132} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='Corvaum' AIRFLOW_CTX_DAG_ID='coleta_dados_abertos_cnpj' AIRFLOW_CTX_TASK_ID='extract_cnaes' AIRFLOW_CTX_EXECUTION_DATE='2025-01-24T20:59:53.324100+00:00' AIRFLOW_CTX_TRY_NUMBER='3' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-01-24T20:59:53.324100+00:00'
+[2025-01-24T21:04:49.933+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2025-01-24T21:04:49.947+0000] {logging_mixin.py:190} INFO - Data formatada: 2025-01
+[2025-01-24T21:04:51.223+0000] {logging_mixin.py:190} INFO - Arquivos encontrados: ['Cnaes.zip']
+[2025-01-24T21:04:51.224+0000] {logging_mixin.py:190} INFO - Baixando o arquivo: https://arquivos.receitafederal.gov.br/dados/cnpj/dados_abertos_cnpj/2025-01/Cnaes.zip
+[2025-01-24T21:04:51.356+0000] {logging_mixin.py:190} INFO - Download concluído: https://arquivos.receitafederal.gov.br/dados/cnpj/dados_abertos_cnpj/2025-01/Cnaes.zip
+[2025-01-24T21:04:51.358+0000] {logging_mixin.py:190} INFO - Arquivos descompactados: ['/tmp/0f7b4f83eee948689b50e584e00870e9_extracted/F.K03200$Z.D50111.CNAECSV']
+[2025-01-24T21:04:51.444+0000] {logging_mixin.py:190} INFO - Arquivo full_cpf/Cnaes/2025-01/Cnaes_2d18cebfd4dd4708b5af1bc8239801b6.csv carregado com sucesso no MinIO!
+[2025-01-24T21:04:51.444+0000] {python.py:240} INFO - Done. Returned value was: None
+[2025-01-24T21:04:51.449+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2025-01-24T21:04:51.449+0000] {taskinstance.py:352} INFO - Marking task as SUCCESS. dag_id=coleta_dados_abertos_cnpj, task_id=extract_cnaes, run_id=manual__2025-01-24T20:59:53.324100+00:00, execution_date=20250124T205953, start_date=20250124T210449, end_date=20250124T210451
+[2025-01-24T21:04:51.468+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2025-01-24T21:04:51.483+0000] {taskinstance.py:3895} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-01-24T21:04:51.485+0000] {local_task_job_runner.py:245} INFO - ::endgroup::

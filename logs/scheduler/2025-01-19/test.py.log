@@ -1,0 +1,379 @@
+[2025-01-19T19:25:19.850+0000] {processor.py:186} INFO - Started process (PID=55) to work on /opt/airflow/dags/test.py
+[2025-01-19T19:25:19.851+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/test.py for tasks to queue
+[2025-01-19T19:25:19.852+0000] {logging_mixin.py:190} INFO - [2025-01-19T19:25:19.852+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/test.py
+[2025-01-19T19:25:20.019+0000] {processor.py:925} INFO - DAG(s) 'coleta_dados_abertos_cnpj' retrieved from /opt/airflow/dags/test.py
+[2025-01-19T19:25:20.148+0000] {logging_mixin.py:190} INFO - [2025-01-19T19:25:20.147+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-01-19T19:25:20.195+0000] {logging_mixin.py:190} INFO - [2025-01-19T19:25:20.195+0000] {dag.py:4180} INFO - Setting next_dagrun for coleta_dados_abertos_cnpj to 2025-01-10 00:00:00+00:00, run_after=2025-02-10 00:00:00+00:00
+[2025-01-19T19:25:20.277+0000] {logging_mixin.py:190} INFO - [2025-01-19T19:25:20.275+0000] {dagbag.py:698} ERROR - Failed to write serialized DAG: /opt/airflow/dags/test.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/dagbag.py", line 686, in _serialize_dag_capturing_errors
+    dag_was_updated = SerializedDagModel.write_dag(
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/session.py", line 94, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/serialized_dag.py", line 160, in write_dag
+    if session.scalar(
+       ^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/orm/session.py", line 1747, in scalar
+    return self.execute(
+           ^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/orm/session.py", line 1716, in execute
+    conn = self._connection_for_bind(bind)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/orm/session.py", line 1555, in _connection_for_bind
+    return self._transaction._connection_for_bind(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/orm/session.py", line 724, in _connection_for_bind
+    self._assert_active()
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/orm/session.py", line 604, in _assert_active
+    raise sa_exc.PendingRollbackError(
+sqlalchemy.exc.PendingRollbackError: This Session's transaction has been rolled back due to a previous exception during flush. To begin a new transaction with this Session, first issue Session.rollback(). Original exception was: (psycopg2.errors.UniqueViolation) duplicate key value violates unique constraint "serialized_dag_pkey"
+DETAIL:  Key (dag_id)=(coleta_dados_abertos_cnpj) already exists.
+
+[SQL: INSERT INTO serialized_dag (dag_id, fileloc, fileloc_hash, data, data_compressed, last_updated, dag_hash, processor_subdir) VALUES (%(dag_id)s, %(fileloc)s, %(fileloc_hash)s, %(data)s, %(data_compressed)s, %(last_updated)s, %(dag_hash)s, %(processor_subdir)s)]
+[parameters: {'dag_id': 'coleta_dados_abertos_cnpj', 'fileloc': '/opt/airflow/dags/test.py', 'fileloc_hash': 71522065385045621, 'data': '{"__version": 1, "dag": {"edge_info": {}, "timetable": {"__type": "airflow.timetables.interval.CronDataIntervalTimetable", "__var": {"expression": "0 ... (2600 characters truncated) ... hon", "_is_empty": false, "start_trigger_args": null, "op_args": [], "op_kwargs": {}}, "__type": "operator"}], "dag_dependencies": [], "params": []}}', 'data_compressed': None, 'last_updated': datetime.datetime(2025, 1, 19, 19, 25, 20, 26905, tzinfo=Timezone('UTC')), 'dag_hash': '7d9b22d8742a1ed2969913a6144243d2', 'processor_subdir': '/opt/airflow/dags'}]
+(Background on this error at: https://sqlalche.me/e/14/gkpj) (Background on this error at: https://sqlalche.me/e/14/7s2a)
+[2025-01-19T19:25:20.278+0000] {logging_mixin.py:190} INFO - [2025-01-19T19:25:20.278+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-01-19T19:25:20.278+0000] {processor.py:211} ERROR - Got an exception! Propagating...
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/dag_processing/processor.py", line 207, in _run_file_processor
+    _handle_dag_file_processing()
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/dag_processing/processor.py", line 188, in _handle_dag_file_processing
+    result: tuple[int, int, int] = dag_file_processor.process_file(
+                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/session.py", line 97, in wrapper
+    return func(*args, session=session, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/dag_processing/processor.py", line 942, in process_file
+    serialize_errors = DagFileProcessor.save_dag_to_db(
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/api_internal/internal_api_call.py", line 166, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/session.py", line 97, in wrapper
+    return func(*args, session=session, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/dag_processing/processor.py", line 982, in save_dag_to_db
+    import_errors = DagBag._sync_to_db(dags=dags, processor_subdir=dag_directory, session=session)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/session.py", line 94, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/dagbag.py", line 708, in _sync_to_db
+    for attempt in run_with_db_retries(logger=log):
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/tenacity/__init__.py", line 443, in __iter__
+    do = self.iter(retry_state=retry_state)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/tenacity/__init__.py", line 376, in iter
+    result = action(retry_state)
+             ^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/tenacity/__init__.py", line 398, in <lambda>
+    self._add_action_func(lambda rs: rs.outcome.result())
+                                     ^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/concurrent/futures/_base.py", line 449, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/dagbag.py", line 724, in _sync_to_db
+    DAG.bulk_write_to_db(dags.values(), processor_subdir=processor_subdir, session=session)
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/session.py", line 94, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/dag.py", line 3252, in bulk_write_to_db
+    orm_dags: list[DagModel] = session.scalars(query).unique().all()
+                               ^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/orm/session.py", line 1778, in scalars
+    return self.execute(
+           ^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/orm/session.py", line 1716, in execute
+    conn = self._connection_for_bind(bind)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/orm/session.py", line 1555, in _connection_for_bind
+    return self._transaction._connection_for_bind(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/orm/session.py", line 724, in _connection_for_bind
+    self._assert_active()
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/orm/session.py", line 604, in _assert_active
+    raise sa_exc.PendingRollbackError(
+sqlalchemy.exc.PendingRollbackError: This Session's transaction has been rolled back due to a previous exception during flush. To begin a new transaction with this Session, first issue Session.rollback(). Original exception was: (psycopg2.errors.UniqueViolation) duplicate key value violates unique constraint "serialized_dag_pkey"
+DETAIL:  Key (dag_id)=(coleta_dados_abertos_cnpj) already exists.
+
+[SQL: INSERT INTO serialized_dag (dag_id, fileloc, fileloc_hash, data, data_compressed, last_updated, dag_hash, processor_subdir) VALUES (%(dag_id)s, %(fileloc)s, %(fileloc_hash)s, %(data)s, %(data_compressed)s, %(last_updated)s, %(dag_hash)s, %(processor_subdir)s)]
+[parameters: {'dag_id': 'coleta_dados_abertos_cnpj', 'fileloc': '/opt/airflow/dags/test.py', 'fileloc_hash': 71522065385045621, 'data': '{"__version": 1, "dag": {"edge_info": {}, "timetable": {"__type": "airflow.timetables.interval.CronDataIntervalTimetable", "__var": {"expression": "0 ... (2600 characters truncated) ... hon", "_is_empty": false, "start_trigger_args": null, "op_args": [], "op_kwargs": {}}, "__type": "operator"}], "dag_dependencies": [], "params": []}}', 'data_compressed': None, 'last_updated': datetime.datetime(2025, 1, 19, 19, 25, 20, 26905, tzinfo=Timezone('UTC')), 'dag_hash': '7d9b22d8742a1ed2969913a6144243d2', 'processor_subdir': '/opt/airflow/dags'}]
+(Background on this error at: https://sqlalche.me/e/14/gkpj) (Background on this error at: https://sqlalche.me/e/14/7s2a)
+[2025-01-19T19:25:51.125+0000] {processor.py:186} INFO - Started process (PID=120) to work on /opt/airflow/dags/test.py
+[2025-01-19T19:25:51.125+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/test.py for tasks to queue
+[2025-01-19T19:25:51.127+0000] {logging_mixin.py:190} INFO - [2025-01-19T19:25:51.126+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/test.py
+[2025-01-19T19:25:51.204+0000] {processor.py:925} INFO - DAG(s) 'coleta_dados_abertos_cnpj' retrieved from /opt/airflow/dags/test.py
+[2025-01-19T19:25:51.257+0000] {logging_mixin.py:190} INFO - [2025-01-19T19:25:51.257+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-01-19T19:25:51.269+0000] {logging_mixin.py:190} INFO - [2025-01-19T19:25:51.268+0000] {dag.py:4180} INFO - Setting next_dagrun for coleta_dados_abertos_cnpj to 2025-01-10 00:00:00+00:00, run_after=2025-02-10 00:00:00+00:00
+[2025-01-19T19:25:51.280+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/test.py took 0.159 seconds
+[2025-01-19T19:26:21.902+0000] {processor.py:186} INFO - Started process (PID=185) to work on /opt/airflow/dags/test.py
+[2025-01-19T19:26:21.903+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/test.py for tasks to queue
+[2025-01-19T19:26:21.905+0000] {logging_mixin.py:190} INFO - [2025-01-19T19:26:21.905+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/test.py
+[2025-01-19T19:26:21.992+0000] {processor.py:925} INFO - DAG(s) 'coleta_dados_abertos_cnpj' retrieved from /opt/airflow/dags/test.py
+[2025-01-19T19:26:22.004+0000] {logging_mixin.py:190} INFO - [2025-01-19T19:26:22.004+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-01-19T19:26:22.019+0000] {logging_mixin.py:190} INFO - [2025-01-19T19:26:22.019+0000] {dag.py:4180} INFO - Setting next_dagrun for coleta_dados_abertos_cnpj to 2025-01-10 00:00:00+00:00, run_after=2025-02-10 00:00:00+00:00
+[2025-01-19T19:26:22.031+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/test.py took 0.132 seconds
+[2025-01-19T19:26:52.341+0000] {processor.py:186} INFO - Started process (PID=250) to work on /opt/airflow/dags/test.py
+[2025-01-19T19:26:52.348+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/test.py for tasks to queue
+[2025-01-19T19:26:52.354+0000] {logging_mixin.py:190} INFO - [2025-01-19T19:26:52.353+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/test.py
+[2025-01-19T19:26:52.443+0000] {processor.py:925} INFO - DAG(s) 'coleta_dados_abertos_cnpj' retrieved from /opt/airflow/dags/test.py
+[2025-01-19T19:26:52.498+0000] {logging_mixin.py:190} INFO - [2025-01-19T19:26:52.498+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-01-19T19:26:52.511+0000] {logging_mixin.py:190} INFO - [2025-01-19T19:26:52.511+0000] {dag.py:4180} INFO - Setting next_dagrun for coleta_dados_abertos_cnpj to 2025-01-10 00:00:00+00:00, run_after=2025-02-10 00:00:00+00:00
+[2025-01-19T19:26:52.522+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/test.py took 0.184 seconds
+[2025-01-19T19:27:22.562+0000] {processor.py:186} INFO - Started process (PID=315) to work on /opt/airflow/dags/test.py
+[2025-01-19T19:27:22.563+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/test.py for tasks to queue
+[2025-01-19T19:27:22.565+0000] {logging_mixin.py:190} INFO - [2025-01-19T19:27:22.565+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/test.py
+[2025-01-19T19:27:22.643+0000] {processor.py:925} INFO - DAG(s) 'coleta_dados_abertos_cnpj' retrieved from /opt/airflow/dags/test.py
+[2025-01-19T19:27:22.664+0000] {logging_mixin.py:190} INFO - [2025-01-19T19:27:22.664+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-01-19T19:27:22.678+0000] {logging_mixin.py:190} INFO - [2025-01-19T19:27:22.678+0000] {dag.py:4180} INFO - Setting next_dagrun for coleta_dados_abertos_cnpj to 2025-01-10 00:00:00+00:00, run_after=2025-02-10 00:00:00+00:00
+[2025-01-19T19:27:22.689+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/test.py took 0.130 seconds
+[2025-01-19T19:27:52.814+0000] {processor.py:186} INFO - Started process (PID=380) to work on /opt/airflow/dags/test.py
+[2025-01-19T19:27:52.815+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/test.py for tasks to queue
+[2025-01-19T19:27:52.816+0000] {logging_mixin.py:190} INFO - [2025-01-19T19:27:52.816+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/test.py
+[2025-01-19T19:27:53.018+0000] {processor.py:925} INFO - DAG(s) 'coleta_dados_abertos_cnpj' retrieved from /opt/airflow/dags/test.py
+[2025-01-19T19:27:53.102+0000] {logging_mixin.py:190} INFO - [2025-01-19T19:27:53.101+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-01-19T19:27:53.116+0000] {logging_mixin.py:190} INFO - [2025-01-19T19:27:53.116+0000] {dag.py:4180} INFO - Setting next_dagrun for coleta_dados_abertos_cnpj to 2025-01-10 00:00:00+00:00, run_after=2025-02-10 00:00:00+00:00
+[2025-01-19T19:27:53.136+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/test.py took 0.326 seconds
+[2025-01-19T19:28:23.751+0000] {processor.py:186} INFO - Started process (PID=445) to work on /opt/airflow/dags/test.py
+[2025-01-19T19:28:23.751+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/test.py for tasks to queue
+[2025-01-19T19:28:23.753+0000] {logging_mixin.py:190} INFO - [2025-01-19T19:28:23.753+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/test.py
+[2025-01-19T19:28:23.969+0000] {processor.py:925} INFO - DAG(s) 'coleta_dados_abertos_cnpj' retrieved from /opt/airflow/dags/test.py
+[2025-01-19T19:28:23.980+0000] {logging_mixin.py:190} INFO - [2025-01-19T19:28:23.979+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-01-19T19:28:23.992+0000] {logging_mixin.py:190} INFO - [2025-01-19T19:28:23.992+0000] {dag.py:4180} INFO - Setting next_dagrun for coleta_dados_abertos_cnpj to 2025-01-10 00:00:00+00:00, run_after=2025-02-10 00:00:00+00:00
+[2025-01-19T19:28:24.008+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/test.py took 0.260 seconds
+[2025-01-19T19:28:54.944+0000] {processor.py:186} INFO - Started process (PID=510) to work on /opt/airflow/dags/test.py
+[2025-01-19T19:28:54.945+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/test.py for tasks to queue
+[2025-01-19T19:28:54.946+0000] {logging_mixin.py:190} INFO - [2025-01-19T19:28:54.946+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/test.py
+[2025-01-19T19:28:55.161+0000] {processor.py:925} INFO - DAG(s) 'coleta_dados_abertos_cnpj' retrieved from /opt/airflow/dags/test.py
+[2025-01-19T19:28:55.215+0000] {logging_mixin.py:190} INFO - [2025-01-19T19:28:55.215+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-01-19T19:28:55.227+0000] {logging_mixin.py:190} INFO - [2025-01-19T19:28:55.226+0000] {dag.py:4180} INFO - Setting next_dagrun for coleta_dados_abertos_cnpj to 2025-01-10 00:00:00+00:00, run_after=2025-02-10 00:00:00+00:00
+[2025-01-19T19:28:55.237+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/test.py took 0.297 seconds
+[2025-01-19T19:29:25.273+0000] {processor.py:186} INFO - Started process (PID=576) to work on /opt/airflow/dags/test.py
+[2025-01-19T19:29:25.274+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/test.py for tasks to queue
+[2025-01-19T19:29:25.275+0000] {logging_mixin.py:190} INFO - [2025-01-19T19:29:25.275+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/test.py
+[2025-01-19T19:29:25.403+0000] {processor.py:925} INFO - DAG(s) 'coleta_dados_abertos_cnpj' retrieved from /opt/airflow/dags/test.py
+[2025-01-19T19:29:25.416+0000] {logging_mixin.py:190} INFO - [2025-01-19T19:29:25.416+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-01-19T19:29:25.431+0000] {logging_mixin.py:190} INFO - [2025-01-19T19:29:25.430+0000] {dag.py:4180} INFO - Setting next_dagrun for coleta_dados_abertos_cnpj to 2025-01-10 00:00:00+00:00, run_after=2025-02-10 00:00:00+00:00
+[2025-01-19T19:29:25.442+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/test.py took 0.173 seconds
+[2025-01-19T19:29:56.348+0000] {processor.py:186} INFO - Started process (PID=640) to work on /opt/airflow/dags/test.py
+[2025-01-19T19:29:56.348+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/test.py for tasks to queue
+[2025-01-19T19:29:56.350+0000] {logging_mixin.py:190} INFO - [2025-01-19T19:29:56.350+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/test.py
+[2025-01-19T19:29:56.430+0000] {processor.py:925} INFO - DAG(s) 'coleta_dados_abertos_cnpj' retrieved from /opt/airflow/dags/test.py
+[2025-01-19T19:29:56.492+0000] {logging_mixin.py:190} INFO - [2025-01-19T19:29:56.491+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-01-19T19:29:56.504+0000] {logging_mixin.py:190} INFO - [2025-01-19T19:29:56.504+0000] {dag.py:4180} INFO - Setting next_dagrun for coleta_dados_abertos_cnpj to 2025-01-10 00:00:00+00:00, run_after=2025-02-10 00:00:00+00:00
+[2025-01-19T19:29:56.517+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/test.py took 0.174 seconds
+[2025-01-19T19:30:26.580+0000] {processor.py:186} INFO - Started process (PID=705) to work on /opt/airflow/dags/test.py
+[2025-01-19T19:30:26.581+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/test.py for tasks to queue
+[2025-01-19T19:30:26.583+0000] {logging_mixin.py:190} INFO - [2025-01-19T19:30:26.582+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/test.py
+[2025-01-19T19:30:26.660+0000] {processor.py:925} INFO - DAG(s) 'coleta_dados_abertos_cnpj' retrieved from /opt/airflow/dags/test.py
+[2025-01-19T19:30:26.670+0000] {logging_mixin.py:190} INFO - [2025-01-19T19:30:26.670+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-01-19T19:30:26.683+0000] {logging_mixin.py:190} INFO - [2025-01-19T19:30:26.683+0000] {dag.py:4180} INFO - Setting next_dagrun for coleta_dados_abertos_cnpj to 2025-01-10 00:00:00+00:00, run_after=2025-02-10 00:00:00+00:00
+[2025-01-19T19:30:26.693+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/test.py took 0.117 seconds
+[2025-01-19T19:30:57.367+0000] {processor.py:186} INFO - Started process (PID=770) to work on /opt/airflow/dags/test.py
+[2025-01-19T19:30:57.368+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/test.py for tasks to queue
+[2025-01-19T19:30:57.370+0000] {logging_mixin.py:190} INFO - [2025-01-19T19:30:57.369+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/test.py
+[2025-01-19T19:30:57.449+0000] {processor.py:925} INFO - DAG(s) 'coleta_dados_abertos_cnpj' retrieved from /opt/airflow/dags/test.py
+[2025-01-19T19:30:57.508+0000] {logging_mixin.py:190} INFO - [2025-01-19T19:30:57.508+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-01-19T19:30:57.520+0000] {logging_mixin.py:190} INFO - [2025-01-19T19:30:57.520+0000] {dag.py:4180} INFO - Setting next_dagrun for coleta_dados_abertos_cnpj to 2025-01-10 00:00:00+00:00, run_after=2025-02-10 00:00:00+00:00
+[2025-01-19T19:30:57.532+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/test.py took 0.168 seconds
+[2025-01-19T19:31:27.567+0000] {processor.py:186} INFO - Started process (PID=835) to work on /opt/airflow/dags/test.py
+[2025-01-19T19:31:27.567+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/test.py for tasks to queue
+[2025-01-19T19:31:27.569+0000] {logging_mixin.py:190} INFO - [2025-01-19T19:31:27.569+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/test.py
+[2025-01-19T19:31:27.643+0000] {processor.py:925} INFO - DAG(s) 'coleta_dados_abertos_cnpj' retrieved from /opt/airflow/dags/test.py
+[2025-01-19T19:31:27.654+0000] {logging_mixin.py:190} INFO - [2025-01-19T19:31:27.653+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-01-19T19:31:27.665+0000] {logging_mixin.py:190} INFO - [2025-01-19T19:31:27.665+0000] {dag.py:4180} INFO - Setting next_dagrun for coleta_dados_abertos_cnpj to 2025-01-10 00:00:00+00:00, run_after=2025-02-10 00:00:00+00:00
+[2025-01-19T19:31:27.676+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/test.py took 0.113 seconds
+[2025-01-19T19:31:58.305+0000] {processor.py:186} INFO - Started process (PID=900) to work on /opt/airflow/dags/test.py
+[2025-01-19T19:31:58.306+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/test.py for tasks to queue
+[2025-01-19T19:31:58.307+0000] {logging_mixin.py:190} INFO - [2025-01-19T19:31:58.307+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/test.py
+[2025-01-19T19:31:58.392+0000] {processor.py:925} INFO - DAG(s) 'coleta_dados_abertos_cnpj' retrieved from /opt/airflow/dags/test.py
+[2025-01-19T19:31:58.447+0000] {logging_mixin.py:190} INFO - [2025-01-19T19:31:58.446+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-01-19T19:31:58.458+0000] {logging_mixin.py:190} INFO - [2025-01-19T19:31:58.458+0000] {dag.py:4180} INFO - Setting next_dagrun for coleta_dados_abertos_cnpj to 2025-01-10 00:00:00+00:00, run_after=2025-02-10 00:00:00+00:00
+[2025-01-19T19:31:58.468+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/test.py took 0.167 seconds
+[2025-01-19T19:32:29.266+0000] {processor.py:186} INFO - Started process (PID=965) to work on /opt/airflow/dags/test.py
+[2025-01-19T19:32:29.267+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/test.py for tasks to queue
+[2025-01-19T19:32:29.269+0000] {logging_mixin.py:190} INFO - [2025-01-19T19:32:29.268+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/test.py
+[2025-01-19T19:32:29.384+0000] {processor.py:925} INFO - DAG(s) 'coleta_dados_abertos_cnpj' retrieved from /opt/airflow/dags/test.py
+[2025-01-19T19:32:29.394+0000] {logging_mixin.py:190} INFO - [2025-01-19T19:32:29.393+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-01-19T19:32:29.405+0000] {logging_mixin.py:190} INFO - [2025-01-19T19:32:29.405+0000] {dag.py:4180} INFO - Setting next_dagrun for coleta_dados_abertos_cnpj to 2025-01-10 00:00:00+00:00, run_after=2025-02-10 00:00:00+00:00
+[2025-01-19T19:32:29.416+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/test.py took 0.154 seconds
+[2025-01-19T19:32:59.649+0000] {processor.py:186} INFO - Started process (PID=1030) to work on /opt/airflow/dags/test.py
+[2025-01-19T19:32:59.664+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/test.py for tasks to queue
+[2025-01-19T19:32:59.685+0000] {logging_mixin.py:190} INFO - [2025-01-19T19:32:59.685+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/test.py
+[2025-01-19T19:32:59.782+0000] {processor.py:925} INFO - DAG(s) 'coleta_dados_abertos_cnpj' retrieved from /opt/airflow/dags/test.py
+[2025-01-19T19:32:59.846+0000] {logging_mixin.py:190} INFO - [2025-01-19T19:32:59.846+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-01-19T19:32:59.860+0000] {logging_mixin.py:190} INFO - [2025-01-19T19:32:59.860+0000] {dag.py:4180} INFO - Setting next_dagrun for coleta_dados_abertos_cnpj to 2025-01-10 00:00:00+00:00, run_after=2025-02-10 00:00:00+00:00
+[2025-01-19T19:33:00.140+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/test.py took 0.494 seconds
+[2025-01-19T19:33:30.831+0000] {processor.py:186} INFO - Started process (PID=1095) to work on /opt/airflow/dags/test.py
+[2025-01-19T19:33:30.832+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/test.py for tasks to queue
+[2025-01-19T19:33:30.834+0000] {logging_mixin.py:190} INFO - [2025-01-19T19:33:30.834+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/test.py
+[2025-01-19T19:33:31.041+0000] {processor.py:925} INFO - DAG(s) 'coleta_dados_abertos_cnpj' retrieved from /opt/airflow/dags/test.py
+[2025-01-19T19:33:31.052+0000] {logging_mixin.py:190} INFO - [2025-01-19T19:33:31.052+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-01-19T19:33:31.066+0000] {logging_mixin.py:190} INFO - [2025-01-19T19:33:31.066+0000] {dag.py:4180} INFO - Setting next_dagrun for coleta_dados_abertos_cnpj to 2025-01-10 00:00:00+00:00, run_after=2025-02-10 00:00:00+00:00
+[2025-01-19T19:33:31.080+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/test.py took 0.252 seconds
+[2025-01-19T19:34:44.999+0000] {processor.py:186} INFO - Started process (PID=55) to work on /opt/airflow/dags/test.py
+[2025-01-19T19:34:44.999+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/test.py for tasks to queue
+[2025-01-19T19:34:45.000+0000] {logging_mixin.py:190} INFO - [2025-01-19T19:34:45.000+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/test.py
+[2025-01-19T19:34:45.113+0000] {processor.py:925} INFO - DAG(s) 'coleta_dados_abertos_cnpj' retrieved from /opt/airflow/dags/test.py
+[2025-01-19T19:34:45.229+0000] {logging_mixin.py:190} INFO - [2025-01-19T19:34:45.228+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-01-19T19:34:45.268+0000] {logging_mixin.py:190} INFO - [2025-01-19T19:34:45.268+0000] {dag.py:4180} INFO - Setting next_dagrun for coleta_dados_abertos_cnpj to 2025-01-10 00:00:00+00:00, run_after=2025-02-10 00:00:00+00:00
+[2025-01-19T19:34:45.278+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/test.py took 0.283 seconds
+[2025-01-19T19:35:15.524+0000] {processor.py:186} INFO - Started process (PID=120) to work on /opt/airflow/dags/test.py
+[2025-01-19T19:35:15.524+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/test.py for tasks to queue
+[2025-01-19T19:35:15.526+0000] {logging_mixin.py:190} INFO - [2025-01-19T19:35:15.526+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/test.py
+[2025-01-19T19:35:15.608+0000] {processor.py:925} INFO - DAG(s) 'coleta_dados_abertos_cnpj' retrieved from /opt/airflow/dags/test.py
+[2025-01-19T19:35:15.618+0000] {logging_mixin.py:190} INFO - [2025-01-19T19:35:15.618+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-01-19T19:35:15.632+0000] {logging_mixin.py:190} INFO - [2025-01-19T19:35:15.632+0000] {dag.py:4180} INFO - Setting next_dagrun for coleta_dados_abertos_cnpj to 2025-01-10 00:00:00+00:00, run_after=2025-02-10 00:00:00+00:00
+[2025-01-19T19:35:15.643+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/test.py took 0.123 seconds
+[2025-01-19T19:35:46.121+0000] {processor.py:186} INFO - Started process (PID=186) to work on /opt/airflow/dags/test.py
+[2025-01-19T19:35:46.121+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/test.py for tasks to queue
+[2025-01-19T19:35:46.123+0000] {logging_mixin.py:190} INFO - [2025-01-19T19:35:46.123+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/test.py
+[2025-01-19T19:35:46.200+0000] {processor.py:925} INFO - DAG(s) 'coleta_dados_abertos_cnpj' retrieved from /opt/airflow/dags/test.py
+[2025-01-19T19:35:46.256+0000] {logging_mixin.py:190} INFO - [2025-01-19T19:35:46.256+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-01-19T19:35:46.267+0000] {logging_mixin.py:190} INFO - [2025-01-19T19:35:46.267+0000] {dag.py:4180} INFO - Setting next_dagrun for coleta_dados_abertos_cnpj to 2025-01-10 00:00:00+00:00, run_after=2025-02-10 00:00:00+00:00
+[2025-01-19T19:35:46.305+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/test.py took 0.188 seconds
+[2025-01-19T19:36:16.434+0000] {processor.py:186} INFO - Started process (PID=252) to work on /opt/airflow/dags/test.py
+[2025-01-19T19:36:16.435+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/test.py for tasks to queue
+[2025-01-19T19:36:16.436+0000] {logging_mixin.py:190} INFO - [2025-01-19T19:36:16.436+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/test.py
+[2025-01-19T19:36:16.516+0000] {processor.py:925} INFO - DAG(s) 'coleta_dados_abertos_cnpj' retrieved from /opt/airflow/dags/test.py
+[2025-01-19T19:36:16.527+0000] {logging_mixin.py:190} INFO - [2025-01-19T19:36:16.527+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-01-19T19:36:16.539+0000] {logging_mixin.py:190} INFO - [2025-01-19T19:36:16.539+0000] {dag.py:4180} INFO - Setting next_dagrun for coleta_dados_abertos_cnpj to 2025-01-10 00:00:00+00:00, run_after=2025-02-10 00:00:00+00:00
+[2025-01-19T19:36:16.549+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/test.py took 0.118 seconds
+[2025-01-19T19:36:47.268+0000] {processor.py:186} INFO - Started process (PID=317) to work on /opt/airflow/dags/test.py
+[2025-01-19T19:36:47.269+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/test.py for tasks to queue
+[2025-01-19T19:36:47.270+0000] {logging_mixin.py:190} INFO - [2025-01-19T19:36:47.270+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/test.py
+[2025-01-19T19:36:47.348+0000] {processor.py:925} INFO - DAG(s) 'coleta_dados_abertos_cnpj' retrieved from /opt/airflow/dags/test.py
+[2025-01-19T19:36:47.404+0000] {logging_mixin.py:190} INFO - [2025-01-19T19:36:47.403+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-01-19T19:36:47.416+0000] {logging_mixin.py:190} INFO - [2025-01-19T19:36:47.416+0000] {dag.py:4180} INFO - Setting next_dagrun for coleta_dados_abertos_cnpj to 2025-01-10 00:00:00+00:00, run_after=2025-02-10 00:00:00+00:00
+[2025-01-19T19:36:47.426+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/test.py took 0.161 seconds
+[2025-01-19T19:38:06.112+0000] {processor.py:186} INFO - Started process (PID=54) to work on /opt/airflow/dags/test.py
+[2025-01-19T19:38:06.113+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/test.py for tasks to queue
+[2025-01-19T19:38:06.115+0000] {logging_mixin.py:190} INFO - [2025-01-19T19:38:06.115+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/test.py
+[2025-01-19T19:38:06.251+0000] {processor.py:925} INFO - DAG(s) 'coleta_dados_abertos_cnpj' retrieved from /opt/airflow/dags/test.py
+[2025-01-19T19:38:06.273+0000] {logging_mixin.py:190} INFO - [2025-01-19T19:38:06.273+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-01-19T19:38:06.286+0000] {logging_mixin.py:190} INFO - [2025-01-19T19:38:06.286+0000] {dag.py:4180} INFO - Setting next_dagrun for coleta_dados_abertos_cnpj to 2025-01-10 00:00:00+00:00, run_after=2025-02-10 00:00:00+00:00
+[2025-01-19T19:38:06.296+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/test.py took 0.188 seconds
+[2025-01-19T19:38:36.505+0000] {processor.py:186} INFO - Started process (PID=62) to work on /opt/airflow/dags/test.py
+[2025-01-19T19:38:36.505+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/test.py for tasks to queue
+[2025-01-19T19:38:36.508+0000] {logging_mixin.py:190} INFO - [2025-01-19T19:38:36.508+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/test.py
+[2025-01-19T19:38:36.603+0000] {processor.py:925} INFO - DAG(s) 'coleta_dados_abertos_cnpj' retrieved from /opt/airflow/dags/test.py
+[2025-01-19T19:38:36.757+0000] {logging_mixin.py:190} INFO - [2025-01-19T19:38:36.757+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-01-19T19:38:36.781+0000] {logging_mixin.py:190} INFO - [2025-01-19T19:38:36.780+0000] {dag.py:4180} INFO - Setting next_dagrun for coleta_dados_abertos_cnpj to 2025-01-10 00:00:00+00:00, run_after=2025-02-10 00:00:00+00:00
+[2025-01-19T19:38:36.797+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/test.py took 0.296 seconds
+[2025-01-19T19:39:07.114+0000] {processor.py:186} INFO - Started process (PID=70) to work on /opt/airflow/dags/test.py
+[2025-01-19T19:39:07.115+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/test.py for tasks to queue
+[2025-01-19T19:39:07.116+0000] {logging_mixin.py:190} INFO - [2025-01-19T19:39:07.116+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/test.py
+[2025-01-19T19:39:07.241+0000] {processor.py:925} INFO - DAG(s) 'coleta_dados_abertos_cnpj' retrieved from /opt/airflow/dags/test.py
+[2025-01-19T19:39:07.258+0000] {logging_mixin.py:190} INFO - [2025-01-19T19:39:07.258+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-01-19T19:39:07.367+0000] {logging_mixin.py:190} INFO - [2025-01-19T19:39:07.367+0000] {dag.py:4180} INFO - Setting next_dagrun for coleta_dados_abertos_cnpj to 2025-01-10 00:00:00+00:00, run_after=2025-02-10 00:00:00+00:00
+[2025-01-19T19:39:07.378+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/test.py took 0.268 seconds
+[2025-01-19T19:39:37.879+0000] {processor.py:186} INFO - Started process (PID=79) to work on /opt/airflow/dags/test.py
+[2025-01-19T19:39:37.880+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/test.py for tasks to queue
+[2025-01-19T19:39:37.881+0000] {logging_mixin.py:190} INFO - [2025-01-19T19:39:37.881+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/test.py
+[2025-01-19T19:39:37.967+0000] {processor.py:925} INFO - DAG(s) 'coleta_dados_abertos_cnpj' retrieved from /opt/airflow/dags/test.py
+[2025-01-19T19:39:38.129+0000] {logging_mixin.py:190} INFO - [2025-01-19T19:39:38.128+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-01-19T19:39:38.140+0000] {logging_mixin.py:190} INFO - [2025-01-19T19:39:38.140+0000] {dag.py:4180} INFO - Setting next_dagrun for coleta_dados_abertos_cnpj to 2025-01-10 00:00:00+00:00, run_after=2025-02-10 00:00:00+00:00
+[2025-01-19T19:39:38.151+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/test.py took 0.276 seconds
+[2025-01-19T19:40:08.528+0000] {processor.py:186} INFO - Started process (PID=96) to work on /opt/airflow/dags/test.py
+[2025-01-19T19:40:08.529+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/test.py for tasks to queue
+[2025-01-19T19:40:08.530+0000] {logging_mixin.py:190} INFO - [2025-01-19T19:40:08.530+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/test.py
+[2025-01-19T19:40:08.614+0000] {processor.py:925} INFO - DAG(s) 'coleta_dados_abertos_cnpj' retrieved from /opt/airflow/dags/test.py
+[2025-01-19T19:40:08.721+0000] {logging_mixin.py:190} INFO - [2025-01-19T19:40:08.721+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-01-19T19:40:08.733+0000] {logging_mixin.py:190} INFO - [2025-01-19T19:40:08.733+0000] {dag.py:4180} INFO - Setting next_dagrun for coleta_dados_abertos_cnpj to 2025-01-10 00:00:00+00:00, run_after=2025-02-10 00:00:00+00:00
+[2025-01-19T19:40:08.742+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/test.py took 0.218 seconds
+[2025-01-19T19:40:38.987+0000] {processor.py:186} INFO - Started process (PID=106) to work on /opt/airflow/dags/test.py
+[2025-01-19T19:40:38.988+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/test.py for tasks to queue
+[2025-01-19T19:40:38.990+0000] {logging_mixin.py:190} INFO - [2025-01-19T19:40:38.989+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/test.py
+[2025-01-19T19:40:39.177+0000] {processor.py:925} INFO - DAG(s) 'coleta_dados_abertos_cnpj' retrieved from /opt/airflow/dags/test.py
+[2025-01-19T19:40:39.232+0000] {logging_mixin.py:190} INFO - [2025-01-19T19:40:39.231+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-01-19T19:40:39.243+0000] {logging_mixin.py:190} INFO - [2025-01-19T19:40:39.242+0000] {dag.py:4180} INFO - Setting next_dagrun for coleta_dados_abertos_cnpj to 2025-01-10 00:00:00+00:00, run_after=2025-02-10 00:00:00+00:00
+[2025-01-19T19:40:39.253+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/test.py took 0.270 seconds
+[2025-01-19T19:41:09.590+0000] {processor.py:186} INFO - Started process (PID=114) to work on /opt/airflow/dags/test.py
+[2025-01-19T19:41:09.591+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/test.py for tasks to queue
+[2025-01-19T19:41:09.592+0000] {logging_mixin.py:190} INFO - [2025-01-19T19:41:09.592+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/test.py
+[2025-01-19T19:41:09.814+0000] {processor.py:925} INFO - DAG(s) 'coleta_dados_abertos_cnpj' retrieved from /opt/airflow/dags/test.py
+[2025-01-19T19:41:09.825+0000] {logging_mixin.py:190} INFO - [2025-01-19T19:41:09.825+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-01-19T19:41:09.836+0000] {logging_mixin.py:190} INFO - [2025-01-19T19:41:09.836+0000] {dag.py:4180} INFO - Setting next_dagrun for coleta_dados_abertos_cnpj to 2025-01-10 00:00:00+00:00, run_after=2025-02-10 00:00:00+00:00
+[2025-01-19T19:41:09.846+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/test.py took 0.260 seconds
+[2025-01-19T19:41:40.103+0000] {processor.py:186} INFO - Started process (PID=122) to work on /opt/airflow/dags/test.py
+[2025-01-19T19:41:40.104+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/test.py for tasks to queue
+[2025-01-19T19:41:40.105+0000] {logging_mixin.py:190} INFO - [2025-01-19T19:41:40.105+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/test.py
+[2025-01-19T19:41:40.458+0000] {processor.py:925} INFO - DAG(s) 'coleta_dados_abertos_cnpj' retrieved from /opt/airflow/dags/test.py
+[2025-01-19T19:41:40.517+0000] {logging_mixin.py:190} INFO - [2025-01-19T19:41:40.517+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-01-19T19:41:40.529+0000] {logging_mixin.py:190} INFO - [2025-01-19T19:41:40.529+0000] {dag.py:4180} INFO - Setting next_dagrun for coleta_dados_abertos_cnpj to 2025-01-10 00:00:00+00:00, run_after=2025-02-10 00:00:00+00:00
+[2025-01-19T19:41:40.540+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/test.py took 0.441 seconds
+[2025-01-19T19:42:10.823+0000] {processor.py:186} INFO - Started process (PID=130) to work on /opt/airflow/dags/test.py
+[2025-01-19T19:42:10.824+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/test.py for tasks to queue
+[2025-01-19T19:42:10.825+0000] {logging_mixin.py:190} INFO - [2025-01-19T19:42:10.825+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/test.py
+[2025-01-19T19:42:11.000+0000] {processor.py:925} INFO - DAG(s) 'coleta_dados_abertos_cnpj' retrieved from /opt/airflow/dags/test.py
+[2025-01-19T19:42:11.011+0000] {logging_mixin.py:190} INFO - [2025-01-19T19:42:11.011+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-01-19T19:42:11.024+0000] {logging_mixin.py:190} INFO - [2025-01-19T19:42:11.024+0000] {dag.py:4180} INFO - Setting next_dagrun for coleta_dados_abertos_cnpj to 2025-01-10 00:00:00+00:00, run_after=2025-02-10 00:00:00+00:00
+[2025-01-19T19:42:11.034+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/test.py took 0.215 seconds
+[2025-01-19T19:42:41.267+0000] {processor.py:186} INFO - Started process (PID=138) to work on /opt/airflow/dags/test.py
+[2025-01-19T19:42:41.268+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/test.py for tasks to queue
+[2025-01-19T19:42:41.269+0000] {logging_mixin.py:190} INFO - [2025-01-19T19:42:41.269+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/test.py
+[2025-01-19T19:42:41.447+0000] {processor.py:925} INFO - DAG(s) 'coleta_dados_abertos_cnpj' retrieved from /opt/airflow/dags/test.py
+[2025-01-19T19:42:41.503+0000] {logging_mixin.py:190} INFO - [2025-01-19T19:42:41.503+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-01-19T19:42:41.539+0000] {logging_mixin.py:190} INFO - [2025-01-19T19:42:41.539+0000] {dag.py:4180} INFO - Setting next_dagrun for coleta_dados_abertos_cnpj to 2025-01-10 00:00:00+00:00, run_after=2025-02-10 00:00:00+00:00
+[2025-01-19T19:42:41.550+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/test.py took 0.286 seconds
+[2025-01-19T19:43:11.942+0000] {processor.py:186} INFO - Started process (PID=154) to work on /opt/airflow/dags/test.py
+[2025-01-19T19:43:11.942+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/test.py for tasks to queue
+[2025-01-19T19:43:11.944+0000] {logging_mixin.py:190} INFO - [2025-01-19T19:43:11.944+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/test.py
+[2025-01-19T19:43:12.129+0000] {processor.py:925} INFO - DAG(s) 'coleta_dados_abertos_cnpj' retrieved from /opt/airflow/dags/test.py
+[2025-01-19T19:43:12.141+0000] {logging_mixin.py:190} INFO - [2025-01-19T19:43:12.141+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-01-19T19:43:12.152+0000] {logging_mixin.py:190} INFO - [2025-01-19T19:43:12.152+0000] {dag.py:4180} INFO - Setting next_dagrun for coleta_dados_abertos_cnpj to 2025-01-10 00:00:00+00:00, run_after=2025-02-10 00:00:00+00:00
+[2025-01-19T19:43:12.162+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/test.py took 0.224 seconds
+[2025-01-19T19:43:42.426+0000] {processor.py:186} INFO - Started process (PID=162) to work on /opt/airflow/dags/test.py
+[2025-01-19T19:43:42.427+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/test.py for tasks to queue
+[2025-01-19T19:43:42.429+0000] {logging_mixin.py:190} INFO - [2025-01-19T19:43:42.428+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/test.py
+[2025-01-19T19:43:42.623+0000] {processor.py:925} INFO - DAG(s) 'coleta_dados_abertos_cnpj' retrieved from /opt/airflow/dags/test.py
+[2025-01-19T19:43:42.679+0000] {logging_mixin.py:190} INFO - [2025-01-19T19:43:42.679+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-01-19T19:43:42.691+0000] {logging_mixin.py:190} INFO - [2025-01-19T19:43:42.690+0000] {dag.py:4180} INFO - Setting next_dagrun for coleta_dados_abertos_cnpj to 2025-01-10 00:00:00+00:00, run_after=2025-02-10 00:00:00+00:00
+[2025-01-19T19:43:42.701+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/test.py took 0.278 seconds
+[2025-01-19T19:44:12.883+0000] {processor.py:186} INFO - Started process (PID=170) to work on /opt/airflow/dags/test.py
+[2025-01-19T19:44:12.883+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/test.py for tasks to queue
+[2025-01-19T19:44:12.885+0000] {logging_mixin.py:190} INFO - [2025-01-19T19:44:12.885+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/test.py
+[2025-01-19T19:44:13.169+0000] {processor.py:925} INFO - DAG(s) 'coleta_dados_abertos_cnpj' retrieved from /opt/airflow/dags/test.py
+[2025-01-19T19:44:13.181+0000] {logging_mixin.py:190} INFO - [2025-01-19T19:44:13.181+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-01-19T19:44:13.192+0000] {logging_mixin.py:190} INFO - [2025-01-19T19:44:13.192+0000] {dag.py:4180} INFO - Setting next_dagrun for coleta_dados_abertos_cnpj to 2025-01-10 00:00:00+00:00, run_after=2025-02-10 00:00:00+00:00
+[2025-01-19T19:44:13.202+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/test.py took 0.323 seconds
+[2025-01-19T19:44:43.643+0000] {processor.py:186} INFO - Started process (PID=178) to work on /opt/airflow/dags/test.py
+[2025-01-19T19:44:43.643+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/test.py for tasks to queue
+[2025-01-19T19:44:43.645+0000] {logging_mixin.py:190} INFO - [2025-01-19T19:44:43.645+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/test.py
+[2025-01-19T19:44:43.827+0000] {processor.py:925} INFO - DAG(s) 'coleta_dados_abertos_cnpj' retrieved from /opt/airflow/dags/test.py
+[2025-01-19T19:44:43.882+0000] {logging_mixin.py:190} INFO - [2025-01-19T19:44:43.882+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-01-19T19:44:43.893+0000] {logging_mixin.py:190} INFO - [2025-01-19T19:44:43.893+0000] {dag.py:4180} INFO - Setting next_dagrun for coleta_dados_abertos_cnpj to 2025-01-10 00:00:00+00:00, run_after=2025-02-10 00:00:00+00:00
+[2025-01-19T19:44:43.903+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/test.py took 0.264 seconds
+[2025-01-19T19:45:14.085+0000] {processor.py:186} INFO - Started process (PID=186) to work on /opt/airflow/dags/test.py
+[2025-01-19T19:45:14.086+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/test.py for tasks to queue
+[2025-01-19T19:45:14.088+0000] {logging_mixin.py:190} INFO - [2025-01-19T19:45:14.088+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/test.py
+[2025-01-19T19:45:14.281+0000] {processor.py:925} INFO - DAG(s) 'coleta_dados_abertos_cnpj' retrieved from /opt/airflow/dags/test.py
+[2025-01-19T19:45:14.293+0000] {logging_mixin.py:190} INFO - [2025-01-19T19:45:14.293+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-01-19T19:45:14.305+0000] {logging_mixin.py:190} INFO - [2025-01-19T19:45:14.304+0000] {dag.py:4180} INFO - Setting next_dagrun for coleta_dados_abertos_cnpj to 2025-01-10 00:00:00+00:00, run_after=2025-02-10 00:00:00+00:00
+[2025-01-19T19:45:14.315+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/test.py took 0.234 seconds
+[2025-01-19T19:45:44.614+0000] {processor.py:186} INFO - Started process (PID=194) to work on /opt/airflow/dags/test.py
+[2025-01-19T19:45:44.615+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/test.py for tasks to queue
+[2025-01-19T19:45:44.616+0000] {logging_mixin.py:190} INFO - [2025-01-19T19:45:44.616+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/test.py
+[2025-01-19T19:45:44.798+0000] {processor.py:925} INFO - DAG(s) 'coleta_dados_abertos_cnpj' retrieved from /opt/airflow/dags/test.py
+[2025-01-19T19:45:44.854+0000] {logging_mixin.py:190} INFO - [2025-01-19T19:45:44.853+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-01-19T19:45:44.865+0000] {logging_mixin.py:190} INFO - [2025-01-19T19:45:44.865+0000] {dag.py:4180} INFO - Setting next_dagrun for coleta_dados_abertos_cnpj to 2025-01-10 00:00:00+00:00, run_after=2025-02-10 00:00:00+00:00
+[2025-01-19T19:45:44.876+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/test.py took 0.265 seconds
+[2025-01-19T19:46:15.039+0000] {processor.py:186} INFO - Started process (PID=202) to work on /opt/airflow/dags/test.py
+[2025-01-19T19:46:15.039+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/test.py for tasks to queue
+[2025-01-19T19:46:15.041+0000] {logging_mixin.py:190} INFO - [2025-01-19T19:46:15.040+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/test.py
+[2025-01-19T19:46:15.206+0000] {processor.py:925} INFO - DAG(s) 'coleta_dados_abertos_cnpj' retrieved from /opt/airflow/dags/test.py
+[2025-01-19T19:46:15.218+0000] {logging_mixin.py:190} INFO - [2025-01-19T19:46:15.218+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-01-19T19:46:15.231+0000] {logging_mixin.py:190} INFO - [2025-01-19T19:46:15.231+0000] {dag.py:4180} INFO - Setting next_dagrun for coleta_dados_abertos_cnpj to 2025-01-10 00:00:00+00:00, run_after=2025-02-10 00:00:00+00:00
+[2025-01-19T19:46:15.242+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/test.py took 0.207 seconds
+[2025-01-19T19:46:45.580+0000] {processor.py:186} INFO - Started process (PID=210) to work on /opt/airflow/dags/test.py
+[2025-01-19T19:46:45.581+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/test.py for tasks to queue
+[2025-01-19T19:46:45.582+0000] {logging_mixin.py:190} INFO - [2025-01-19T19:46:45.582+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/test.py
+[2025-01-19T19:46:45.760+0000] {processor.py:925} INFO - DAG(s) 'coleta_dados_abertos_cnpj' retrieved from /opt/airflow/dags/test.py
+[2025-01-19T19:46:45.819+0000] {logging_mixin.py:190} INFO - [2025-01-19T19:46:45.818+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-01-19T19:46:45.832+0000] {logging_mixin.py:190} INFO - [2025-01-19T19:46:45.831+0000] {dag.py:4180} INFO - Setting next_dagrun for coleta_dados_abertos_cnpj to 2025-01-10 00:00:00+00:00, run_after=2025-02-10 00:00:00+00:00
+[2025-01-19T19:46:45.844+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/test.py took 0.267 seconds

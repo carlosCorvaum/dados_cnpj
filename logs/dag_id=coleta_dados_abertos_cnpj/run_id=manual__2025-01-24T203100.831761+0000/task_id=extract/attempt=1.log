@@ -1,0 +1,87 @@
+[2025-01-24T20:31:01.799+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2025-01-24T20:31:01.806+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: coleta_dados_abertos_cnpj.extract manual__2025-01-24T20:31:00.831761+00:00 [queued]>
+[2025-01-24T20:31:01.811+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: coleta_dados_abertos_cnpj.extract manual__2025-01-24T20:31:00.831761+00:00 [queued]>
+[2025-01-24T20:31:01.811+0000] {taskinstance.py:2866} INFO - Starting attempt 1 of 2
+[2025-01-24T20:31:01.849+0000] {taskinstance.py:2889} INFO - Executing <Task(PythonOperator): extract> on 2025-01-24 20:31:00.831761+00:00
+[2025-01-24T20:31:01.853+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70: DeprecationWarning: This process (pid=254) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2025-01-24T20:31:01.853+0000] {standard_task_runner.py:72} INFO - Started process 255 to run task
+[2025-01-24T20:31:01.854+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'coleta_dados_abertos_cnpj', 'extract', 'manual__2025-01-24T20:31:00.831761+00:00', '--job-id', '773', '--raw', '--subdir', 'DAGS_FOLDER/coleta_dados_abertos_cnpj/dag.py', '--cfg-path', '/tmp/tmp7yrbd__f']
+[2025-01-24T20:31:01.855+0000] {standard_task_runner.py:105} INFO - Job 773: Subtask extract
+[2025-01-24T20:31:01.875+0000] {task_command.py:467} INFO - Running <TaskInstance: coleta_dados_abertos_cnpj.extract manual__2025-01-24T20:31:00.831761+00:00 [running]> on host ee70781c29c7
+[2025-01-24T20:31:01.916+0000] {taskinstance.py:3132} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='Corvaum' AIRFLOW_CTX_DAG_ID='coleta_dados_abertos_cnpj' AIRFLOW_CTX_TASK_ID='extract' AIRFLOW_CTX_EXECUTION_DATE='2025-01-24T20:31:00.831761+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-01-24T20:31:00.831761+00:00'
+[2025-01-24T20:31:01.917+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2025-01-24T20:31:01.927+0000] {logging_mixin.py:190} INFO - Data formatada: 2025-01
+[2025-01-24T20:31:02.229+0000] {logging_mixin.py:190} INFO - Arquivos encontrados: ['Cnaes.zip', 'Empresas0.zip', 'Empresas1.zip', 'Empresas2.zip', 'Empresas3.zip', 'Empresas4.zip', 'Empresas5.zip', 'Empresas6.zip', 'Empresas7.zip', 'Empresas8.zip', 'Empresas9.zip', 'Estabelecimentos0.zip', 'Estabelecimentos1.zip', 'Estabelecimentos2.zip', 'Estabelecimentos3.zip', 'Estabelecimentos4.zip', 'Estabelecimentos5.zip', 'Estabelecimentos6.zip', 'Estabelecimentos7.zip', 'Estabelecimentos8.zip', 'Estabelecimentos9.zip', 'Motivos.zip', 'Municipios.zip', 'Naturezas.zip', 'Paises.zip', 'Qualificacoes.zip', 'Simples.zip', 'Socios0.zip', 'Socios1.zip', 'Socios2.zip', 'Socios3.zip', 'Socios4.zip', 'Socios5.zip', 'Socios6.zip', 'Socios7.zip', 'Socios8.zip', 'Socios9.zip']
+[2025-01-24T20:31:02.229+0000] {logging_mixin.py:190} INFO - Baixando o arquivo: https://arquivos.receitafederal.gov.br/dados/cnpj/dados_abertos_cnpj/2025-01/Cnaes.zip
+[2025-01-24T20:31:02.410+0000] {logging_mixin.py:190} INFO - Download concluído: https://arquivos.receitafederal.gov.br/dados/cnpj/dados_abertos_cnpj/2025-01/Cnaes.zip
+[2025-01-24T20:31:02.413+0000] {logging_mixin.py:190} INFO - Arquivos descompactados: ['/tmp/9e881a6d787d472b940740dc3d9659c3_extracted/F.K03200$Z.D50111.CNAECSV']
+[2025-01-24T20:31:02.599+0000] {logging_mixin.py:190} INFO - Arquivo full_cpf/Cnaes/2025-01/Cnaes_e85e8b3878034d788feb82a33d54be5e.csv carregado com sucesso no MinIO!
+[2025-01-24T20:31:02.600+0000] {logging_mixin.py:190} INFO - Baixando o arquivo: https://arquivos.receitafederal.gov.br/dados/cnpj/dados_abertos_cnpj/2025-01/Empresas0.zip
+[2025-01-24T20:32:47.678+0000] {logging_mixin.py:190} INFO - Download concluído: https://arquivos.receitafederal.gov.br/dados/cnpj/dados_abertos_cnpj/2025-01/Empresas0.zip
+[2025-01-24T20:32:51.368+0000] {logging_mixin.py:190} INFO - Arquivos descompactados: ['/tmp/55e83ecd8b264e3e97d3e59b03eb621d_extracted/K3241.K03200Y0.D50111.EMPRECSV']
+[2025-01-24T20:33:33.087+0000] {logging_mixin.py:190} INFO - Arquivo full_cpf/Empresas/2025-01/Empresas_e36469d4eeb248e49d6a6a32faaff532.csv carregado com sucesso no MinIO!
+[2025-01-24T20:33:33.168+0000] {logging_mixin.py:190} INFO - Baixando o arquivo: https://arquivos.receitafederal.gov.br/dados/cnpj/dados_abertos_cnpj/2025-01/Empresas1.zip
+[2025-01-24T20:33:54.490+0000] {logging_mixin.py:190} INFO - Download concluído: https://arquivos.receitafederal.gov.br/dados/cnpj/dados_abertos_cnpj/2025-01/Empresas1.zip
+[2025-01-24T20:33:55.242+0000] {logging_mixin.py:190} INFO - Arquivos descompactados: ['/tmp/82ab1d8f4db144a48b39cf00f11277c4_extracted/K3241.K03200Y1.D50111.EMPRECSV']
+[2025-01-24T20:34:02.142+0000] {logging_mixin.py:190} INFO - Arquivo full_cpf/Empresas/2025-01/Empresas_81a96363965a4d95b6ffc931e37971cf.csv carregado com sucesso no MinIO!
+[2025-01-24T20:34:02.160+0000] {logging_mixin.py:190} INFO - Baixando o arquivo: https://arquivos.receitafederal.gov.br/dados/cnpj/dados_abertos_cnpj/2025-01/Empresas2.zip
+[2025-01-24T20:34:23.943+0000] {logging_mixin.py:190} INFO - Download concluído: https://arquivos.receitafederal.gov.br/dados/cnpj/dados_abertos_cnpj/2025-01/Empresas2.zip
+[2025-01-24T20:34:24.729+0000] {logging_mixin.py:190} INFO - Arquivos descompactados: ['/tmp/43390b9a4d0d4266952837810778421c_extracted/K3241.K03200Y2.D50111.EMPRECSV']
+[2025-01-24T20:34:32.093+0000] {logging_mixin.py:190} INFO - Arquivo full_cpf/Empresas/2025-01/Empresas_233e933df63945f79ebe3db820a6653c.csv carregado com sucesso no MinIO!
+[2025-01-24T20:34:32.113+0000] {logging_mixin.py:190} INFO - Baixando o arquivo: https://arquivos.receitafederal.gov.br/dados/cnpj/dados_abertos_cnpj/2025-01/Empresas3.zip
+[2025-01-24T20:34:56.092+0000] {logging_mixin.py:190} INFO - Download concluído: https://arquivos.receitafederal.gov.br/dados/cnpj/dados_abertos_cnpj/2025-01/Empresas3.zip
+[2025-01-24T20:34:56.882+0000] {logging_mixin.py:190} INFO - Arquivos descompactados: ['/tmp/a577d3d49c6a40f883fcb5cc8a35284d_extracted/K3241.K03200Y3.D50111.EMPRECSV']
+[2025-01-24T20:35:04.701+0000] {logging_mixin.py:190} INFO - Arquivo full_cpf/Empresas/2025-01/Empresas_3b1754d31cc9481db28e8f64b9d483d2.csv carregado com sucesso no MinIO!
+[2025-01-24T20:35:04.722+0000] {logging_mixin.py:190} INFO - Baixando o arquivo: https://arquivos.receitafederal.gov.br/dados/cnpj/dados_abertos_cnpj/2025-01/Empresas4.zip
+[2025-01-24T20:35:30.399+0000] {logging_mixin.py:190} INFO - Download concluído: https://arquivos.receitafederal.gov.br/dados/cnpj/dados_abertos_cnpj/2025-01/Empresas4.zip
+[2025-01-24T20:35:31.229+0000] {logging_mixin.py:190} INFO - Arquivos descompactados: ['/tmp/101caaed01e345238983c5fddefcc158_extracted/K3241.K03200Y4.D50111.EMPRECSV']
+[2025-01-24T20:35:38.983+0000] {logging_mixin.py:190} INFO - Arquivo full_cpf/Empresas/2025-01/Empresas_7dd281cdd9414bed919e3d76f3644a13.csv carregado com sucesso no MinIO!
+[2025-01-24T20:35:39.004+0000] {logging_mixin.py:190} INFO - Baixando o arquivo: https://arquivos.receitafederal.gov.br/dados/cnpj/dados_abertos_cnpj/2025-01/Empresas5.zip
+[2025-01-24T20:36:05.166+0000] {logging_mixin.py:190} INFO - Download concluído: https://arquivos.receitafederal.gov.br/dados/cnpj/dados_abertos_cnpj/2025-01/Empresas5.zip
+[2025-01-24T20:36:06.017+0000] {logging_mixin.py:190} INFO - Arquivos descompactados: ['/tmp/059cf4c8d1424db8ac6138450b90c942_extracted/K3241.K03200Y5.D50111.EMPRECSV']
+[2025-01-24T20:36:13.824+0000] {logging_mixin.py:190} INFO - Arquivo full_cpf/Empresas/2025-01/Empresas_1a06d616c2af4e229174bc635d9108fc.csv carregado com sucesso no MinIO!
+[2025-01-24T20:36:13.846+0000] {logging_mixin.py:190} INFO - Baixando o arquivo: https://arquivos.receitafederal.gov.br/dados/cnpj/dados_abertos_cnpj/2025-01/Empresas6.zip
+[2025-01-24T20:36:41.776+0000] {logging_mixin.py:190} INFO - Download concluído: https://arquivos.receitafederal.gov.br/dados/cnpj/dados_abertos_cnpj/2025-01/Empresas6.zip
+[2025-01-24T20:36:42.637+0000] {logging_mixin.py:190} INFO - Arquivos descompactados: ['/tmp/c601a76330074b07906596514a729e8a_extracted/K3241.K03200Y6.D50111.EMPRECSV']
+[2025-01-24T20:36:50.536+0000] {logging_mixin.py:190} INFO - Arquivo full_cpf/Empresas/2025-01/Empresas_0084b1751b654f11a325960048ca6255.csv carregado com sucesso no MinIO!
+[2025-01-24T20:36:50.555+0000] {logging_mixin.py:190} INFO - Baixando o arquivo: https://arquivos.receitafederal.gov.br/dados/cnpj/dados_abertos_cnpj/2025-01/Empresas7.zip
+[2025-01-24T20:37:18.543+0000] {logging_mixin.py:190} INFO - Download concluído: https://arquivos.receitafederal.gov.br/dados/cnpj/dados_abertos_cnpj/2025-01/Empresas7.zip
+[2025-01-24T20:37:19.417+0000] {logging_mixin.py:190} INFO - Arquivos descompactados: ['/tmp/38120f3bf3b6442c9bb144ea6487bb51_extracted/K3241.K03200Y7.D50111.EMPRECSV']
+[2025-01-24T20:37:26.860+0000] {logging_mixin.py:190} INFO - Arquivo full_cpf/Empresas/2025-01/Empresas_875e36ad08f14c1fbf02f74d20d23b7b.csv carregado com sucesso no MinIO!
+[2025-01-24T20:37:26.882+0000] {logging_mixin.py:190} INFO - Baixando o arquivo: https://arquivos.receitafederal.gov.br/dados/cnpj/dados_abertos_cnpj/2025-01/Empresas8.zip
+[2025-01-24T20:37:54.772+0000] {logging_mixin.py:190} INFO - Download concluído: https://arquivos.receitafederal.gov.br/dados/cnpj/dados_abertos_cnpj/2025-01/Empresas8.zip
+[2025-01-24T20:37:55.659+0000] {logging_mixin.py:190} INFO - Arquivos descompactados: ['/tmp/8883412a8aa848aca6d4d331d2e6b971_extracted/K3241.K03200Y8.D50111.EMPRECSV']
+[2025-01-24T20:38:03.511+0000] {logging_mixin.py:190} INFO - Arquivo full_cpf/Empresas/2025-01/Empresas_7b227e9c6caa48318ca8e763b55e7a65.csv carregado com sucesso no MinIO!
+[2025-01-24T20:38:03.531+0000] {logging_mixin.py:190} INFO - Baixando o arquivo: https://arquivos.receitafederal.gov.br/dados/cnpj/dados_abertos_cnpj/2025-01/Empresas9.zip
+[2025-01-24T20:38:29.790+0000] {logging_mixin.py:190} INFO - Download concluído: https://arquivos.receitafederal.gov.br/dados/cnpj/dados_abertos_cnpj/2025-01/Empresas9.zip
+[2025-01-24T20:38:30.647+0000] {logging_mixin.py:190} INFO - Arquivos descompactados: ['/tmp/997414834f2c4a69a3501ba59687bc68_extracted/K3241.K03200Y9.D50111.EMPRECSV']
+[2025-01-24T20:38:39.447+0000] {logging_mixin.py:190} INFO - Arquivo full_cpf/Empresas/2025-01/Empresas_e224d839c149408d80b49e52d32d72e4.csv carregado com sucesso no MinIO!
+[2025-01-24T20:38:39.467+0000] {logging_mixin.py:190} INFO - Baixando o arquivo: https://arquivos.receitafederal.gov.br/dados/cnpj/dados_abertos_cnpj/2025-01/Estabelecimentos0.zip
+[2025-01-24T20:45:49.552+0000] {logging_mixin.py:190} INFO - Download concluído: https://arquivos.receitafederal.gov.br/dados/cnpj/dados_abertos_cnpj/2025-01/Estabelecimentos0.zip
+[2025-01-24T20:46:03.360+0000] {logging_mixin.py:190} INFO - Arquivos descompactados: ['/tmp/85dab62f1648474382b7d0108c0854c0_extracted/K3241.K03200Y0.D50111.ESTABELE']
+[2025-01-24T20:47:45.853+0000] {logging_mixin.py:190} INFO - Arquivo full_cpf/Estabelecimentos/2025-01/Estabelecimentos_7e6146d42b714b41b0c090ae6e5b5985.csv carregado com sucesso no MinIO!
+[2025-01-24T20:47:46.090+0000] {logging_mixin.py:190} INFO - Baixando o arquivo: https://arquivos.receitafederal.gov.br/dados/cnpj/dados_abertos_cnpj/2025-01/Estabelecimentos1.zip
+[2025-01-24T20:47:46.378+0000] {logging_mixin.py:190} INFO - Erro ao fazer o download do arquivo: HTTPSConnectionPool(host='arquivos.receitafederal.gov.br', port=443): Max retries exceeded with url: /dados/cnpj/dados_abertos_cnpj/2025-01/Estabelecimentos1.zip (Caused by SSLError(SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1000)')))
+[2025-01-24T20:47:46.393+0000] {logging_mixin.py:190} INFO - Falha no download do arquivo: Estabelecimentos1.zip
+[2025-01-24T20:47:46.394+0000] {logging_mixin.py:190} INFO - Baixando o arquivo: https://arquivos.receitafederal.gov.br/dados/cnpj/dados_abertos_cnpj/2025-01/Estabelecimentos2.zip
+[2025-01-24T20:49:57.295+0000] {logging_mixin.py:190} INFO - Download concluído: https://arquivos.receitafederal.gov.br/dados/cnpj/dados_abertos_cnpj/2025-01/Estabelecimentos2.zip
+[2025-01-24T20:50:00.384+0000] {logging_mixin.py:190} INFO - Arquivos descompactados: ['/tmp/0a2f4f05aa164eab98e0ab0e990a0103_extracted/K3241.K03200Y2.D50111.ESTABELE']
+[2025-01-24T20:50:22.178+0000] {logging_mixin.py:190} INFO - Arquivo full_cpf/Estabelecimentos/2025-01/Estabelecimentos_0e9e44f63cff4fb1860b1561261a4494.csv carregado com sucesso no MinIO!
+[2025-01-24T20:50:22.238+0000] {logging_mixin.py:190} INFO - Baixando o arquivo: https://arquivos.receitafederal.gov.br/dados/cnpj/dados_abertos_cnpj/2025-01/Estabelecimentos3.zip
+[2025-01-24T20:51:56.005+0000] {logging_mixin.py:190} INFO - Download concluído: https://arquivos.receitafederal.gov.br/dados/cnpj/dados_abertos_cnpj/2025-01/Estabelecimentos3.zip
+[2025-01-24T20:51:59.034+0000] {logging_mixin.py:190} INFO - Arquivos descompactados: ['/tmp/4dc32feac9d84b02b8e37d2c61130d78_extracted/K3241.K03200Y3.D50111.ESTABELE']
+[2025-01-24T20:52:21.804+0000] {logging_mixin.py:190} INFO - Arquivo full_cpf/Estabelecimentos/2025-01/Estabelecimentos_211bc0a1c2374a0f8d61eadd63b18529.csv carregado com sucesso no MinIO!
+[2025-01-24T20:52:21.859+0000] {logging_mixin.py:190} INFO - Baixando o arquivo: https://arquivos.receitafederal.gov.br/dados/cnpj/dados_abertos_cnpj/2025-01/Estabelecimentos4.zip
+[2025-01-24T20:54:08.495+0000] {logging_mixin.py:190} INFO - Download concluído: https://arquivos.receitafederal.gov.br/dados/cnpj/dados_abertos_cnpj/2025-01/Estabelecimentos4.zip
+[2025-01-24T20:54:11.744+0000] {logging_mixin.py:190} INFO - Arquivos descompactados: ['/tmp/b610eca77f4a4f2db6cee63351ac86f7_extracted/K3241.K03200Y4.D50111.ESTABELE']
+[2025-01-24T20:54:35.806+0000] {logging_mixin.py:190} INFO - Arquivo full_cpf/Estabelecimentos/2025-01/Estabelecimentos_f4548a38031443c2ad079e1488d22c84.csv carregado com sucesso no MinIO!
+[2025-01-24T20:54:35.877+0000] {logging_mixin.py:190} INFO - Baixando o arquivo: https://arquivos.receitafederal.gov.br/dados/cnpj/dados_abertos_cnpj/2025-01/Estabelecimentos5.zip
+[2025-01-24T20:55:21.440+0000] {local_task_job_runner.py:346} WARNING - State of this instance has been externally set to failed. Terminating instance.
+[2025-01-24T20:55:21.440+0000] {local_task_job_runner.py:245} INFO - ::endgroup::
+[2025-01-24T20:55:21.441+0000] {process_utils.py:132} INFO - Sending 15 to group 255. PIDs of all processes in the group: [255]
+[2025-01-24T20:55:21.441+0000] {process_utils.py:87} INFO - Sending the signal 15 to group 255
+[2025-01-24T20:55:21.442+0000] {taskinstance.py:3093} ERROR - Received SIGTERM. Terminating subprocesses.
+[2025-01-24T20:55:21.460+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2025-01-24T20:55:21.468+0000] {process_utils.py:80} INFO - Process psutil.Process(pid=255, status='terminated', exitcode=0, started='20:31:01') (255) terminated with exit code 0

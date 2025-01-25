@@ -1,0 +1,27 @@
+[2025-01-19T19:55:37.906+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2025-01-19T19:55:38.015+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: gerar_csv_dados_abertos_cnpj.gerar_csv manual__2025-01-19T19:49:13.414481+00:00 [queued]>
+[2025-01-19T19:55:38.019+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: gerar_csv_dados_abertos_cnpj.gerar_csv manual__2025-01-19T19:49:13.414481+00:00 [queued]>
+[2025-01-19T19:55:38.020+0000] {taskinstance.py:2866} INFO - Starting attempt 5 of 5
+[2025-01-19T19:55:38.139+0000] {taskinstance.py:2889} INFO - Executing <Task(PythonOperator): gerar_csv> on 2025-01-19 19:49:13.414481+00:00
+[2025-01-19T19:55:38.143+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70: DeprecationWarning: This process (pid=338) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2025-01-19T19:55:38.145+0000] {standard_task_runner.py:72} INFO - Started process 340 to run task
+[2025-01-19T19:55:38.145+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'gerar_csv_dados_abertos_cnpj', 'gerar_csv', 'manual__2025-01-19T19:49:13.414481+00:00', '--job-id', '216', '--raw', '--subdir', 'DAGS_FOLDER/saving_file.py', '--cfg-path', '/tmp/tmpw5cia1hq']
+[2025-01-19T19:55:38.149+0000] {standard_task_runner.py:105} INFO - Job 216: Subtask gerar_csv
+[2025-01-19T19:55:38.179+0000] {task_command.py:467} INFO - Running <TaskInstance: gerar_csv_dados_abertos_cnpj.gerar_csv manual__2025-01-19T19:49:13.414481+00:00 [running]> on host f9324e49080a
+[2025-01-19T19:55:38.225+0000] {taskinstance.py:3132} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='gerar_csv_dados_abertos_cnpj' AIRFLOW_CTX_TASK_ID='gerar_csv' AIRFLOW_CTX_EXECUTION_DATE='2025-01-19T19:49:13.414481+00:00' AIRFLOW_CTX_TRY_NUMBER='5' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-01-19T19:49:13.414481+00:00'
+[2025-01-19T19:55:38.226+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2025-01-19T19:55:38.234+0000] {logging_mixin.py:190} INFO - testanaado
+[2025-01-19T19:55:38.235+0000] {logging_mixin.py:190} INFO - Erro ao gerar CSV: [Errno 17] File exists: 'G:/Airlfow/volumes/dados_abertos_cnpj/empresa_dados.csv'
+[2025-01-19T19:55:38.237+0000] {logging_mixin.py:190} WARNING - Traceback (most recent call last):
+[2025-01-19T19:55:38.238+0000] {logging_mixin.py:190} WARNING -   File "/opt/***/dags/saving_file.py", line 29, in gerar_csv
+    os.makedirs(dir_name, exist_ok=True)
+[2025-01-19T19:55:38.238+0000] {logging_mixin.py:190} WARNING -   File "<frozen os>", line 225, in makedirs
+[2025-01-19T19:55:38.238+0000] {logging_mixin.py:190} WARNING - FileExistsError: [Errno 17] File exists: 'G:/Airlfow/volumes/dados_abertos_cnpj/empresa_dados.csv'
+[2025-01-19T19:55:38.238+0000] {python.py:240} INFO - Done. Returned value was: None
+[2025-01-19T19:55:38.244+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2025-01-19T19:55:38.244+0000] {taskinstance.py:352} INFO - Marking task as SUCCESS. dag_id=gerar_csv_dados_abertos_cnpj, task_id=gerar_csv, run_id=manual__2025-01-19T19:49:13.414481+00:00, execution_date=20250119T194913, start_date=20250119T195538, end_date=20250119T195538
+[2025-01-19T19:55:38.279+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2025-01-19T19:55:38.288+0000] {taskinstance.py:3895} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-01-19T19:55:38.290+0000] {local_task_job_runner.py:245} INFO - ::endgroup::

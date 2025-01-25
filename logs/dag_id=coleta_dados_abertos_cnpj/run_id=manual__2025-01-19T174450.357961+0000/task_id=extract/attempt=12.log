@@ -1,0 +1,39 @@
+[2025-01-19T18:11:31.390+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2025-01-19T18:11:31.398+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: coleta_dados_abertos_cnpj.extract manual__2025-01-19T17:44:50.357961+00:00 [queued]>
+[2025-01-19T18:11:31.403+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: coleta_dados_abertos_cnpj.extract manual__2025-01-19T17:44:50.357961+00:00 [queued]>
+[2025-01-19T18:11:31.404+0000] {taskinstance.py:2866} INFO - Starting attempt 12 of 12
+[2025-01-19T18:11:31.428+0000] {taskinstance.py:2889} INFO - Executing <Task(PythonOperator): extract> on 2025-01-19 17:44:50.357961+00:00
+[2025-01-19T18:11:31.432+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70: DeprecationWarning: This process (pid=2745) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2025-01-19T18:11:31.434+0000] {standard_task_runner.py:72} INFO - Started process 2746 to run task
+[2025-01-19T18:11:31.433+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'coleta_dados_abertos_cnpj', 'extract', 'manual__2025-01-19T17:44:50.357961+00:00', '--job-id', '184', '--raw', '--subdir', 'DAGS_FOLDER/coleta_dados_abertos_cnpj/dag.py', '--cfg-path', '/tmp/tmphtrljpj5']
+[2025-01-19T18:11:31.435+0000] {standard_task_runner.py:105} INFO - Job 184: Subtask extract
+[2025-01-19T18:11:31.458+0000] {task_command.py:467} INFO - Running <TaskInstance: coleta_dados_abertos_cnpj.extract manual__2025-01-19T17:44:50.357961+00:00 [running]> on host e9a1739d3128
+[2025-01-19T18:11:31.508+0000] {taskinstance.py:3132} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='Corvaum' AIRFLOW_CTX_DAG_ID='coleta_dados_abertos_cnpj' AIRFLOW_CTX_TASK_ID='extract' AIRFLOW_CTX_EXECUTION_DATE='2025-01-19T17:44:50.357961+00:00' AIRFLOW_CTX_TRY_NUMBER='12' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-01-19T17:44:50.357961+00:00'
+[2025-01-19T18:11:31.508+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2025-01-19T18:11:31.522+0000] {logging_mixin.py:190} INFO - 2025-01
+[2025-01-19T18:11:31.791+0000] {logging_mixin.py:190} INFO - -----------------
+[2025-01-19T18:11:31.792+0000] {logging_mixin.py:190} INFO - ['Cnaes.zip', 'Empresas0.zip', 'Empresas1.zip', 'Empresas2.zip', 'Empresas3.zip', 'Empresas4.zip', 'Empresas5.zip', 'Empresas6.zip', 'Empresas7.zip', 'Empresas8.zip', 'Empresas9.zip', 'Estabelecimentos0.zip', 'Estabelecimentos1.zip', 'Estabelecimentos2.zip', 'Estabelecimentos3.zip', 'Estabelecimentos4.zip', 'Estabelecimentos5.zip', 'Estabelecimentos6.zip', 'Estabelecimentos7.zip', 'Estabelecimentos8.zip', 'Estabelecimentos9.zip', 'Motivos.zip', 'Municipios.zip', 'Naturezas.zip', 'Paises.zip', 'Qualificacoes.zip', 'Simples.zip', 'Socios0.zip', 'Socios1.zip', 'Socios2.zip', 'Socios3.zip', 'Socios4.zip', 'Socios5.zip', 'Socios6.zip', 'Socios7.zip', 'Socios8.zip', 'Socios9.zip']
+[2025-01-19T18:11:31.792+0000] {logging_mixin.py:190} INFO - ['Cnaes', 'Empresas', 'Estabelecimentos', 'Motivos', 'Municipios', 'Natureza', 'Paises', 'Qualificacoes', 'Simples', 'Socios']
+[2025-01-19T18:11:31.949+0000] {logging_mixin.py:190} INFO - Arquivo salvo em: G:/Airlfow/volumes/dados_abertos_cnpj/2025-01/Cnaes/Cnaes.zip
+[2025-01-19T18:11:31.949+0000] {logging_mixin.py:190} INFO - None
+[2025-01-19T18:13:28.755+0000] {logging_mixin.py:190} INFO - Arquivo salvo em: G:/Airlfow/volumes/dados_abertos_cnpj/2025-01/Empresas/Empresas0.zip
+[2025-01-19T18:13:28.756+0000] {logging_mixin.py:190} INFO - None
+[2025-01-19T18:13:51.551+0000] {logging_mixin.py:190} INFO - Arquivo salvo em: G:/Airlfow/volumes/dados_abertos_cnpj/2025-01/Empresas/Empresas1.zip
+[2025-01-19T18:13:51.555+0000] {logging_mixin.py:190} INFO - None
+[2025-01-19T18:14:14.427+0000] {logging_mixin.py:190} INFO - Arquivo salvo em: G:/Airlfow/volumes/dados_abertos_cnpj/2025-01/Empresas/Empresas2.zip
+[2025-01-19T18:14:14.428+0000] {logging_mixin.py:190} INFO - None
+[2025-01-19T18:14:39.177+0000] {logging_mixin.py:190} INFO - Arquivo salvo em: G:/Airlfow/volumes/dados_abertos_cnpj/2025-01/Empresas/Empresas3.zip
+[2025-01-19T18:14:39.178+0000] {logging_mixin.py:190} INFO - None
+[2025-01-19T18:15:06.998+0000] {logging_mixin.py:190} INFO - Arquivo salvo em: G:/Airlfow/volumes/dados_abertos_cnpj/2025-01/Empresas/Empresas4.zip
+[2025-01-19T18:15:06.999+0000] {logging_mixin.py:190} INFO - None
+[2025-01-19T18:15:35.285+0000] {logging_mixin.py:190} INFO - Arquivo salvo em: G:/Airlfow/volumes/dados_abertos_cnpj/2025-01/Empresas/Empresas5.zip
+[2025-01-19T18:15:35.286+0000] {logging_mixin.py:190} INFO - None
+[2025-01-19T18:15:58.335+0000] {local_task_job_runner.py:346} WARNING - State of this instance has been externally set to failed. Terminating instance.
+[2025-01-19T18:15:58.336+0000] {local_task_job_runner.py:245} INFO - ::endgroup::
+[2025-01-19T18:15:58.337+0000] {process_utils.py:132} INFO - Sending 15 to group 2746. PIDs of all processes in the group: [2746]
+[2025-01-19T18:15:58.337+0000] {process_utils.py:87} INFO - Sending the signal 15 to group 2746
+[2025-01-19T18:15:58.337+0000] {taskinstance.py:3093} ERROR - Received SIGTERM. Terminating subprocesses.
+[2025-01-19T18:15:58.349+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2025-01-19T18:15:58.363+0000] {process_utils.py:80} INFO - Process psutil.Process(pid=2746, status='terminated', exitcode=0, started='18:11:30') (2746) terminated with exit code 0

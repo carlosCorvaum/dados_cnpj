@@ -1,0 +1,266 @@
+[2025-01-18T21:22:27.384+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2025-01-18T21:22:27.392+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: coleta_dados_abertos_cnpj.extract scheduled__2023-01-10T00:00:00+00:00 [queued]>
+[2025-01-18T21:22:27.397+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: coleta_dados_abertos_cnpj.extract scheduled__2023-01-10T00:00:00+00:00 [queued]>
+[2025-01-18T21:22:27.397+0000] {taskinstance.py:2866} INFO - Starting attempt 1 of 2
+[2025-01-18T21:22:27.475+0000] {taskinstance.py:2889} INFO - Executing <Task(PythonOperator): extract> on 2023-01-10 00:00:00+00:00
+[2025-01-18T21:22:27.479+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70: DeprecationWarning: This process (pid=287) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2025-01-18T21:22:27.480+0000] {standard_task_runner.py:72} INFO - Started process 294 to run task
+[2025-01-18T21:22:27.480+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'coleta_dados_abertos_cnpj', 'extract', 'scheduled__2023-01-10T00:00:00+00:00', '--job-id', '107', '--raw', '--subdir', 'DAGS_FOLDER/coleta_dados_abertos_cnpj/dag.py', '--cfg-path', '/tmp/tmpdijyww1i']
+[2025-01-18T21:22:27.482+0000] {standard_task_runner.py:105} INFO - Job 107: Subtask extract
+[2025-01-18T21:22:27.506+0000] {task_command.py:467} INFO - Running <TaskInstance: coleta_dados_abertos_cnpj.extract scheduled__2023-01-10T00:00:00+00:00 [running]> on host e9a1739d3128
+[2025-01-18T21:22:27.551+0000] {taskinstance.py:3132} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='Corvaum' AIRFLOW_CTX_DAG_ID='coleta_dados_abertos_cnpj' AIRFLOW_CTX_TASK_ID='extract' AIRFLOW_CTX_EXECUTION_DATE='2023-01-10T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2023-01-10T00:00:00+00:00'
+[2025-01-18T21:22:27.552+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2025-01-18T21:22:27.563+0000] {logging_mixin.py:190} INFO - 2023-01
+[2025-01-18T21:22:27.697+0000] {logging_mixin.py:190} INFO - Erro ao listar os arquivos: 404 Client Error: Not Found for url: https://arquivos.receitafederal.gov.br/dados/cnpj/dados_abertos_cnpj/2023-01
+[2025-01-18T21:22:27.809+0000] {logging_mixin.py:190} INFO - None
+[2025-01-18T21:22:27.810+0000] {python.py:240} INFO - Done. Returned value was: None
+[2025-01-18T21:22:27.817+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2025-01-18T21:22:27.817+0000] {taskinstance.py:352} INFO - Marking task as SUCCESS. dag_id=coleta_dados_abertos_cnpj, task_id=extract, run_id=scheduled__2023-01-10T00:00:00+00:00, execution_date=20230110T000000, start_date=20250118T212227, end_date=20250118T212227
+[2025-01-18T21:22:27.854+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2025-01-18T21:22:27.863+0000] {taskinstance.py:3895} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-01-18T21:22:27.865+0000] {local_task_job_runner.py:245} INFO - ::endgroup::
+[2025-01-19T20:06:20.741+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2025-01-19T20:06:20.750+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: coleta_dados_abertos_cnpj.extract scheduled__2023-01-10T00:00:00+00:00 [queued]>
+[2025-01-19T20:06:20.755+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: coleta_dados_abertos_cnpj.extract scheduled__2023-01-10T00:00:00+00:00 [queued]>
+[2025-01-19T20:06:20.755+0000] {taskinstance.py:2866} INFO - Starting attempt 1 of 2
+[2025-01-19T20:06:20.804+0000] {taskinstance.py:2889} INFO - Executing <Task(PythonOperator): extract> on 2023-01-10 00:00:00+00:00
+[2025-01-19T20:06:20.808+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70: DeprecationWarning: This process (pid=108) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2025-01-19T20:06:20.809+0000] {standard_task_runner.py:72} INFO - Started process 119 to run task
+[2025-01-19T20:06:20.809+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'coleta_dados_abertos_cnpj', 'extract', 'scheduled__2023-01-10T00:00:00+00:00', '--job-id', '17', '--raw', '--subdir', 'DAGS_FOLDER/coleta_dados_abertos_cnpj/dag.py', '--cfg-path', '/tmp/tmpsm9trc1z']
+[2025-01-19T20:06:20.810+0000] {standard_task_runner.py:105} INFO - Job 17: Subtask extract
+[2025-01-19T20:06:20.840+0000] {task_command.py:467} INFO - Running <TaskInstance: coleta_dados_abertos_cnpj.extract scheduled__2023-01-10T00:00:00+00:00 [running]> on host 659dab735c6e
+[2025-01-19T20:06:20.899+0000] {taskinstance.py:3132} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='Corvaum' AIRFLOW_CTX_DAG_ID='coleta_dados_abertos_cnpj' AIRFLOW_CTX_TASK_ID='extract' AIRFLOW_CTX_EXECUTION_DATE='2023-01-10T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2023-01-10T00:00:00+00:00'
+[2025-01-19T20:06:20.900+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2025-01-19T20:06:20.912+0000] {logging_mixin.py:190} INFO - 2023-01
+[2025-01-19T20:06:21.048+0000] {logging_mixin.py:190} INFO - Erro ao listar os arquivos: 404 Client Error: Not Found for url: https://arquivos.receitafederal.gov.br/dados/cnpj/dados_abertos_cnpj/2023-01
+[2025-01-19T20:06:21.049+0000] {logging_mixin.py:190} INFO - -----------------
+[2025-01-19T20:06:21.049+0000] {logging_mixin.py:190} INFO - None
+[2025-01-19T20:06:21.049+0000] {logging_mixin.py:190} INFO - ['Cnaes']
+[2025-01-19T20:06:21.050+0000] {taskinstance.py:3311} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 767, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 733, in _execute_callable
+    return ExecutionCallableRunner(
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/operator_helpers.py", line 252, in run
+    return self.func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 422, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/python.py", line 238, in execute
+    return_value = self.execute_callable()
+                   ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/python.py", line 256, in execute_callable
+    return runner.run(*self.op_args, **self.op_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/operator_helpers.py", line 252, in run
+    return self.func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/airflow/dags/coleta_dados_abertos_cnpj/jobs/extract.py", line 96, in extract
+    for file in files:
+                ^^^^^
+TypeError: 'NoneType' object is not iterable
+[2025-01-19T20:06:21.059+0000] {taskinstance.py:1225} INFO - Marking task as UP_FOR_RETRY. dag_id=coleta_dados_abertos_cnpj, task_id=extract, run_id=scheduled__2023-01-10T00:00:00+00:00, execution_date=20230110T000000, start_date=20250119T200620, end_date=20250119T200621
+[2025-01-19T20:06:21.067+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2025-01-19T20:06:21.067+0000] {standard_task_runner.py:124} ERROR - Failed to execute job 17 for task extract ('NoneType' object is not iterable; 119)
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/task/task_runner/standard_task_runner.py", line 117, in _start_by_fork
+    ret = args.func(args, dag=self.dag)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/cli/cli_config.py", line 49, in command
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/cli.py", line 116, in wrapper
+    return f(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/cli/commands/task_command.py", line 483, in task_run
+    task_return_code = _run_task_by_selected_method(args, _dag, ti)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/cli/commands/task_command.py", line 256, in _run_task_by_selected_method
+    return _run_raw_task(args, ti)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/cli/commands/task_command.py", line 341, in _run_raw_task
+    return ti._run_raw_task(
+           ^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/session.py", line 97, in wrapper
+    return func(*args, session=session, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 3005, in _run_raw_task
+    return _run_raw_task(
+           ^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 273, in _run_raw_task
+    TaskInstance._execute_task_with_callbacks(
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 3159, in _execute_task_with_callbacks
+    result = self._execute_task(context, task_orig)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 3183, in _execute_task
+    return _execute_task(self, context, task_orig)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 767, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 733, in _execute_callable
+    return ExecutionCallableRunner(
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/operator_helpers.py", line 252, in run
+    return self.func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 422, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/python.py", line 238, in execute
+    return_value = self.execute_callable()
+                   ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/python.py", line 256, in execute_callable
+    return runner.run(*self.op_args, **self.op_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/operator_helpers.py", line 252, in run
+    return self.func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/airflow/dags/coleta_dados_abertos_cnpj/jobs/extract.py", line 96, in extract
+    for file in files:
+                ^^^^^
+TypeError: 'NoneType' object is not iterable
+[2025-01-19T20:06:21.103+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 1
+[2025-01-19T20:06:21.126+0000] {taskinstance.py:3895} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-01-19T20:06:21.128+0000] {local_task_job_runner.py:245} INFO - ::endgroup::
+[2025-01-19T22:19:13.796+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2025-01-19T22:19:13.807+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: coleta_dados_abertos_cnpj.extract scheduled__2023-01-10T00:00:00+00:00 [queued]>
+[2025-01-19T22:19:13.812+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: coleta_dados_abertos_cnpj.extract scheduled__2023-01-10T00:00:00+00:00 [queued]>
+[2025-01-19T22:19:13.812+0000] {taskinstance.py:2866} INFO - Starting attempt 1 of 2
+[2025-01-19T22:19:13.824+0000] {taskinstance.py:2889} INFO - Executing <Task(PythonOperator): extract> on 2023-01-10 00:00:00+00:00
+[2025-01-19T22:19:13.828+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70: DeprecationWarning: This process (pid=436) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2025-01-19T22:19:13.829+0000] {standard_task_runner.py:72} INFO - Started process 445 to run task
+[2025-01-19T22:19:13.830+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'coleta_dados_abertos_cnpj', 'extract', 'scheduled__2023-01-10T00:00:00+00:00', '--job-id', '136', '--raw', '--subdir', 'DAGS_FOLDER/coleta_dados_abertos_cnpj/dag.py', '--cfg-path', '/tmp/tmpb7bxmqro']
+[2025-01-19T22:19:13.831+0000] {standard_task_runner.py:105} INFO - Job 136: Subtask extract
+[2025-01-19T22:19:13.863+0000] {task_command.py:467} INFO - Running <TaskInstance: coleta_dados_abertos_cnpj.extract scheduled__2023-01-10T00:00:00+00:00 [running]> on host 659dab735c6e
+[2025-01-19T22:19:13.909+0000] {taskinstance.py:3132} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='Corvaum' AIRFLOW_CTX_DAG_ID='coleta_dados_abertos_cnpj' AIRFLOW_CTX_TASK_ID='extract' AIRFLOW_CTX_EXECUTION_DATE='2023-01-10T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2023-01-10T00:00:00+00:00'
+[2025-01-19T22:19:13.909+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2025-01-19T22:19:13.921+0000] {logging_mixin.py:190} INFO - 2023-01
+[2025-01-19T22:19:14.060+0000] {logging_mixin.py:190} INFO - Erro ao listar os arquivos: 404 Client Error: Not Found for url: https://arquivos.receitafederal.gov.br/dados/cnpj/dados_abertos_cnpj/2023-01
+[2025-01-19T22:19:14.061+0000] {logging_mixin.py:190} INFO - -----------------
+[2025-01-19T22:19:14.061+0000] {logging_mixin.py:190} INFO - None
+[2025-01-19T22:19:14.062+0000] {logging_mixin.py:190} INFO - ['Cnaes', 'Empresas', 'Estabelecimentos', 'Motivos', 'Municipios', 'Naturezas', 'Paises', 'Qualificacoes', 'Simples', 'Socios']
+[2025-01-19T22:19:14.062+0000] {taskinstance.py:3311} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 767, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 733, in _execute_callable
+    return ExecutionCallableRunner(
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/operator_helpers.py", line 252, in run
+    return self.func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 422, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/python.py", line 238, in execute
+    return_value = self.execute_callable()
+                   ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/python.py", line 256, in execute_callable
+    return runner.run(*self.op_args, **self.op_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/operator_helpers.py", line 252, in run
+    return self.func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/airflow/dags/coleta_dados_abertos_cnpj/jobs/extract.py", line 100, in extract
+    for file in files:
+                ^^^^^
+TypeError: 'NoneType' object is not iterable
+[2025-01-19T22:19:14.073+0000] {taskinstance.py:1225} INFO - Marking task as UP_FOR_RETRY. dag_id=coleta_dados_abertos_cnpj, task_id=extract, run_id=scheduled__2023-01-10T00:00:00+00:00, execution_date=20230110T000000, start_date=20250119T221913, end_date=20250119T221914
+[2025-01-19T22:19:14.082+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2025-01-19T22:19:14.082+0000] {standard_task_runner.py:124} ERROR - Failed to execute job 136 for task extract ('NoneType' object is not iterable; 445)
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/task/task_runner/standard_task_runner.py", line 117, in _start_by_fork
+    ret = args.func(args, dag=self.dag)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/cli/cli_config.py", line 49, in command
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/cli.py", line 116, in wrapper
+    return f(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/cli/commands/task_command.py", line 483, in task_run
+    task_return_code = _run_task_by_selected_method(args, _dag, ti)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/cli/commands/task_command.py", line 256, in _run_task_by_selected_method
+    return _run_raw_task(args, ti)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/cli/commands/task_command.py", line 341, in _run_raw_task
+    return ti._run_raw_task(
+           ^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/session.py", line 97, in wrapper
+    return func(*args, session=session, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 3005, in _run_raw_task
+    return _run_raw_task(
+           ^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 273, in _run_raw_task
+    TaskInstance._execute_task_with_callbacks(
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 3159, in _execute_task_with_callbacks
+    result = self._execute_task(context, task_orig)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 3183, in _execute_task
+    return _execute_task(self, context, task_orig)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 767, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 733, in _execute_callable
+    return ExecutionCallableRunner(
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/operator_helpers.py", line 252, in run
+    return self.func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 422, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/python.py", line 238, in execute
+    return_value = self.execute_callable()
+                   ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/python.py", line 256, in execute_callable
+    return runner.run(*self.op_args, **self.op_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/operator_helpers.py", line 252, in run
+    return self.func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/airflow/dags/coleta_dados_abertos_cnpj/jobs/extract.py", line 100, in extract
+    for file in files:
+                ^^^^^
+TypeError: 'NoneType' object is not iterable
+[2025-01-19T22:19:14.123+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 1
+[2025-01-19T22:19:14.137+0000] {taskinstance.py:3895} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-01-19T22:19:14.139+0000] {local_task_job_runner.py:245} INFO - ::endgroup::
+[2025-01-24T19:01:05.056+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2025-01-24T19:01:05.068+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: coleta_dados_abertos_cnpj.extract scheduled__2023-01-10T00:00:00+00:00 [queued]>
+[2025-01-24T19:01:05.074+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: coleta_dados_abertos_cnpj.extract scheduled__2023-01-10T00:00:00+00:00 [queued]>
+[2025-01-24T19:01:05.075+0000] {taskinstance.py:2866} INFO - Starting attempt 1 of 2
+[2025-01-24T19:01:05.084+0000] {taskinstance.py:2889} INFO - Executing <Task(PythonOperator): extract> on 2023-01-10 00:00:00+00:00
+[2025-01-24T19:01:05.088+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70: DeprecationWarning: This process (pid=730) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2025-01-24T19:01:05.089+0000] {standard_task_runner.py:72} INFO - Started process 757 to run task
+[2025-01-24T19:01:05.089+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'coleta_dados_abertos_cnpj', 'extract', 'scheduled__2023-01-10T00:00:00+00:00', '--job-id', '401', '--raw', '--subdir', 'DAGS_FOLDER/coleta_dados_abertos_cnpj/dag.py', '--cfg-path', '/tmp/tmps061xl_i']
+[2025-01-24T19:01:05.090+0000] {standard_task_runner.py:105} INFO - Job 401: Subtask extract
+[2025-01-24T19:01:05.171+0000] {task_command.py:467} INFO - Running <TaskInstance: coleta_dados_abertos_cnpj.extract scheduled__2023-01-10T00:00:00+00:00 [running]> on host ee70781c29c7
+[2025-01-24T19:01:05.231+0000] {taskinstance.py:3132} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='Corvaum' AIRFLOW_CTX_DAG_ID='coleta_dados_abertos_cnpj' AIRFLOW_CTX_TASK_ID='extract' AIRFLOW_CTX_EXECUTION_DATE='2023-01-10T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2023-01-10T00:00:00+00:00'
+[2025-01-24T19:01:05.232+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2025-01-24T19:01:05.248+0000] {logging_mixin.py:190} INFO - Data formatada: 2023-01
+[2025-01-24T19:01:05.382+0000] {logging_mixin.py:190} INFO - Erro ao listar os arquivos: 404 Client Error: Not Found for url: https://arquivos.receitafederal.gov.br/dados/cnpj/dados_abertos_cnpj/2023-01
+[2025-01-24T19:01:05.383+0000] {logging_mixin.py:190} INFO - Arquivos encontrados: []
+[2025-01-24T19:01:05.383+0000] {python.py:240} INFO - Done. Returned value was: None
+[2025-01-24T19:01:05.390+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2025-01-24T19:01:05.391+0000] {taskinstance.py:352} INFO - Marking task as SUCCESS. dag_id=coleta_dados_abertos_cnpj, task_id=extract, run_id=scheduled__2023-01-10T00:00:00+00:00, execution_date=20230110T000000, start_date=20250124T190105, end_date=20250124T190105
+[2025-01-24T19:01:05.503+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2025-01-24T19:01:05.519+0000] {taskinstance.py:3895} INFO - 10 downstream tasks scheduled from follow-on schedule check
+[2025-01-24T19:01:05.521+0000] {local_task_job_runner.py:245} INFO - ::endgroup::

@@ -1,0 +1,116 @@
+[2025-01-24T07:02:36.962+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2025-01-24T07:02:36.970+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: coleta_dados_abertos_cnpj.extract manual__2025-01-24T06:56:26.109432+00:00 [queued]>
+[2025-01-24T07:02:36.975+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: coleta_dados_abertos_cnpj.extract manual__2025-01-24T06:56:26.109432+00:00 [queued]>
+[2025-01-24T07:02:36.975+0000] {taskinstance.py:2866} INFO - Starting attempt 8 of 8
+[2025-01-24T07:02:37.003+0000] {taskinstance.py:2889} INFO - Executing <Task(PythonOperator): extract> on 2025-01-24 06:56:26.109432+00:00
+[2025-01-24T07:02:37.007+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70: DeprecationWarning: This process (pid=1525) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2025-01-24T07:02:37.009+0000] {standard_task_runner.py:72} INFO - Started process 1527 to run task
+[2025-01-24T07:02:37.008+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'coleta_dados_abertos_cnpj', 'extract', 'manual__2025-01-24T06:56:26.109432+00:00', '--job-id', '300', '--raw', '--subdir', 'DAGS_FOLDER/coleta_dados_abertos_cnpj/dag.py', '--cfg-path', '/tmp/tmpoqmveopz']
+[2025-01-24T07:02:37.009+0000] {standard_task_runner.py:105} INFO - Job 300: Subtask extract
+[2025-01-24T07:02:37.032+0000] {task_command.py:467} INFO - Running <TaskInstance: coleta_dados_abertos_cnpj.extract manual__2025-01-24T06:56:26.109432+00:00 [running]> on host ee70781c29c7
+[2025-01-24T07:02:37.072+0000] {taskinstance.py:3132} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='Corvaum' AIRFLOW_CTX_DAG_ID='coleta_dados_abertos_cnpj' AIRFLOW_CTX_TASK_ID='extract' AIRFLOW_CTX_EXECUTION_DATE='2025-01-24T06:56:26.109432+00:00' AIRFLOW_CTX_TRY_NUMBER='8' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-01-24T06:56:26.109432+00:00'
+[2025-01-24T07:02:37.073+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2025-01-24T07:02:37.079+0000] {logging_mixin.py:190} INFO - 2025-01
+[2025-01-24T07:02:37.333+0000] {logging_mixin.py:190} INFO - -----------------
+[2025-01-24T07:02:37.333+0000] {logging_mixin.py:190} INFO - ['Cnaes.zip', 'Empresas0.zip', 'Empresas1.zip', 'Empresas2.zip', 'Empresas3.zip', 'Empresas4.zip', 'Empresas5.zip', 'Empresas6.zip', 'Empresas7.zip', 'Empresas8.zip', 'Empresas9.zip', 'Estabelecimentos0.zip', 'Estabelecimentos1.zip', 'Estabelecimentos2.zip', 'Estabelecimentos3.zip', 'Estabelecimentos4.zip', 'Estabelecimentos5.zip', 'Estabelecimentos6.zip', 'Estabelecimentos7.zip', 'Estabelecimentos8.zip', 'Estabelecimentos9.zip', 'Motivos.zip', 'Municipios.zip', 'Naturezas.zip', 'Paises.zip', 'Qualificacoes.zip', 'Simples.zip', 'Socios0.zip', 'Socios1.zip', 'Socios2.zip', 'Socios3.zip', 'Socios4.zip', 'Socios5.zip', 'Socios6.zip', 'Socios7.zip', 'Socios8.zip', 'Socios9.zip']
+[2025-01-24T07:02:37.334+0000] {logging_mixin.py:190} INFO - ['Cnaes', 'Empresas', 'Estabelecimentos', 'Motivos', 'Municipios', 'Naturezas', 'Paises', 'Qualificacoes', 'Simples', 'Socios']
+[2025-01-24T07:02:37.334+0000] {logging_mixin.py:190} INFO - Iniciando o download de: https://arquivos.receitafederal.gov.br/dados/cnpj/dados_abertos_cnpj/2025-01/Cnaes.zip
+[2025-01-24T07:02:37.466+0000] {logging_mixin.py:190} INFO - Nenhum arquivo CSV encontrado no ZIP.
+[2025-01-24T07:02:37.466+0000] {logging_mixin.py:190} INFO - Iniciando o download de: https://arquivos.receitafederal.gov.br/dados/cnpj/dados_abertos_cnpj/2025-01/Empresas0.zip
+[2025-01-24T07:04:28.101+0000] {logging_mixin.py:190} INFO - Nenhum arquivo CSV encontrado no ZIP.
+[2025-01-24T07:04:28.102+0000] {logging_mixin.py:190} INFO - Iniciando o download de: https://arquivos.receitafederal.gov.br/dados/cnpj/dados_abertos_cnpj/2025-01/Empresas1.zip
+[2025-01-24T07:04:32.790+0000] {local_task_job_runner.py:318} WARNING - Recorded pid 1559 does not match the current pid 1527
+[2025-01-24T07:04:32.791+0000] {local_task_job_runner.py:218} WARNING - Heartbeat failed with Exception: PID of job runner does not match
+[2025-01-24T07:04:37.826+0000] {local_task_job_runner.py:318} WARNING - Recorded pid 1559 does not match the current pid 1527
+[2025-01-24T07:04:37.826+0000] {local_task_job_runner.py:218} WARNING - Heartbeat failed with Exception: PID of job runner does not match
+[2025-01-24T07:04:42.861+0000] {local_task_job_runner.py:318} WARNING - Recorded pid 1559 does not match the current pid 1527
+[2025-01-24T07:04:42.863+0000] {local_task_job_runner.py:218} WARNING - Heartbeat failed with Exception: PID of job runner does not match
+[2025-01-24T07:04:47.903+0000] {local_task_job_runner.py:318} WARNING - Recorded pid 1559 does not match the current pid 1527
+[2025-01-24T07:04:47.903+0000] {local_task_job_runner.py:218} WARNING - Heartbeat failed with Exception: PID of job runner does not match
+[2025-01-24T07:04:50.584+0000] {logging_mixin.py:190} INFO - Nenhum arquivo CSV encontrado no ZIP.
+[2025-01-24T07:04:50.584+0000] {logging_mixin.py:190} INFO - Iniciando o download de: https://arquivos.receitafederal.gov.br/dados/cnpj/dados_abertos_cnpj/2025-01/Empresas2.zip
+[2025-01-24T07:04:52.938+0000] {local_task_job_runner.py:318} WARNING - Recorded pid 1559 does not match the current pid 1527
+[2025-01-24T07:04:52.939+0000] {local_task_job_runner.py:218} WARNING - Heartbeat failed with Exception: PID of job runner does not match
+[2025-01-24T07:04:57.972+0000] {local_task_job_runner.py:318} WARNING - Recorded pid 1559 does not match the current pid 1527
+[2025-01-24T07:04:57.972+0000] {local_task_job_runner.py:218} WARNING - Heartbeat failed with Exception: PID of job runner does not match
+[2025-01-24T07:05:03.006+0000] {local_task_job_runner.py:318} WARNING - Recorded pid 1559 does not match the current pid 1527
+[2025-01-24T07:05:03.007+0000] {local_task_job_runner.py:218} WARNING - Heartbeat failed with Exception: PID of job runner does not match
+[2025-01-24T07:05:08.045+0000] {local_task_job_runner.py:318} WARNING - Recorded pid 1559 does not match the current pid 1527
+[2025-01-24T07:05:08.048+0000] {local_task_job_runner.py:218} WARNING - Heartbeat failed with Exception: PID of job runner does not match
+[2025-01-24T07:05:12.876+0000] {logging_mixin.py:190} INFO - Nenhum arquivo CSV encontrado no ZIP.
+[2025-01-24T07:05:12.876+0000] {logging_mixin.py:190} INFO - Iniciando o download de: https://arquivos.receitafederal.gov.br/dados/cnpj/dados_abertos_cnpj/2025-01/Empresas3.zip
+[2025-01-24T07:05:13.085+0000] {local_task_job_runner.py:318} WARNING - Recorded pid 1559 does not match the current pid 1527
+[2025-01-24T07:05:13.086+0000] {local_task_job_runner.py:218} WARNING - Heartbeat failed with Exception: PID of job runner does not match
+[2025-01-24T07:05:18.121+0000] {local_task_job_runner.py:318} WARNING - Recorded pid 1559 does not match the current pid 1527
+[2025-01-24T07:05:18.122+0000] {local_task_job_runner.py:218} WARNING - Heartbeat failed with Exception: PID of job runner does not match
+[2025-01-24T07:05:23.155+0000] {local_task_job_runner.py:318} WARNING - Recorded pid 1559 does not match the current pid 1527
+[2025-01-24T07:05:23.155+0000] {local_task_job_runner.py:218} WARNING - Heartbeat failed with Exception: PID of job runner does not match
+[2025-01-24T07:05:28.187+0000] {local_task_job_runner.py:318} WARNING - Recorded pid 1559 does not match the current pid 1527
+[2025-01-24T07:05:28.188+0000] {local_task_job_runner.py:218} WARNING - Heartbeat failed with Exception: PID of job runner does not match
+[2025-01-24T07:05:33.224+0000] {local_task_job_runner.py:318} WARNING - Recorded pid 1559 does not match the current pid 1527
+[2025-01-24T07:05:33.224+0000] {local_task_job_runner.py:218} WARNING - Heartbeat failed with Exception: PID of job runner does not match
+[2025-01-24T07:05:36.731+0000] {logging_mixin.py:190} INFO - Nenhum arquivo CSV encontrado no ZIP.
+[2025-01-24T07:05:36.745+0000] {logging_mixin.py:190} INFO - Iniciando o download de: https://arquivos.receitafederal.gov.br/dados/cnpj/dados_abertos_cnpj/2025-01/Empresas4.zip
+[2025-01-24T07:05:38.258+0000] {local_task_job_runner.py:318} WARNING - Recorded pid 1559 does not match the current pid 1527
+[2025-01-24T07:05:38.259+0000] {local_task_job_runner.py:218} WARNING - Heartbeat failed with Exception: PID of job runner does not match
+[2025-01-24T07:05:43.292+0000] {local_task_job_runner.py:318} WARNING - Recorded pid 1559 does not match the current pid 1527
+[2025-01-24T07:05:43.293+0000] {local_task_job_runner.py:218} WARNING - Heartbeat failed with Exception: PID of job runner does not match
+[2025-01-24T07:05:48.329+0000] {local_task_job_runner.py:318} WARNING - Recorded pid 1559 does not match the current pid 1527
+[2025-01-24T07:05:48.329+0000] {local_task_job_runner.py:218} WARNING - Heartbeat failed with Exception: PID of job runner does not match
+[2025-01-24T07:05:53.362+0000] {local_task_job_runner.py:318} WARNING - Recorded pid 1559 does not match the current pid 1527
+[2025-01-24T07:05:53.363+0000] {local_task_job_runner.py:218} WARNING - Heartbeat failed with Exception: PID of job runner does not match
+[2025-01-24T07:05:58.396+0000] {local_task_job_runner.py:318} WARNING - Recorded pid 1559 does not match the current pid 1527
+[2025-01-24T07:05:58.396+0000] {local_task_job_runner.py:218} WARNING - Heartbeat failed with Exception: PID of job runner does not match
+[2025-01-24T07:06:02.068+0000] {logging_mixin.py:190} INFO - Nenhum arquivo CSV encontrado no ZIP.
+[2025-01-24T07:06:02.073+0000] {logging_mixin.py:190} INFO - Iniciando o download de: https://arquivos.receitafederal.gov.br/dados/cnpj/dados_abertos_cnpj/2025-01/Empresas5.zip
+[2025-01-24T07:06:03.433+0000] {local_task_job_runner.py:318} WARNING - Recorded pid 1559 does not match the current pid 1527
+[2025-01-24T07:06:03.434+0000] {local_task_job_runner.py:218} WARNING - Heartbeat failed with Exception: PID of job runner does not match
+[2025-01-24T07:06:08.467+0000] {local_task_job_runner.py:318} WARNING - Recorded pid 1559 does not match the current pid 1527
+[2025-01-24T07:06:08.468+0000] {local_task_job_runner.py:218} WARNING - Heartbeat failed with Exception: PID of job runner does not match
+[2025-01-24T07:06:13.503+0000] {local_task_job_runner.py:318} WARNING - Recorded pid 1559 does not match the current pid 1527
+[2025-01-24T07:06:13.503+0000] {local_task_job_runner.py:218} WARNING - Heartbeat failed with Exception: PID of job runner does not match
+[2025-01-24T07:06:18.542+0000] {local_task_job_runner.py:318} WARNING - Recorded pid 1559 does not match the current pid 1527
+[2025-01-24T07:06:18.542+0000] {local_task_job_runner.py:218} WARNING - Heartbeat failed with Exception: PID of job runner does not match
+[2025-01-24T07:06:23.575+0000] {local_task_job_runner.py:318} WARNING - Recorded pid 1559 does not match the current pid 1527
+[2025-01-24T07:06:23.576+0000] {local_task_job_runner.py:218} WARNING - Heartbeat failed with Exception: PID of job runner does not match
+[2025-01-24T07:06:28.609+0000] {local_task_job_runner.py:318} WARNING - Recorded pid 1559 does not match the current pid 1527
+[2025-01-24T07:06:28.610+0000] {local_task_job_runner.py:218} WARNING - Heartbeat failed with Exception: PID of job runner does not match
+[2025-01-24T07:06:29.794+0000] {logging_mixin.py:190} INFO - Nenhum arquivo CSV encontrado no ZIP.
+[2025-01-24T07:06:29.795+0000] {logging_mixin.py:190} INFO - Iniciando o download de: https://arquivos.receitafederal.gov.br/dados/cnpj/dados_abertos_cnpj/2025-01/Empresas6.zip
+[2025-01-24T07:06:33.643+0000] {local_task_job_runner.py:318} WARNING - Recorded pid 1559 does not match the current pid 1527
+[2025-01-24T07:06:33.645+0000] {local_task_job_runner.py:218} WARNING - Heartbeat failed with Exception: PID of job runner does not match
+[2025-01-24T07:06:38.687+0000] {local_task_job_runner.py:318} WARNING - Recorded pid 1559 does not match the current pid 1527
+[2025-01-24T07:06:38.687+0000] {local_task_job_runner.py:218} WARNING - Heartbeat failed with Exception: PID of job runner does not match
+[2025-01-24T07:06:43.723+0000] {local_task_job_runner.py:318} WARNING - Recorded pid 1559 does not match the current pid 1527
+[2025-01-24T07:06:43.723+0000] {local_task_job_runner.py:218} WARNING - Heartbeat failed with Exception: PID of job runner does not match
+[2025-01-24T07:06:48.758+0000] {local_task_job_runner.py:318} WARNING - Recorded pid 1559 does not match the current pid 1527
+[2025-01-24T07:06:48.759+0000] {local_task_job_runner.py:218} WARNING - Heartbeat failed with Exception: PID of job runner does not match
+[2025-01-24T07:06:53.792+0000] {local_task_job_runner.py:318} WARNING - Recorded pid 1559 does not match the current pid 1527
+[2025-01-24T07:06:53.792+0000] {local_task_job_runner.py:218} WARNING - Heartbeat failed with Exception: PID of job runner does not match
+[2025-01-24T07:06:56.272+0000] {logging_mixin.py:190} INFO - Nenhum arquivo CSV encontrado no ZIP.
+[2025-01-24T07:06:56.273+0000] {logging_mixin.py:190} INFO - Iniciando o download de: https://arquivos.receitafederal.gov.br/dados/cnpj/dados_abertos_cnpj/2025-01/Empresas7.zip
+[2025-01-24T07:06:58.826+0000] {local_task_job_runner.py:318} WARNING - Recorded pid 1559 does not match the current pid 1527
+[2025-01-24T07:06:58.826+0000] {local_task_job_runner.py:218} WARNING - Heartbeat failed with Exception: PID of job runner does not match
+[2025-01-24T07:07:03.859+0000] {local_task_job_runner.py:318} WARNING - Recorded pid 1559 does not match the current pid 1527
+[2025-01-24T07:07:03.860+0000] {local_task_job_runner.py:218} WARNING - Heartbeat failed with Exception: PID of job runner does not match
+[2025-01-24T07:07:08.893+0000] {local_task_job_runner.py:318} WARNING - Recorded pid 1559 does not match the current pid 1527
+[2025-01-24T07:07:08.894+0000] {local_task_job_runner.py:218} WARNING - Heartbeat failed with Exception: PID of job runner does not match
+[2025-01-24T07:07:13.927+0000] {local_task_job_runner.py:318} WARNING - Recorded pid 1559 does not match the current pid 1527
+[2025-01-24T07:07:13.927+0000] {local_task_job_runner.py:218} WARNING - Heartbeat failed with Exception: PID of job runner does not match
+[2025-01-24T07:07:18.961+0000] {local_task_job_runner.py:318} WARNING - Recorded pid 1559 does not match the current pid 1527
+[2025-01-24T07:07:18.961+0000] {local_task_job_runner.py:218} WARNING - Heartbeat failed with Exception: PID of job runner does not match
+[2025-01-24T07:07:23.998+0000] {local_task_job_runner.py:318} WARNING - Recorded pid 1559 does not match the current pid 1527
+[2025-01-24T07:07:24.000+0000] {local_task_job_runner.py:218} WARNING - Heartbeat failed with Exception: PID of job runner does not match
+[2025-01-24T07:07:25.652+0000] {logging_mixin.py:190} INFO - Nenhum arquivo CSV encontrado no ZIP.
+[2025-01-24T07:07:25.653+0000] {logging_mixin.py:190} INFO - Iniciando o download de: https://arquivos.receitafederal.gov.br/dados/cnpj/dados_abertos_cnpj/2025-01/Empresas8.zip
+[2025-01-24T07:07:29.034+0000] {local_task_job_runner.py:318} WARNING - Recorded pid 1559 does not match the current pid 1527
+[2025-01-24T07:07:29.037+0000] {local_task_job_runner.py:218} WARNING - Heartbeat failed with Exception: PID of job runner does not match
+[2025-01-24T07:07:34.073+0000] {local_task_job_runner.py:346} WARNING - State of this instance has been externally set to failed. Terminating instance.
+[2025-01-24T07:07:34.074+0000] {local_task_job_runner.py:245} INFO - ::endgroup::
+[2025-01-24T07:07:34.075+0000] {process_utils.py:132} INFO - Sending 15 to group 1527. PIDs of all processes in the group: [1527]
+[2025-01-24T07:07:34.075+0000] {process_utils.py:87} INFO - Sending the signal 15 to group 1527
+[2025-01-24T07:07:34.077+0000] {taskinstance.py:3093} ERROR - Received SIGTERM. Terminating subprocesses.
+[2025-01-24T07:07:34.091+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2025-01-24T07:07:34.102+0000] {process_utils.py:80} INFO - Process psutil.Process(pid=1527, status='terminated', exitcode=0, started='07:02:36') (1527) terminated with exit code 0

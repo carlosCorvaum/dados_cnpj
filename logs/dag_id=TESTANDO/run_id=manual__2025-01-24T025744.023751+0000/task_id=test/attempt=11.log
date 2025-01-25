@@ -1,0 +1,143 @@
+[2025-01-24T05:27:15.330+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2025-01-24T05:27:15.450+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: TESTANDO.test manual__2025-01-24T02:57:44.023751+00:00 [queued]>
+[2025-01-24T05:27:15.454+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: TESTANDO.test manual__2025-01-24T02:57:44.023751+00:00 [queued]>
+[2025-01-24T05:27:15.455+0000] {taskinstance.py:2866} INFO - Starting attempt 11 of 12
+[2025-01-24T05:27:15.463+0000] {taskinstance.py:2889} INFO - Executing <Task(PythonOperator): test> on 2025-01-24 02:57:44.023751+00:00
+[2025-01-24T05:27:15.504+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70: DeprecationWarning: This process (pid=185) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2025-01-24T05:27:15.505+0000] {standard_task_runner.py:72} INFO - Started process 187 to run task
+[2025-01-24T05:27:15.505+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'TESTANDO', 'test', 'manual__2025-01-24T02:57:44.023751+00:00', '--job-id', '281', '--raw', '--subdir', 'DAGS_FOLDER/testdag.py', '--cfg-path', '/tmp/tmp2c2sgyr8']
+[2025-01-24T05:27:15.507+0000] {standard_task_runner.py:105} INFO - Job 281: Subtask test
+[2025-01-24T05:27:15.533+0000] {task_command.py:467} INFO - Running <TaskInstance: TESTANDO.test manual__2025-01-24T02:57:44.023751+00:00 [running]> on host ee70781c29c7
+[2025-01-24T05:27:15.572+0000] {taskinstance.py:3132} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='Corvaum' AIRFLOW_CTX_DAG_ID='TESTANDO' AIRFLOW_CTX_TASK_ID='test' AIRFLOW_CTX_EXECUTION_DATE='2025-01-24T02:57:44.023751+00:00' AIRFLOW_CTX_TRY_NUMBER='11' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-01-24T02:57:44.023751+00:00'
+[2025-01-24T05:27:15.581+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2025-01-24T05:27:15.594+0000] {logging_mixin.py:190} INFO -              CNPJ Razão Social  Atividade
+0  12345678000195    Empresa A   Comércio
+1  98765432000100    Empresa B   Serviços
+2  45678901000123    Empresa C  Indústria
+[2025-01-24T05:27:15.594+0000] {taskinstance.py:3311} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/minio/helpers.py", line 523, in _parse_url
+    url.port
+  File "/usr/local/lib/python3.12/urllib/parse.py", line 184, in port
+    raise ValueError("Port out of range 0-65535")
+ValueError: Port out of range 0-65535
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 767, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 733, in _execute_callable
+    return ExecutionCallableRunner(
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/operator_helpers.py", line 252, in run
+    return self.func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 422, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/python.py", line 238, in execute
+    return_value = self.execute_callable()
+                   ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/python.py", line 256, in execute_callable
+    return runner.run(*self.op_args, **self.op_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/operator_helpers.py", line 252, in run
+    return self.func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/airflow/dags/testdag.py", line 28, in test
+    client = Minio(
+             ^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/minio/api.py", line 153, in __init__
+    self._base_url = BaseURL(
+                     ^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/minio/helpers.py", line 551, in __init__
+    url = _parse_url(endpoint)
+          ^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/minio/helpers.py", line 525, in _parse_url
+    raise ValueError("invalid port") from exc
+ValueError: invalid port
+[2025-01-24T05:27:15.602+0000] {taskinstance.py:1225} INFO - Marking task as UP_FOR_RETRY. dag_id=TESTANDO, task_id=test, run_id=manual__2025-01-24T02:57:44.023751+00:00, execution_date=20250124T025744, start_date=20250124T052715, end_date=20250124T052715
+[2025-01-24T05:27:15.618+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2025-01-24T05:27:15.619+0000] {standard_task_runner.py:124} ERROR - Failed to execute job 281 for task test (invalid port; 187)
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/minio/helpers.py", line 523, in _parse_url
+    url.port
+  File "/usr/local/lib/python3.12/urllib/parse.py", line 184, in port
+    raise ValueError("Port out of range 0-65535")
+ValueError: Port out of range 0-65535
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/task/task_runner/standard_task_runner.py", line 117, in _start_by_fork
+    ret = args.func(args, dag=self.dag)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/cli/cli_config.py", line 49, in command
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/cli.py", line 116, in wrapper
+    return f(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/cli/commands/task_command.py", line 483, in task_run
+    task_return_code = _run_task_by_selected_method(args, _dag, ti)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/cli/commands/task_command.py", line 256, in _run_task_by_selected_method
+    return _run_raw_task(args, ti)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/cli/commands/task_command.py", line 341, in _run_raw_task
+    return ti._run_raw_task(
+           ^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/session.py", line 97, in wrapper
+    return func(*args, session=session, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 3005, in _run_raw_task
+    return _run_raw_task(
+           ^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 273, in _run_raw_task
+    TaskInstance._execute_task_with_callbacks(
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 3159, in _execute_task_with_callbacks
+    result = self._execute_task(context, task_orig)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 3183, in _execute_task
+    return _execute_task(self, context, task_orig)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 767, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 733, in _execute_callable
+    return ExecutionCallableRunner(
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/operator_helpers.py", line 252, in run
+    return self.func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 422, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/python.py", line 238, in execute
+    return_value = self.execute_callable()
+                   ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/python.py", line 256, in execute_callable
+    return runner.run(*self.op_args, **self.op_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/operator_helpers.py", line 252, in run
+    return self.func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/airflow/dags/testdag.py", line 28, in test
+    client = Minio(
+             ^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/minio/api.py", line 153, in __init__
+    self._base_url = BaseURL(
+                     ^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/minio/helpers.py", line 551, in __init__
+    url = _parse_url(endpoint)
+          ^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/minio/helpers.py", line 525, in _parse_url
+    raise ValueError("invalid port") from exc
+ValueError: invalid port
+[2025-01-24T05:27:15.638+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 1
+[2025-01-24T05:27:15.650+0000] {taskinstance.py:3895} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-01-24T05:27:15.651+0000] {local_task_job_runner.py:245} INFO - ::endgroup::

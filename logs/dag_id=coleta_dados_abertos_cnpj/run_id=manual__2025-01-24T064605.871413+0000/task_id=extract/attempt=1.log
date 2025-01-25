@@ -1,0 +1,48 @@
+[2025-01-24T06:46:07.522+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2025-01-24T06:46:07.532+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: coleta_dados_abertos_cnpj.extract manual__2025-01-24T06:46:05.871413+00:00 [queued]>
+[2025-01-24T06:46:07.537+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: coleta_dados_abertos_cnpj.extract manual__2025-01-24T06:46:05.871413+00:00 [queued]>
+[2025-01-24T06:46:07.537+0000] {taskinstance.py:2866} INFO - Starting attempt 1 of 2
+[2025-01-24T06:46:07.566+0000] {taskinstance.py:2889} INFO - Executing <Task(PythonOperator): extract> on 2025-01-24 06:46:05.871413+00:00
+[2025-01-24T06:46:07.570+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70: DeprecationWarning: This process (pid=1279) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2025-01-24T06:46:07.571+0000] {standard_task_runner.py:72} INFO - Started process 1280 to run task
+[2025-01-24T06:46:07.571+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'coleta_dados_abertos_cnpj', 'extract', 'manual__2025-01-24T06:46:05.871413+00:00', '--job-id', '292', '--raw', '--subdir', 'DAGS_FOLDER/coleta_dados_abertos_cnpj/dag.py', '--cfg-path', '/tmp/tmpic1gcrdj']
+[2025-01-24T06:46:07.572+0000] {standard_task_runner.py:105} INFO - Job 292: Subtask extract
+[2025-01-24T06:46:07.597+0000] {task_command.py:467} INFO - Running <TaskInstance: coleta_dados_abertos_cnpj.extract manual__2025-01-24T06:46:05.871413+00:00 [running]> on host ee70781c29c7
+[2025-01-24T06:46:07.640+0000] {taskinstance.py:3132} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='Corvaum' AIRFLOW_CTX_DAG_ID='coleta_dados_abertos_cnpj' AIRFLOW_CTX_TASK_ID='extract' AIRFLOW_CTX_EXECUTION_DATE='2025-01-24T06:46:05.871413+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-01-24T06:46:05.871413+00:00'
+[2025-01-24T06:46:07.641+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2025-01-24T06:46:07.652+0000] {logging_mixin.py:190} INFO - 2025-01
+[2025-01-24T06:46:07.914+0000] {logging_mixin.py:190} INFO - -----------------
+[2025-01-24T06:46:07.915+0000] {logging_mixin.py:190} INFO - ['Cnaes.zip', 'Empresas0.zip', 'Empresas1.zip', 'Empresas2.zip', 'Empresas3.zip', 'Empresas4.zip', 'Empresas5.zip', 'Empresas6.zip', 'Empresas7.zip', 'Empresas8.zip', 'Empresas9.zip', 'Estabelecimentos0.zip', 'Estabelecimentos1.zip', 'Estabelecimentos2.zip', 'Estabelecimentos3.zip', 'Estabelecimentos4.zip', 'Estabelecimentos5.zip', 'Estabelecimentos6.zip', 'Estabelecimentos7.zip', 'Estabelecimentos8.zip', 'Estabelecimentos9.zip', 'Motivos.zip', 'Municipios.zip', 'Naturezas.zip', 'Paises.zip', 'Qualificacoes.zip', 'Simples.zip', 'Socios0.zip', 'Socios1.zip', 'Socios2.zip', 'Socios3.zip', 'Socios4.zip', 'Socios5.zip', 'Socios6.zip', 'Socios7.zip', 'Socios8.zip', 'Socios9.zip']
+[2025-01-24T06:46:07.915+0000] {logging_mixin.py:190} INFO - ['Cnaes', 'Empresas', 'Estabelecimentos', 'Motivos', 'Municipios', 'Naturezas', 'Paises', 'Qualificacoes', 'Simples', 'Socios']
+[2025-01-24T06:46:07.915+0000] {logging_mixin.py:190} INFO - Iniciando o download de: https://arquivos.receitafederal.gov.br/dados/cnpj/dados_abertos_cnpj/2025-01/Cnaes.zip
+[2025-01-24T06:46:08.044+0000] {logging_mixin.py:190} INFO - Arquivo salvo em: G:/Airflow/volumes/dados_abertos_cnpj/2025-01/Cnaes/Cnaes.zip
+[2025-01-24T06:46:08.049+0000] {logging_mixin.py:190} INFO - Iniciando o download de: https://arquivos.receitafederal.gov.br/dados/cnpj/dados_abertos_cnpj/2025-01/Empresas0.zip
+[2025-01-24T06:47:53.685+0000] {logging_mixin.py:190} INFO - Arquivo salvo em: G:/Airflow/volumes/dados_abertos_cnpj/2025-01/Empresas/Empresas0.zip
+[2025-01-24T06:47:53.686+0000] {logging_mixin.py:190} INFO - Iniciando o download de: https://arquivos.receitafederal.gov.br/dados/cnpj/dados_abertos_cnpj/2025-01/Empresas1.zip
+[2025-01-24T06:48:14.829+0000] {logging_mixin.py:190} INFO - Arquivo salvo em: G:/Airflow/volumes/dados_abertos_cnpj/2025-01/Empresas/Empresas1.zip
+[2025-01-24T06:48:14.829+0000] {logging_mixin.py:190} INFO - Iniciando o download de: https://arquivos.receitafederal.gov.br/dados/cnpj/dados_abertos_cnpj/2025-01/Empresas2.zip
+[2025-01-24T06:48:36.430+0000] {logging_mixin.py:190} INFO - Arquivo salvo em: G:/Airflow/volumes/dados_abertos_cnpj/2025-01/Empresas/Empresas2.zip
+[2025-01-24T06:48:36.431+0000] {logging_mixin.py:190} INFO - Iniciando o download de: https://arquivos.receitafederal.gov.br/dados/cnpj/dados_abertos_cnpj/2025-01/Empresas3.zip
+[2025-01-24T06:48:58.761+0000] {logging_mixin.py:190} INFO - Arquivo salvo em: G:/Airflow/volumes/dados_abertos_cnpj/2025-01/Empresas/Empresas3.zip
+[2025-01-24T06:48:58.763+0000] {logging_mixin.py:190} INFO - Iniciando o download de: https://arquivos.receitafederal.gov.br/dados/cnpj/dados_abertos_cnpj/2025-01/Empresas4.zip
+[2025-01-24T06:49:23.247+0000] {logging_mixin.py:190} INFO - Arquivo salvo em: G:/Airflow/volumes/dados_abertos_cnpj/2025-01/Empresas/Empresas4.zip
+[2025-01-24T06:49:23.248+0000] {logging_mixin.py:190} INFO - Iniciando o download de: https://arquivos.receitafederal.gov.br/dados/cnpj/dados_abertos_cnpj/2025-01/Empresas5.zip
+[2025-01-24T06:49:49.188+0000] {logging_mixin.py:190} INFO - Arquivo salvo em: G:/Airflow/volumes/dados_abertos_cnpj/2025-01/Empresas/Empresas5.zip
+[2025-01-24T06:49:49.214+0000] {logging_mixin.py:190} INFO - Iniciando o download de: https://arquivos.receitafederal.gov.br/dados/cnpj/dados_abertos_cnpj/2025-01/Empresas6.zip
+[2025-01-24T06:50:14.732+0000] {logging_mixin.py:190} INFO - Arquivo salvo em: G:/Airflow/volumes/dados_abertos_cnpj/2025-01/Empresas/Empresas6.zip
+[2025-01-24T06:50:14.733+0000] {logging_mixin.py:190} INFO - Iniciando o download de: https://arquivos.receitafederal.gov.br/dados/cnpj/dados_abertos_cnpj/2025-01/Empresas7.zip
+[2025-01-24T06:50:42.081+0000] {logging_mixin.py:190} INFO - Arquivo salvo em: G:/Airflow/volumes/dados_abertos_cnpj/2025-01/Empresas/Empresas7.zip
+[2025-01-24T06:50:42.081+0000] {logging_mixin.py:190} INFO - Iniciando o download de: https://arquivos.receitafederal.gov.br/dados/cnpj/dados_abertos_cnpj/2025-01/Empresas8.zip
+[2025-01-24T06:51:08.247+0000] {logging_mixin.py:190} INFO - Arquivo salvo em: G:/Airflow/volumes/dados_abertos_cnpj/2025-01/Empresas/Empresas8.zip
+[2025-01-24T06:51:08.247+0000] {logging_mixin.py:190} INFO - Iniciando o download de: https://arquivos.receitafederal.gov.br/dados/cnpj/dados_abertos_cnpj/2025-01/Empresas9.zip
+[2025-01-24T06:51:33.789+0000] {logging_mixin.py:190} INFO - Arquivo salvo em: G:/Airflow/volumes/dados_abertos_cnpj/2025-01/Empresas/Empresas9.zip
+[2025-01-24T06:51:33.790+0000] {logging_mixin.py:190} INFO - Iniciando o download de: https://arquivos.receitafederal.gov.br/dados/cnpj/dados_abertos_cnpj/2025-01/Estabelecimentos0.zip
+[2025-01-24T06:56:21.782+0000] {local_task_job_runner.py:346} WARNING - State of this instance has been externally set to failed. Terminating instance.
+[2025-01-24T06:56:21.782+0000] {local_task_job_runner.py:245} INFO - ::endgroup::
+[2025-01-24T06:56:21.783+0000] {process_utils.py:132} INFO - Sending 15 to group 1280. PIDs of all processes in the group: [1280]
+[2025-01-24T06:56:21.784+0000] {process_utils.py:87} INFO - Sending the signal 15 to group 1280
+[2025-01-24T06:56:21.784+0000] {taskinstance.py:3093} ERROR - Received SIGTERM. Terminating subprocesses.
+[2025-01-24T06:56:21.795+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2025-01-24T06:56:21.810+0000] {process_utils.py:80} INFO - Process psutil.Process(pid=1280, status='terminated', exitcode=0, started='06:46:07') (1280) terminated with exit code 0

@@ -1,0 +1,20 @@
+[2025-01-24T19:01:04.765+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2025-01-24T19:01:04.777+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: coleta_dados_abertos_cnpj.transform_estabelecimentos scheduled__2022-01-10T00:00:00+00:00 [queued]>
+[2025-01-24T19:01:04.783+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: coleta_dados_abertos_cnpj.transform_estabelecimentos scheduled__2022-01-10T00:00:00+00:00 [queued]>
+[2025-01-24T19:01:04.783+0000] {taskinstance.py:2866} INFO - Starting attempt 1 of 2
+[2025-01-24T19:01:04.959+0000] {taskinstance.py:2889} INFO - Executing <Task(PythonOperator): transform_estabelecimentos> on 2022-01-10 00:00:00+00:00
+[2025-01-24T19:01:04.964+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70: DeprecationWarning: This process (pid=720) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2025-01-24T19:01:04.965+0000] {standard_task_runner.py:72} INFO - Started process 752 to run task
+[2025-01-24T19:01:04.966+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'coleta_dados_abertos_cnpj', 'transform_estabelecimentos', 'scheduled__2022-01-10T00:00:00+00:00', '--job-id', '397', '--raw', '--subdir', 'DAGS_FOLDER/coleta_dados_abertos_cnpj/dag.py', '--cfg-path', '/tmp/tmpefr6eovh']
+[2025-01-24T19:01:04.967+0000] {standard_task_runner.py:105} INFO - Job 397: Subtask transform_estabelecimentos
+[2025-01-24T19:01:05.002+0000] {task_command.py:467} INFO - Running <TaskInstance: coleta_dados_abertos_cnpj.transform_estabelecimentos scheduled__2022-01-10T00:00:00+00:00 [running]> on host ee70781c29c7
+[2025-01-24T19:01:05.059+0000] {taskinstance.py:3132} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='Corvaum' AIRFLOW_CTX_DAG_ID='coleta_dados_abertos_cnpj' AIRFLOW_CTX_TASK_ID='transform_estabelecimentos' AIRFLOW_CTX_EXECUTION_DATE='2022-01-10T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2022-01-10T00:00:00+00:00'
+[2025-01-24T19:01:05.060+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2025-01-24T19:01:05.067+0000] {logging_mixin.py:190} INFO - cnaes
+[2025-01-24T19:01:05.068+0000] {python.py:240} INFO - Done. Returned value was: None
+[2025-01-24T19:01:05.073+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2025-01-24T19:01:05.073+0000] {taskinstance.py:352} INFO - Marking task as SUCCESS. dag_id=coleta_dados_abertos_cnpj, task_id=transform_estabelecimentos, run_id=scheduled__2022-01-10T00:00:00+00:00, execution_date=20220110T000000, start_date=20250124T190104, end_date=20250124T190105
+[2025-01-24T19:01:05.099+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2025-01-24T19:01:05.104+0000] {local_task_job_runner.py:245} INFO - ::endgroup::

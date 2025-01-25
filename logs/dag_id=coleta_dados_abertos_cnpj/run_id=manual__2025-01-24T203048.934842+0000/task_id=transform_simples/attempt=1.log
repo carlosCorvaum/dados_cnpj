@@ -1,0 +1,21 @@
+[2025-01-24T20:30:50.798+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2025-01-24T20:30:50.808+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: coleta_dados_abertos_cnpj.transform_simples manual__2025-01-24T20:30:48.934842+00:00 [queued]>
+[2025-01-24T20:30:50.813+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: coleta_dados_abertos_cnpj.transform_simples manual__2025-01-24T20:30:48.934842+00:00 [queued]>
+[2025-01-24T20:30:50.813+0000] {taskinstance.py:2866} INFO - Starting attempt 1 of 2
+[2025-01-24T20:30:51.245+0000] {taskinstance.py:2889} INFO - Executing <Task(PythonOperator): transform_simples> on 2025-01-24 20:30:48.934842+00:00
+[2025-01-24T20:30:51.470+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70: DeprecationWarning: This process (pid=222) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2025-01-24T20:30:51.474+0000] {standard_task_runner.py:72} INFO - Started process 236 to run task
+[2025-01-24T20:30:51.472+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'coleta_dados_abertos_cnpj', 'transform_simples', 'manual__2025-01-24T20:30:48.934842+00:00', '--job-id', '765', '--raw', '--subdir', 'DAGS_FOLDER/coleta_dados_abertos_cnpj/dag.py', '--cfg-path', '/tmp/tmp1wvc8zhn']
+[2025-01-24T20:30:51.476+0000] {standard_task_runner.py:105} INFO - Job 765: Subtask transform_simples
+[2025-01-24T20:30:51.509+0000] {task_command.py:467} INFO - Running <TaskInstance: coleta_dados_abertos_cnpj.transform_simples manual__2025-01-24T20:30:48.934842+00:00 [running]> on host ee70781c29c7
+[2025-01-24T20:30:51.557+0000] {taskinstance.py:3132} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='Corvaum' AIRFLOW_CTX_DAG_ID='coleta_dados_abertos_cnpj' AIRFLOW_CTX_TASK_ID='transform_simples' AIRFLOW_CTX_EXECUTION_DATE='2025-01-24T20:30:48.934842+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-01-24T20:30:48.934842+00:00'
+[2025-01-24T20:30:51.558+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2025-01-24T20:30:51.565+0000] {logging_mixin.py:190} INFO - cnaes
+[2025-01-24T20:30:51.565+0000] {python.py:240} INFO - Done. Returned value was: None
+[2025-01-24T20:30:51.571+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2025-01-24T20:30:51.572+0000] {taskinstance.py:352} INFO - Marking task as SUCCESS. dag_id=coleta_dados_abertos_cnpj, task_id=transform_simples, run_id=manual__2025-01-24T20:30:48.934842+00:00, execution_date=20250124T203048, start_date=20250124T203050, end_date=20250124T203051
+[2025-01-24T20:30:51.608+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2025-01-24T20:30:51.618+0000] {taskinstance.py:3895} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2025-01-24T20:30:51.621+0000] {local_task_job_runner.py:245} INFO - ::endgroup::

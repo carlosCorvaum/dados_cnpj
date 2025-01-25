@@ -1,0 +1,26 @@
+[2025-01-24T21:04:49.810+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2025-01-24T21:04:49.819+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: coleta_dados_abertos_cnpj.extract_naturezas manual__2025-01-24T20:59:53.324100+00:00 [queued]>
+[2025-01-24T21:04:49.825+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: coleta_dados_abertos_cnpj.extract_naturezas manual__2025-01-24T20:59:53.324100+00:00 [queued]>
+[2025-01-24T21:04:49.825+0000] {taskinstance.py:2866} INFO - Starting attempt 3 of 4
+[2025-01-24T21:04:49.860+0000] {taskinstance.py:2889} INFO - Executing <Task(PythonOperator): extract_naturezas> on 2025-01-24 20:59:53.324100+00:00
+[2025-01-24T21:04:49.863+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70: DeprecationWarning: This process (pid=808) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2025-01-24T21:04:49.864+0000] {standard_task_runner.py:72} INFO - Started process 821 to run task
+[2025-01-24T21:04:49.865+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'coleta_dados_abertos_cnpj', 'extract_naturezas', 'manual__2025-01-24T20:59:53.324100+00:00', '--job-id', '798', '--raw', '--subdir', 'DAGS_FOLDER/coleta_dados_abertos_cnpj/dag.py', '--cfg-path', '/tmp/tmpd_62bgup']
+[2025-01-24T21:04:49.866+0000] {standard_task_runner.py:105} INFO - Job 798: Subtask extract_naturezas
+[2025-01-24T21:04:49.899+0000] {task_command.py:467} INFO - Running <TaskInstance: coleta_dados_abertos_cnpj.extract_naturezas manual__2025-01-24T20:59:53.324100+00:00 [running]> on host ee70781c29c7
+[2025-01-24T21:04:49.953+0000] {taskinstance.py:3132} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='Corvaum' AIRFLOW_CTX_DAG_ID='coleta_dados_abertos_cnpj' AIRFLOW_CTX_TASK_ID='extract_naturezas' AIRFLOW_CTX_EXECUTION_DATE='2025-01-24T20:59:53.324100+00:00' AIRFLOW_CTX_TRY_NUMBER='3' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-01-24T20:59:53.324100+00:00'
+[2025-01-24T21:04:49.954+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2025-01-24T21:04:49.967+0000] {logging_mixin.py:190} INFO - Data formatada: 2025-01
+[2025-01-24T21:04:51.227+0000] {logging_mixin.py:190} INFO - Arquivos encontrados: ['Naturezas.zip']
+[2025-01-24T21:04:51.227+0000] {logging_mixin.py:190} INFO - Baixando o arquivo: https://arquivos.receitafederal.gov.br/dados/cnpj/dados_abertos_cnpj/2025-01/Naturezas.zip
+[2025-01-24T21:04:51.360+0000] {logging_mixin.py:190} INFO - Download concluído: https://arquivos.receitafederal.gov.br/dados/cnpj/dados_abertos_cnpj/2025-01/Naturezas.zip
+[2025-01-24T21:04:51.363+0000] {logging_mixin.py:190} INFO - Arquivos descompactados: ['/tmp/c2cbc7143a67413a9f82f6a94e80869f_extracted/F.K03200$Z.D50111.NATJUCSV']
+[2025-01-24T21:04:51.463+0000] {logging_mixin.py:190} INFO - Arquivo full_cpf/Naturezas/2025-01/Naturezas_96d05171b74d46998a590d1e510c8035.csv carregado com sucesso no MinIO!
+[2025-01-24T21:04:51.464+0000] {python.py:240} INFO - Done. Returned value was: None
+[2025-01-24T21:04:51.469+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2025-01-24T21:04:51.469+0000] {taskinstance.py:352} INFO - Marking task as SUCCESS. dag_id=coleta_dados_abertos_cnpj, task_id=extract_naturezas, run_id=manual__2025-01-24T20:59:53.324100+00:00, execution_date=20250124T205953, start_date=20250124T210449, end_date=20250124T210451
+[2025-01-24T21:04:51.482+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2025-01-24T21:04:51.496+0000] {taskinstance.py:3895} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-01-24T21:04:51.497+0000] {local_task_job_runner.py:245} INFO - ::endgroup::

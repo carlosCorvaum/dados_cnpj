@@ -1,0 +1,2 @@
+def simples():
+    print("simples")

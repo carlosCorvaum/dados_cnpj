@@ -1,0 +1,2 @@
+def socios():
+    print("socios")

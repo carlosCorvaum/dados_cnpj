@@ -1,0 +1,90 @@
+[2025-01-24T21:34:03.148+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2025-01-24T21:34:03.159+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: coleta_dados_abertos_cnpj.extract_estabelecimentos manual__2025-01-24T21:15:51.387766+00:00 [queued]>
+[2025-01-24T21:34:03.165+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: coleta_dados_abertos_cnpj.extract_estabelecimentos manual__2025-01-24T21:15:51.387766+00:00 [queued]>
+[2025-01-24T21:34:03.166+0000] {taskinstance.py:2866} INFO - Starting attempt 2 of 3
+[2025-01-24T21:34:03.253+0000] {taskinstance.py:2889} INFO - Executing <Task(PythonOperator): extract_estabelecimentos> on 2025-01-24 21:15:51.387766+00:00
+[2025-01-24T21:34:03.259+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70: DeprecationWarning: This process (pid=1352) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2025-01-24T21:34:03.260+0000] {standard_task_runner.py:72} INFO - Started process 1375 to run task
+[2025-01-24T21:34:03.260+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'coleta_dados_abertos_cnpj', 'extract_estabelecimentos', 'manual__2025-01-24T21:15:51.387766+00:00', '--job-id', '838', '--raw', '--subdir', 'DAGS_FOLDER/coleta_dados_abertos_cnpj/dag.py', '--cfg-path', '/tmp/tmpqb9js0hx']
+[2025-01-24T21:34:03.261+0000] {standard_task_runner.py:105} INFO - Job 838: Subtask extract_estabelecimentos
+[2025-01-24T21:34:03.291+0000] {task_command.py:467} INFO - Running <TaskInstance: coleta_dados_abertos_cnpj.extract_estabelecimentos manual__2025-01-24T21:15:51.387766+00:00 [running]> on host ee70781c29c7
+[2025-01-24T21:34:03.349+0000] {taskinstance.py:3132} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='Corvaum' AIRFLOW_CTX_DAG_ID='coleta_dados_abertos_cnpj' AIRFLOW_CTX_TASK_ID='extract_estabelecimentos' AIRFLOW_CTX_EXECUTION_DATE='2025-01-24T21:15:51.387766+00:00' AIRFLOW_CTX_TRY_NUMBER='2' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-01-24T21:15:51.387766+00:00'
+[2025-01-24T21:34:03.350+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2025-01-24T21:34:03.361+0000] {logging_mixin.py:190} INFO - Data formatada: 2025-01
+[2025-01-24T21:34:03.563+0000] {logging_mixin.py:190} INFO - Arquivos encontrados: ['Estabelecimentos0.zip', 'Estabelecimentos1.zip', 'Estabelecimentos2.zip', 'Estabelecimentos3.zip', 'Estabelecimentos4.zip', 'Estabelecimentos5.zip', 'Estabelecimentos6.zip', 'Estabelecimentos7.zip', 'Estabelecimentos8.zip', 'Estabelecimentos9.zip']
+[2025-01-24T21:34:03.565+0000] {logging_mixin.py:190} INFO - Baixando o arquivo: https://arquivos.receitafederal.gov.br/dados/cnpj/dados_abertos_cnpj/2025-01/Estabelecimentos0.zip
+[2025-01-24T21:42:43.520+0000] {logging_mixin.py:190} INFO - Download concluído: https://arquivos.receitafederal.gov.br/dados/cnpj/dados_abertos_cnpj/2025-01/Estabelecimentos0.zip
+[2025-01-24T21:42:57.883+0000] {logging_mixin.py:190} INFO - Arquivos descompactados: ['/tmp/fbc2039985c141dbaabf1350e97bd1ad_extracted/K3241.K03200Y0.D50111.ESTABELE']
+[2025-01-24T21:44:55.393+0000] {logging_mixin.py:190} INFO - Arquivo full_cpf/Estabelecimentos/2025-01/Estabelecimentos_413e563112b4408881a49a3ae7f00c37.csv carregado com sucesso no MinIO!
+[2025-01-24T21:44:55.628+0000] {logging_mixin.py:190} INFO - Baixando o arquivo: https://arquivos.receitafederal.gov.br/dados/cnpj/dados_abertos_cnpj/2025-01/Estabelecimentos1.zip
+[2025-01-24T21:44:55.727+0000] {logging_mixin.py:190} INFO - Erro ao fazer o download do arquivo: HTTPSConnectionPool(host='arquivos.receitafederal.gov.br', port=443): Max retries exceeded with url: /dados/cnpj/dados_abertos_cnpj/2025-01/Estabelecimentos1.zip (Caused by SSLError(SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1000)')))
+[2025-01-24T21:44:55.739+0000] {logging_mixin.py:190} INFO - Falha no download do arquivo: Estabelecimentos1.zip
+[2025-01-24T21:44:55.740+0000] {logging_mixin.py:190} INFO - Baixando o arquivo: https://arquivos.receitafederal.gov.br/dados/cnpj/dados_abertos_cnpj/2025-01/Estabelecimentos2.zip
+[2025-01-24T21:45:27.785+0000] {local_task_job_runner.py:346} WARNING - State of this instance has been externally set to restarting. Terminating instance.
+[2025-01-24T21:45:27.786+0000] {local_task_job_runner.py:245} INFO - ::endgroup::
+[2025-01-24T21:45:27.787+0000] {process_utils.py:132} INFO - Sending 15 to group 1375. PIDs of all processes in the group: [1375]
+[2025-01-24T21:45:27.787+0000] {process_utils.py:87} INFO - Sending the signal 15 to group 1375
+[2025-01-24T21:45:27.787+0000] {taskinstance.py:3093} ERROR - Received SIGTERM. Terminating subprocesses.
+[2025-01-24T21:45:27.793+0000] {taskinstance.py:3311} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 767, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 733, in _execute_callable
+    return ExecutionCallableRunner(
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/operator_helpers.py", line 252, in run
+    return self.func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 422, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/python.py", line 238, in execute
+    return_value = self.execute_callable()
+                   ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/python.py", line 256, in execute_callable
+    return runner.run(*self.op_args, **self.op_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/operator_helpers.py", line 252, in run
+    return self.func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/airflow/dags/coleta_dados_abertos_cnpj/jobs/extract.py", line 123, in extract
+    zip_file = download_with_requests(download_file_url)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/airflow/dags/coleta_dados_abertos_cnpj/jobs/extract.py", line 53, in download_with_requests
+    for chunk in r.iter_content(chunk_size=8192):
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/requests/models.py", line 820, in generate
+    yield from self.raw.stream(chunk_size, decode_content=True)
+  File "/home/airflow/.local/lib/python3.12/site-packages/urllib3/response.py", line 1060, in stream
+    data = self.read(amt=amt, decode_content=decode_content)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/urllib3/response.py", line 949, in read
+    data = self._raw_read(amt)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/urllib3/response.py", line 873, in _raw_read
+    data = self._fp_read(amt, read1=read1) if not fp_closed else b""
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/urllib3/response.py", line 856, in _fp_read
+    return self._fp.read(amt) if amt is not None else self._fp.read()
+           ^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/http/client.py", line 479, in read
+    s = self.fp.read(amt)
+        ^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/socket.py", line 720, in readinto
+    return self._sock.recv_into(b)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/ssl.py", line 1251, in recv_into
+    return self.read(nbytes, buffer)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/ssl.py", line 1103, in read
+    return self._sslobj.read(len, buffer)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 3095, in signal_handler
+    raise AirflowTaskTerminated("Task received SIGTERM signal")
+airflow.exceptions.AirflowTaskTerminated: Task received SIGTERM signal
+[2025-01-24T21:45:27.803+0000] {taskinstance.py:1225} INFO - Marking task as UP_FOR_RETRY. dag_id=coleta_dados_abertos_cnpj, task_id=extract_estabelecimentos, run_id=manual__2025-01-24T21:15:51.387766+00:00, execution_date=20250124T211551, start_date=20250124T213403, end_date=20250124T214527
+[2025-01-24T21:45:27.811+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2025-01-24T21:45:27.839+0000] {process_utils.py:80} INFO - Process psutil.Process(pid=1375, status='terminated', exitcode=2, started='21:34:02') (1375) terminated with exit code 2

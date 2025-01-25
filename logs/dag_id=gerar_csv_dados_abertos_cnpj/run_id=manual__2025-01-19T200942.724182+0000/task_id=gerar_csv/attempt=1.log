@@ -1,0 +1,23 @@
+[2025-01-19T20:09:44.516+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2025-01-19T20:09:44.526+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: gerar_csv_dados_abertos_cnpj.gerar_csv manual__2025-01-19T20:09:42.724182+00:00 [queued]>
+[2025-01-19T20:09:44.530+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: gerar_csv_dados_abertos_cnpj.gerar_csv manual__2025-01-19T20:09:42.724182+00:00 [queued]>
+[2025-01-19T20:09:44.531+0000] {taskinstance.py:2866} INFO - Starting attempt 1 of 1
+[2025-01-19T20:09:44.575+0000] {taskinstance.py:2889} INFO - Executing <Task(PythonOperator): gerar_csv> on 2025-01-19 20:09:42.724182+00:00
+[2025-01-19T20:09:44.581+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70: DeprecationWarning: This process (pid=426) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2025-01-19T20:09:44.583+0000] {standard_task_runner.py:72} INFO - Started process 428 to run task
+[2025-01-19T20:09:44.583+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'gerar_csv_dados_abertos_cnpj', 'gerar_csv', 'manual__2025-01-19T20:09:42.724182+00:00', '--job-id', '100', '--raw', '--subdir', 'DAGS_FOLDER/saving_file.py', '--cfg-path', '/tmp/tmpddtcqct6']
+[2025-01-19T20:09:44.584+0000] {standard_task_runner.py:105} INFO - Job 100: Subtask gerar_csv
+[2025-01-19T20:09:44.612+0000] {task_command.py:467} INFO - Running <TaskInstance: gerar_csv_dados_abertos_cnpj.gerar_csv manual__2025-01-19T20:09:42.724182+00:00 [running]> on host 659dab735c6e
+[2025-01-19T20:09:44.772+0000] {taskinstance.py:3132} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='gerar_csv_dados_abertos_cnpj' AIRFLOW_CTX_TASK_ID='gerar_csv' AIRFLOW_CTX_EXECUTION_DATE='2025-01-19T20:09:42.724182+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-01-19T20:09:42.724182+00:00'
+[2025-01-19T20:09:44.773+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2025-01-19T20:09:44.780+0000] {logging_mixin.py:190} INFO - testanaado
+[2025-01-19T20:09:44.782+0000] {logging_mixin.py:190} INFO - Diretório criado com sucesso: G:/Airlfow/volumes/dados_abertos_cnpj/empresa_dados
+[2025-01-19T20:09:44.786+0000] {logging_mixin.py:190} INFO - Arquivo salvo em G:/Airlfow/volumes/dados_abertos_cnpj/empresa_dados/teste.csv
+[2025-01-19T20:09:44.786+0000] {python.py:240} INFO - Done. Returned value was: None
+[2025-01-19T20:09:44.792+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2025-01-19T20:09:44.792+0000] {taskinstance.py:352} INFO - Marking task as SUCCESS. dag_id=gerar_csv_dados_abertos_cnpj, task_id=gerar_csv, run_id=manual__2025-01-19T20:09:42.724182+00:00, execution_date=20250119T200942, start_date=20250119T200944, end_date=20250119T200944
+[2025-01-19T20:09:44.837+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2025-01-19T20:09:44.846+0000] {taskinstance.py:3895} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-01-19T20:09:44.848+0000] {local_task_job_runner.py:245} INFO - ::endgroup::

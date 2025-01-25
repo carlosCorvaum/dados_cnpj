@@ -1,0 +1,24 @@
+[2025-01-24T19:04:14.174+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2025-01-24T19:04:14.184+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: coleta_dados_abertos_cnpj.echo_hello_world manual__2025-01-24T19:04:01.256694+00:00 [queued]>
+[2025-01-24T19:04:14.189+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: coleta_dados_abertos_cnpj.echo_hello_world manual__2025-01-24T19:04:01.256694+00:00 [queued]>
+[2025-01-24T19:04:14.189+0000] {taskinstance.py:2866} INFO - Starting attempt 1 of 2
+[2025-01-24T19:04:14.216+0000] {taskinstance.py:2889} INFO - Executing <Task(BashOperator): echo_hello_world> on 2025-01-24 19:04:01.256694+00:00
+[2025-01-24T19:04:14.220+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70: DeprecationWarning: This process (pid=1653) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2025-01-24T19:04:14.221+0000] {standard_task_runner.py:72} INFO - Started process 1654 to run task
+[2025-01-24T19:04:14.221+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'coleta_dados_abertos_cnpj', 'echo_hello_world', 'manual__2025-01-24T19:04:01.256694+00:00', '--job-id', '681', '--raw', '--subdir', 'DAGS_FOLDER/coleta_dados_abertos_cnpj/dag.py', '--cfg-path', '/tmp/tmp3hw5zyk_']
+[2025-01-24T19:04:14.223+0000] {standard_task_runner.py:105} INFO - Job 681: Subtask echo_hello_world
+[2025-01-24T19:04:14.246+0000] {task_command.py:467} INFO - Running <TaskInstance: coleta_dados_abertos_cnpj.echo_hello_world manual__2025-01-24T19:04:01.256694+00:00 [running]> on host ee70781c29c7
+[2025-01-24T19:04:14.285+0000] {taskinstance.py:3132} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='Corvaum' AIRFLOW_CTX_DAG_ID='coleta_dados_abertos_cnpj' AIRFLOW_CTX_TASK_ID='echo_hello_world' AIRFLOW_CTX_EXECUTION_DATE='2025-01-24T19:04:01.256694+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-01-24T19:04:01.256694+00:00'
+[2025-01-24T19:04:14.286+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2025-01-24T19:04:14.293+0000] {subprocess.py:78} INFO - Tmp dir root location: /tmp
+[2025-01-24T19:04:14.293+0000] {subprocess.py:88} INFO - Running command: ['/usr/bin/bash', '-c', 'echo "Hello, Airflow!"']
+[2025-01-24T19:04:14.300+0000] {subprocess.py:99} INFO - Output:
+[2025-01-24T19:04:14.303+0000] {subprocess.py:106} INFO - Hello, Airflow!
+[2025-01-24T19:04:14.309+0000] {subprocess.py:110} INFO - Command exited with return code 0
+[2025-01-24T19:04:14.327+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2025-01-24T19:04:14.327+0000] {taskinstance.py:352} INFO - Marking task as SUCCESS. dag_id=coleta_dados_abertos_cnpj, task_id=echo_hello_world, run_id=manual__2025-01-24T19:04:01.256694+00:00, execution_date=20250124T190401, start_date=20250124T190414, end_date=20250124T190414
+[2025-01-24T19:04:14.355+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2025-01-24T19:04:14.363+0000] {taskinstance.py:3895} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-01-24T19:04:14.364+0000] {local_task_job_runner.py:245} INFO - ::endgroup::
