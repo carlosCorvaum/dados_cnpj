@@ -4,4 +4,6 @@ O Cadastro Nacional da Pessoa Jurídica (CNPJ) é o registro que cada entidade j
 
 #Fonte de dados
 Os "Dados Abertos do CNPJ" disponibilizam informações públicas sobre as empresas registradas no Brasil, este conjunto de dados abrange desde informações básicas de registro até detalhes sobre os estabelecimentos, dados relacionados ao regime tributário do Simples Nacional e informações sobre os sócios ou acionistas de cada empresa. Adicionalmente, inclui tabelas de apoio com informações sobre países, municípios, qualificações dos sócios, natureza jurídica das empresas e atividades econômicas (CNAEs).
-<img src="diagram.svg">
+
+
+<img src="docs/diagram.svg">
