@@ -1,0 +1,5 @@
+.venv
+plugins
+logs
+config
+__pycache__
