@@ -1,5 +1,6 @@
 # Cadastro Nacional da Pessoa Jurídica (CNPJ)
 
+
 ## Introdução
 
 O Cadastro Nacional da Pessoa Jurídica (CNPJ) é o registro que cada entidade jurídica, seja ela uma empresa, fundação, associação ou outra forma de organização, recebe. Cada entidade possui um número de CNPJ único, composto por 14 dígitos, permitindo uma ampla gama de aplicações.
@@ -30,11 +31,14 @@ Os Dados Abertos do CNPJ disponibilizam informações públicas sobre as empresa
 
 - Atividades econômicas (CNAEs).
 
-# Preparando o ambiente
 
-Para preparar o nosos ambiente precisamosÇ
-- Fazer o deploy do Minio docker-compose
-- Fazer o deploy do Airflow docker-compose
+## Preparando o ambiente
+
+Para preparar o nosso ambiente, precisamos:
+- Fazer o deploy do MinIO, use o [**docker-compose**](<https://github.com/carlosCorvaum/dados_cnpj/blob/V2/compose-airflow/docker-compose.yaml>) presente nesse diretorio.
+- Fazer o deploy do Airflow, use o [**docker-compose**](<https://github.com/carlosCorvaum/dados_cnpj/blob/V2/compose-minio/docker-compose.yaml>) presente nesse diretorio.
+- Adicione o 'ACESS_KEY' E O 'SECRET_KEY' no seu arquivo .env
+
 
 # Arquitetura da Solução
 
@@ -55,10 +59,3 @@ Após a transformação, os dados são carregados no PostgreSQL, que atua como o
     - Microsserviços, que podem consumir esses dados para diversos fins.
 
 Essa abordagem garante um processamento escalável, seguro e eficiente, permitindo análises avançadas e integração com diversos sistemas.
-
-Para preparar o nosso ambiente, precisamos:
-- Fazer o deploy do MinIO, use o [**docker-compose**](<https://github.com/carlosCorvaum/dados_cnpj/blob/V2/compose-airflow/docker-compose.yaml>) presente nesse diretorio.
-- Fazer o deploy do Airflow, use o [**docker-compose**](<https://github.com/carlosCorvaum/dados_cnpj/blob/V2/compose-minio/docker-compose.yaml>) presente nesse diretorio.
-
-
-
