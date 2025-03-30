@@ -46,7 +46,7 @@ Para preparar o nosso ambiente, precisamos:
 
 A arquitetura apresentada e um fluxo de ETL para os Dados Abertos de CNPJ, utilizando ferramentas modernas para processamento e disponibilização dos dados.
 
-1. Fonte de Dados  : Vamos extrair os dados da Receita Federal, que disponibiliza publicamente os Dados publicos dos CNPJs.
+1. Fonte de Dados  : Vamos extrair os dados da Receita Federal, que disponibiliza publicamente os Dados de CNPJ.
 
 2. Extração e Armazenamento : O Airflow realiza a extração dos dados brutos diretamente da Receita Federal e são armazenados no MinIO, um serviço de armazenamento de objetos open-source.
 
