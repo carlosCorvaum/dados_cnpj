@@ -1,7 +1,7 @@
 from datetime import datetime
 import requests
 from bs4 import BeautifulSoup
-from minio import Minio
+from tests.minio import Minio
 from io import BytesIO
 import uuid
 import zipfile
@@ -85,9 +85,9 @@ def unzip(zip_file):
 
 def upload_to_bucket(file, bucket_name, layer, prefix, date=None):
     client = Minio(
-        "host.docker.internal:9000",
-        access_key="Meg0Wufz3QcxA6snJUel",
-        secret_key="qphKazgGKNhyVkSjXdGr3HxNAWdw0pvE3MkIrrFa",
+        os.getenv('MINIO_BASE_URL'),
+        os.getenv('ACCESS_KEY'),
+        os.getenv('SECRET_KEY'),
         secure=False,
     )
 
