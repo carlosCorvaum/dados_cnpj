@@ -21,15 +21,15 @@ Os Dados Abertos do CNPJ disponibilizam informações públicas sobre as empresa
 
 - Adicionalmente, inclui tabelas de apoio com informações sobre:
 
-- Países;
+    - Países;
 
-- Municípios;
+    - Municípios;
 
-- Qualificações dos sócios;
+    - Qualificações dos sócios;
 
-- Natureza jurídica das empresas;
+    - Natureza jurídica das empresas;
 
-- Atividades econômicas (CNAEs).
+    - Atividades econômicas (CNAEs).
 
 
 # Preparando o ambiente
