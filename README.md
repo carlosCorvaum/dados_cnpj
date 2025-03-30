@@ -57,8 +57,8 @@ Após a transformação, os dados são carregados no PostgreSQL, que atua como o
 Essa abordagem garante um processamento escalável, seguro e eficiente, permitindo análises avançadas e integração com diversos sistemas.
 
 Para preparar o nosso ambiente, precisamos:
-- Fazer o deploy do MinIO, use o [**docker-compose**](<compose-minio\docker-compose.yaml>) presente nesse diretorio.
-- Fazer o deploy do Airflow, use o [**docker-compose**](<compose-airflow\docker-compose.yaml>) presente nesse diretorio.
+- Fazer o deploy do MinIO, use o [**docker-compose**](<https://github.com/carlosCorvaum/dados_cnpj/blob/V2/compose-airflow/docker-compose.yaml>) presente nesse diretorio.
+- Fazer o deploy do Airflow, use o [**docker-compose**](<https://github.com/carlosCorvaum/dados_cnpj/blob/V2/compose-minio/docker-compose.yaml>) presente nesse diretorio.
 
 
 
