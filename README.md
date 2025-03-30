@@ -30,7 +30,11 @@ Os Dados Abertos do CNPJ disponibilizam informações públicas sobre as empresa
 
 - Atividades econômicas (CNAEs).
 
+# Preparando o ambiente
 
+Para preparar o nosos ambiente precisamosÇ
+- Fazer o deploy do Minio docker-compose
+- Fazer o deploy do Airflow docker-compose
 
 # Arquitetura da Solução
 
@@ -51,3 +55,10 @@ Após a transformação, os dados são carregados no PostgreSQL, que atua como o
     - Microsserviços, que podem consumir esses dados para diversos fins.
 
 Essa abordagem garante um processamento escalável, seguro e eficiente, permitindo análises avançadas e integração com diversos sistemas.
+
+Para preparar o nosso ambiente, precisamos:
+- Fazer o deploy do MinIO, use o [**docker-compose**](<compose-minio\docker-compose.yaml>) presente nesse diretorio.
+- Fazer o deploy do Airflow, use o [**docker-compose**](<compose-airflow\docker-compose.yaml>) presente nesse diretorio.
+
+
+
