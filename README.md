@@ -32,7 +32,7 @@ Os Dados Abertos do CNPJ disponibilizam informações públicas sobre as empresa
 - Atividades econômicas (CNAEs).
 
 
-## Preparando o ambiente
+# Preparando o ambiente
 
 Para preparar o nosso ambiente, precisamos:
 - Fazer o deploy do MinIO, use o [**docker-compose**](<https://github.com/carlosCorvaum/dados_cnpj/blob/V2/compose-airflow/docker-compose.yaml>) presente nesse diretorio.
