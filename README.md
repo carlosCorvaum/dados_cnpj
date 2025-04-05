@@ -44,7 +44,7 @@ Para preparar o nosso ambiente, precisamos:
 
 <img src="docs/diagrama.svg">
 
-A arquitetura apresentada e um fluxo de ETL para os Dados Abertos de CNPJ, utilizando ferramentas modernas para processamento e disponibilização dos dados.
+A arquitetura apresentada e um fluxo de ELTL para os Dados Abertos de CNPJ, utilizando ferramentas modernas para processamento e disponibilização dos dados.
 
 1. Fonte de Dados  : Vamos extrair os dados da Receita Federal, que disponibiliza publicamente os Dados de CNPJ.
 
