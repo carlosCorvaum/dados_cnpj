@@ -42,7 +42,7 @@ Para preparar o nosso ambiente, precisamos:
 
 # Arquitetura da Solução
 
-<img src="docs/diagram.svg">
+<img src="docs/diagrama.svg">
 
 A arquitetura apresentada e um fluxo de ETL para os Dados Abertos de CNPJ, utilizando ferramentas modernas para processamento e disponibilização dos dados.
 
