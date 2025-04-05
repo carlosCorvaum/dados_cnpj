@@ -37,14 +37,14 @@ Os Dados Abertos do CNPJ disponibilizam informações públicas sobre as empresa
 Para preparar o nosso ambiente, precisamos:
 - Fazer o deploy do MinIO, use o [**docker-compose**](<https://github.com/carlosCorvaum/dados_cnpj/blob/V2/compose-airflow/docker-compose.yaml>) presente nesse diretorio.
 - Fazer o deploy do Airflow, use o [**docker-compose**](<https://github.com/carlosCorvaum/dados_cnpj/blob/V2/compose-minio/docker-compose.yaml>) presente nesse diretorio.
-- Adicione o 'ACESS_KEY' E O 'SECRET_KEY' no seu arquivo .env
+- Adicione o 'ACCESS_KEY' E O 'SECRET_KEY' no seu arquivo .env
 
 
 # Arquitetura da Solução
 
 <img src="docs/diagram.svg">
 
-A arquitetura apresentada e um fluxo de ETL para os Dados Abertos de CNPJ, utilizando ferramentas modernas para processamento e disponibilização dos dados.
+A arquitetura apresentada e um fluxo de ELTL para os Dados Abertos de CNPJ, utilizando ferramentas modernas para processamento e disponibilização dos dados.
 
 1. Fonte de Dados  : Vamos extrair os dados da Receita Federal, que disponibiliza publicamente os Dados de CNPJ.
 
