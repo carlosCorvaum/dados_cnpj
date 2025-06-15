@@ -50,7 +50,7 @@ A arquitetura apresentada e um fluxo de ELTL para os Dados Abertos de CNPJ, util
 
 2. Extração e Armazenamento : O Airflow realiza a extração dos dados brutos diretamente da Receita Federal e são armazenados no MinIO, um serviço de armazenamento de objetos open-source.
 
-3. Transformação e Carga : O Airflow processa os dados, realizando transformações necessárias.
+3. Transformação e Carga : processamos os dados, realizando transformações necessárias.
 Após a transformação, os dados são carregados no PostgreSQL, que atua como o banco de dados principal para consultas estruturadas.
 
 4. Exposição dos Dados : Um API Gateway permite o acesso aos dados processados; Essa API fornece informações para diferentes aplicações, como:
